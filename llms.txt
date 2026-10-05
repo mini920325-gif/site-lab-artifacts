@@ -1,0 +1,7 @@
+# Community design artifacts
+
+> Public static design previews, synthetic experiments and authored research. No production community or member data.
+
+- [Artifact list](https://mini920325-gif.github.io/site-lab-artifacts/artifacts.md)
+- [Structured catalog](https://mini920325-gif.github.io/site-lab-artifacts/artifacts.json)
+- [Repository](https://github.com/mini920325-gif/site-lab-artifacts)
