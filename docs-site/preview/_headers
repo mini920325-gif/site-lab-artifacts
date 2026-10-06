@@ -1,0 +1,11 @@
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-1/WIijfuK1AgIYgGiQBIb/EHVUXsZxRkaONGqS2sW5E=' 'sha256-LrZ/X7CEYzCa8FhvvlewUirEZX++AAnpA8qnUGmRqTg=' 'sha256-QcitKEZMao6ElemfSzR6e+CANnNmENf3w/w8sv6ZSi8=' 'sha256-zhpVAWwQj7sQnN6UYm4xoiii+POJs4senX3n1bFv980=' 'sha256-Ce3lXrI2klVgzcktIWNhP3YPxjalxh2hv18N5J4d7TY=' 'sha256-d37II65GY6ctSH7WmWvfuwDQaG8jryWBpBlrH1Tvazc=' 'sha256-U4h+4UlNeEYXzfnvxrFjMlxZ3K2suPZRJU+djMe6NmU=' 'sha256-i0vJ4hrlueeqvbtxDtUjmaU/xTT+NjiaOIazWm2I8NE=' 'sha256-BQYarPjIo6AWGZZD771Zt9H5+kIYNQMpobE4BfdZNs0=' 'sha256-gywIz6ZR7XZuXFE+F+OMIUIw51yifwSkoNOi7SPQjbg='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow
+
+/site-lab-artifacts/preview/assets/media/*
+  Cache-Control: private, max-age=31536000, immutable

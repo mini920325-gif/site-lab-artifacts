@@ -1,0 +1,16 @@
+{
+  "mode": "preview",
+  "publicOrigin": null,
+  "operator": { "displayName": null, "privacyEmail": null },
+  "decisions": {
+    "operatorAndContactVerified": false,
+    "loginProviderAndHostingApproved": false,
+    "under14GuardianFlowVerified": false,
+    "processorRegionAndTransferReviewed": false,
+    "retentionDeletionAndBackupTested": false,
+    "incidentResponseAndContactTested": false,
+    "serverAuthorizationAndRateLimitsTested": false,
+    "contentAndPublicationApproved": false,
+    "productionHeadersAndRoutingVerified": false
+  }
+}

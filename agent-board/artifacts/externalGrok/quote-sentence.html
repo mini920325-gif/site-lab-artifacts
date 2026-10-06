@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fixture-sha256" content="36f274743ce429b654e480f774e6b9b82d43a4f887b5edd10ceb3bd9b7a72b91">
+<title>구조 비교 · 글 안의 붙인 문장</title>
+<style>
+:root { color:#202522; background:#f4f1ea; font-family:system-ui,sans-serif; font-size:100%; line-height:1.6; }
+* { box-sizing:border-box; }
+body { margin:0; }
+main { max-width:40rem; margin:auto; padding:1rem; }
+p, h1, h2 { overflow-wrap:anywhere; }
+h1 { font-size:1.25rem; }
+.banner, .limits { font-size:0.95rem; }
+.tap, button, input, select, textarea, summary { font:inherit; touch-action:manipulation; }
+button, .tap, summary, input, select { min-height:2.75rem; }
+button, summary { display:flex; align-items:center; width:100%; text-align:left; }
+a.skip { position:absolute; left:0.5rem; top:0.5rem; transform:translateY(-150%); background:#fff; padding:0.5rem 0.8rem; }
+a.skip:focus { transform:none; }
+button, input, select, textarea { border:1px solid #6d776f; border-radius:0.2rem; background:#fff; color:#202522; }
+button { background:#24362c; color:#fff; padding:0.4rem 0.8rem; }
+input, select, textarea { width:100%; padding:0.5rem 0.7rem; }
+textarea { min-height:6rem; }
+:focus-visible { outline:3px solid #245847; outline-offset:3px; }
+.filter { display:grid; gap:0.4rem; margin:1rem 0; }
+.topic { font-weight:700; margin-right:0.4rem; }
+.sheet { padding:0.5rem 0 1rem; }
+.empty { padding:1.5rem 1rem; border:1px solid #c5c9c2; background:#fff; }
+.meta, .limits { color:#3d4740; }
+.kept { padding-left:1.1rem; }
+</style>
+</head>
+<body>
+<a class="skip tap" href="#demo-101">열린 글로 건너뛰기</a>
+<main>
+<p class="banner">구조 스케치입니다. 합성 데모이며 제품 채택, 회원 저장, 실수요가 아닙니다.</p>
+<h1>펼친 글 안에 문장을 붙이고 질문하기</h1>
+<p>색을 바꾸지 않았습니다. 조작 높이는 기본 글자에서 2.75rem(44px)이고, 글자를 키우면 함께 커집니다.</p>
+<button type="button" id="text-size" class="tap" aria-pressed="false">글자 200%</button>
+<form class="filter" id="filter">
+<label for="query">찾을 말<input id="query" name="query" type="search"></label>
+<label for="topic">주제<select id="topic" name="topic"><option value="">모든 주제</option><option>전직</option><option>취업</option><option>교육</option><option>생활</option><option>보훈</option></select></label>
+<button type="submit" class="tap">이 조건으로 찾기</button>
+</form>
+<p id="count" role="status"></p>
+<p id="empty" class="empty" hidden>이 조건의 합성 글은 없습니다. 글을 지어 채우지 않았습니다.</p>
+<div id="posts"><article class="post" id="demo-101" data-topic="전직" data-search="경력 기술서를 다시 쓸 때 무엇부터 정리할까요? 기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. 이것은 디자인 실험용 합성 질문입니다."><details open><summary class="tap"><span class="topic">전직</span> 경력 기술서를 다시 쓸 때 무엇부터 정리할까요?</summary><div class="sheet"><p class="meta">합성 시연 글 · 저장되지 않습니다</p><p>기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. <button type="button" class="tap" data-quote-from="기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다.">이 문장 붙이기</button></p><p>이것은 디자인 실험용 합성 질문입니다. <button type="button" class="tap" data-quote-from="이것은 디자인 실험용 합성 질문입니다.">이 문장 붙이기</button></p><form class="quote-form"><label>붙인 문장<textarea name="quote" required></textarea></label><label>이 문장에 이은 짧은 질문<textarea name="question" required></textarea></label><button type="submit" class="tap">이 글 옆에 남기기</button><p class="status" role="status"></p><ul class="kept"></ul></form><section><h3>이미 있는 합성 댓글</h3><ul><li>직무별로 필요한 경험을 먼저 나눠 보는 안은 어떨까요?</li><li>문장보다 사례를 먼저 모아 보자는 반박도 비교해 주세요.</li></ul></section></div></details></article><article class="post" id="demo-102" data-topic="교육" data-search="퇴근 후 교육 과정을 비교할 때 볼 기준 시간·비용·방식을 비교할 칸이 필요할지 토론합니다. 실제 과정이나 가격 정보는 넣지 않았습니다."><details><summary class="tap"><span class="topic">교육</span> 퇴근 후 교육 과정을 비교할 때 볼 기준</summary><div class="sheet"><p class="meta">합성 시연 글 · 저장되지 않습니다</p><p>시간·비용·방식을 비교할 칸이 필요할지 토론합니다. <button type="button" class="tap" data-quote-from="시간·비용·방식을 비교할 칸이 필요할지 토론합니다.">이 문장 붙이기</button></p><p>실제 과정이나 가격 정보는 넣지 않았습니다. <button type="button" class="tap" data-quote-from="실제 과정이나 가격 정보는 넣지 않았습니다.">이 문장 붙이기</button></p><form class="quote-form"><label>붙인 문장<textarea name="quote" required></textarea></label><label>이 문장에 이은 짧은 질문<textarea name="question" required></textarea></label><button type="submit" class="tap">이 글 옆에 남기기</button><p class="status" role="status"></p><ul class="kept"></ul></form><section><h3>이미 있는 합성 댓글</h3><ul><li>이 합성 글에는 댓글이 없습니다.</li></ul></section></div></details></article><article class="post" id="demo-103" data-topic="생활" data-search="필요한 서류를 한곳에 모아 두는 방법 기록과 자료를 찾는 동선을 비교하는 합성 글입니다. 실제 지원 자격이나 제출 서류를 안내하지 않습니다."><details><summary class="tap"><span class="topic">생활</span> 필요한 서류를 한곳에 모아 두는 방법</summary><div class="sheet"><p class="meta">합성 시연 글 · 저장되지 않습니다</p><p>기록과 자료를 찾는 동선을 비교하는 합성 글입니다. <button type="button" class="tap" data-quote-from="기록과 자료를 찾는 동선을 비교하는 합성 글입니다.">이 문장 붙이기</button></p><p>실제 지원 자격이나 제출 서류를 안내하지 않습니다. <button type="button" class="tap" data-quote-from="실제 지원 자격이나 제출 서류를 안내하지 않습니다.">이 문장 붙이기</button></p><form class="quote-form"><label>붙인 문장<textarea name="quote" required></textarea></label><label>이 문장에 이은 짧은 질문<textarea name="question" required></textarea></label><button type="submit" class="tap">이 글 옆에 남기기</button><p class="status" role="status"></p><ul class="kept"></ul></form><section><h3>이미 있는 합성 댓글</h3><ul><li>이 합성 글에는 댓글이 없습니다.</li></ul></section></div></details></article><article class="post" id="demo-104" data-topic="보훈" data-search="제도 자료와 경험 질문을 함께 읽는 순서 공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. 검증된 제도 설명은 아직 연결하지 않았습니다."><details><summary class="tap"><span class="topic">보훈</span> 제도 자료와 경험 질문을 함께 읽는 순서</summary><div class="sheet"><p class="meta">합성 시연 글 · 저장되지 않습니다</p><p>공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. <button type="button" class="tap" data-quote-from="공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다.">이 문장 붙이기</button></p><p>검증된 제도 설명은 아직 연결하지 않았습니다. <button type="button" class="tap" data-quote-from="검증된 제도 설명은 아직 연결하지 않았습니다.">이 문장 붙이기</button></p><form class="quote-form"><label>붙인 문장<textarea name="quote" required></textarea></label><label>이 문장에 이은 짧은 질문<textarea name="question" required></textarea></label><button type="submit" class="tap">이 글 옆에 남기기</button><p class="status" role="status"></p><ul class="kept"></ul></form><section><h3>이미 있는 합성 댓글</h3><ul><li>이 합성 글에는 댓글이 없습니다.</li></ul></section></div></details></article></div>
+<footer class="limits">
+<p>보존하려는 동선은 읽기, 목록, 검색, 글 안 작성, 댓글 자리, 조건 해제입니다. 인증·서버·상담은 연결하지 않았습니다.</p>
+<p>390·768·1280px와 글자 200%는 이 파일 밖의 측정 로그가 있을 때만 주장합니다.</p>
+</footer>
+</main>
+<script type="application/json" id="source-fixture">{"label": "디자인 비교용 합성 데모 — 실제 이용자 활동·지원 정보가 아님", "topics": ["전직", "취업", "교육", "생활", "보훈"], "posts": [{"id": "demo-101", "topic": "전직", "title": "경력 기술서를 다시 쓸 때 무엇부터 정리할까요?", "body": "기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. 이것은 디자인 실험용 합성 질문입니다.", "comments": ["직무별로 필요한 경험을 먼저 나눠 보는 안은 어떨까요?", "문장보다 사례를 먼저 모아 보자는 반박도 비교해 주세요."]}, {"id": "demo-102", "topic": "교육", "title": "퇴근 후 교육 과정을 비교할 때 볼 기준", "body": "시간·비용·방식을 비교할 칸이 필요할지 토론합니다. 실제 과정이나 가격 정보는 넣지 않았습니다.", "comments": []}, {"id": "demo-103", "topic": "생활", "title": "필요한 서류를 한곳에 모아 두는 방법", "body": "기록과 자료를 찾는 동선을 비교하는 합성 글입니다. 실제 지원 자격이나 제출 서류를 안내하지 않습니다.", "comments": []}, {"id": "demo-104", "topic": "보훈", "title": "제도 자료와 경험 질문을 함께 읽는 순서", "body": "공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. 검증된 제도 설명은 아직 연결하지 않았습니다.", "comments": []}], "materials": [{"title": "자료 비교표 자리", "description": "실제 자료 연결 전의 데모 항목"}, {"title": "내 초안 자리", "description": "사용자 입력·저장 기능을 구현한 것이 아닌 구조 스케치"}], "preserve_contract": ["비회원 읽기", "목록 탐색", "검색", "글 상세", "작성", "댓글", "목록 복귀"], "scope": "구조를 비교할 내용이며 원 제품의 기능 검사·사용자 검증을 대신하지 않는다"}</script>
+<script>
+"use strict";
+const query=document.getElementById("query"),topic=document.getElementById("topic"),empty=document.getElementById("empty"),count=document.getElementById("count");
+function applyFilter(){
+  const term=query.value.trim().toLowerCase();
+  let visible=0;
+  for(const article of document.querySelectorAll("article.post")){
+    const ok=(!topic.value||article.dataset.topic===topic.value)&&article.dataset.search.includes(term);
+    article.hidden=!ok;
+    if(ok)visible++;
+  }
+  empty.hidden=visible!==0;
+  count.textContent="보이는 합성 글 "+visible+"개. 인기나 활동량이 아닙니다.";
+}
+document.getElementById("filter").addEventListener("submit",event=>{event.preventDefault();applyFilter();});
+topic.addEventListener("change",applyFilter);
+query.addEventListener("input",applyFilter);
+document.getElementById("text-size").addEventListener("click",event=>{
+  const on=document.documentElement.style.fontSize!=="200%";
+  document.documentElement.style.fontSize=on?"200%":"";
+  event.currentTarget.setAttribute("aria-pressed",String(on));
+  event.currentTarget.textContent=on?"글자 기본":"글자 200%";
+});
+document.body.addEventListener("click",event=>{
+  const button=event.target.closest("[data-quote-from]");
+  if(!button)return;
+  const details=button.closest("details");
+  const field=details.querySelector('textarea[name="quote"]');
+  field.value=button.getAttribute("data-quote-from");
+  field.focus();
+});
+for(const form of document.querySelectorAll(".quote-form")){
+  form.addEventListener("submit",event=>{
+    event.preventDefault();
+    const details=form.closest("details");
+    const allowed=[...details.querySelectorAll("[data-quote-from]")].map(button=>button.getAttribute("data-quote-from"));
+    const quote=form.querySelector('[name="quote"]').value;
+    const question=form.querySelector('[name="question"]').value.trim();
+    const status=form.querySelector(".status");
+    if(!allowed.includes(quote)){status.textContent="붙인 문장이 이 글의 문장과 같지 않습니다.";return;}
+    if(!question)return;
+    const item=document.createElement("li");
+    item.textContent="이 페이지 메모리 · "+quote+" · "+question;
+    form.querySelector(".kept").append(item);
+    form.querySelector('[name="question"]').value="";
+    status.textContent="이 브라우저 메모리에만 남았습니다. 새로고침하면 없어집니다.";
+  });
+}
+applyFilter();
+</script>
+</body>
+</html>

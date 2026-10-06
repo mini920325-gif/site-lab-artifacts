@@ -1,0 +1,228 @@
+{
+  "books": {
+    "topics": [
+      "education"
+    ],
+    "title": "Blank books stacked on a table",
+    "author": "Trey Jones",
+    "source": "https://commons.wikimedia.org/wiki/File:Blank_books_stacked_on_a_table.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Blank_books_stacked_on_a_table.jpg",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "originalBytes": 478282,
+    "originalSHA256": "2b1ed71fc07dd46f8d66a02a33ffd4c7c1df59a8c0294789366f8698f84fa537",
+    "width": 1200,
+    "height": 1200,
+    "renditions": [
+      {
+        "file": "books-160-8563c1be8d61.avif",
+        "format": "avif",
+        "width": 160,
+        "height": 160,
+        "bytes": 1712,
+        "sha256": "8563c1be8d61c7d55a55bebd08a32fbe24b5de56ee624a9120a986d2e3ebf176"
+      },
+      {
+        "file": "books-160-6e548a51d6bc.webp",
+        "format": "webp",
+        "width": 160,
+        "height": 160,
+        "bytes": 2280,
+        "sha256": "6e548a51d6bc479a4939ae4e548b27791f7ef829c5e165daa872ee17d10e8c91"
+      },
+      {
+        "file": "books-160-a02cd9a88c6b.jpg",
+        "format": "jpg",
+        "width": 160,
+        "height": 160,
+        "bytes": 4696,
+        "sha256": "a02cd9a88c6b0d5c47dda1c7075c4f6ea11694c1c7547eb5d591116a165d81c8"
+      },
+      {
+        "file": "books-320-5c105c46b52d.avif",
+        "format": "avif",
+        "width": 320,
+        "height": 320,
+        "bytes": 5710,
+        "sha256": "5c105c46b52d789e9726417ac336932d0e20455eb97cf2237318bdbb2021d585"
+      },
+      {
+        "file": "books-320-9b5b521ecd5f.webp",
+        "format": "webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 9206,
+        "sha256": "9b5b521ecd5f933239855117c347cbe8837915e136376636c7961d9318af2c3f"
+      },
+      {
+        "file": "books-320-76b9771153d9.jpg",
+        "format": "jpg",
+        "width": 320,
+        "height": 320,
+        "bytes": 16736,
+        "sha256": "76b9771153d973d13503b0d8b83540a6da5128680eba48c7cc544ccc59b9b66d"
+      },
+      {
+        "file": "books-640-0589603b7cd4.avif",
+        "format": "avif",
+        "width": 640,
+        "height": 640,
+        "bytes": 21167,
+        "sha256": "0589603b7cd46a0f74d722d7eddd3593791a00b583b0f88d56fdba4581c6393e"
+      },
+      {
+        "file": "books-640-f6cb3c365ecf.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 33418,
+        "sha256": "f6cb3c365ecf4a3162ae10a22bfb8c21f322cb72908ac3465eb1e99c78034dbf"
+      },
+      {
+        "file": "books-640-5997aab3125f.jpg",
+        "format": "jpg",
+        "width": 640,
+        "height": 640,
+        "bytes": 62108,
+        "sha256": "5997aab3125f68b7dfc390849489fe615d037ea1a5c2273bc72b6a77d1895c97"
+      },
+      {
+        "file": "books-1200-07e08c272447.avif",
+        "format": "avif",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 57689,
+        "sha256": "07e08c272447d8c0c7b3443dfa328f522b967b7f0473a74e745d46e9d94b9c3a"
+      },
+      {
+        "file": "books-1200-f9ec4c101be1.webp",
+        "format": "webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 85182,
+        "sha256": "f9ec4c101be1ee8e9bcf76526c7d6a984a678e206a54a4ff89a05d08b2d26a81"
+      },
+      {
+        "file": "books-1200-3ab85ad08001.jpg",
+        "format": "jpg",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 183975,
+        "sha256": "3ab85ad08001c136853a399ec57adaf4b1785d26496f1aaaeb689d555c73cf71"
+      }
+    ]
+  },
+  "park": {
+    "topics": [
+      "life"
+    ],
+    "title": "Boyd Park path",
+    "author": "Siddharth Patil",
+    "source": "https://commons.wikimedia.org/wiki/File:Boyd_Park_path.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Boyd_Park_path.jpg",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "originalBytes": 18499827,
+    "originalSHA256": "6b1a6549e48e4bcb031cec4c4278480337fa1aee270ce9f42568d6cfa41ddf79",
+    "width": 6382,
+    "height": 2696,
+    "renditions": [
+      {
+        "file": "park-160-da866319ff82.avif",
+        "format": "avif",
+        "width": 160,
+        "height": 68,
+        "bytes": 1313,
+        "sha256": "da866319ff828e9605aacf8ed22c39d0bd6663e282c7005f7a85a764e17b1d86"
+      },
+      {
+        "file": "park-160-8f819f34239a.webp",
+        "format": "webp",
+        "width": 160,
+        "height": 68,
+        "bytes": 1908,
+        "sha256": "8f819f34239a06206b36d56080d156f65f32858585b153b34eab19fb42e23e88"
+      },
+      {
+        "file": "park-160-5d6c31e68296.jpg",
+        "format": "jpg",
+        "width": 160,
+        "height": 68,
+        "bytes": 3286,
+        "sha256": "5d6c31e68296a74aec37213282e7aca91b163a85bc9b2354f031e35e23b5b9eb"
+      },
+      {
+        "file": "park-320-1767c31faebd.avif",
+        "format": "avif",
+        "width": 320,
+        "height": 135,
+        "bytes": 3631,
+        "sha256": "1767c31faebd5a8d11bede28a72faedad9d207f58e67e0a5ba6f9f5fd99a4e3f"
+      },
+      {
+        "file": "park-320-1f8dd48fd6a7.webp",
+        "format": "webp",
+        "width": 320,
+        "height": 135,
+        "bytes": 5688,
+        "sha256": "1f8dd48fd6a79b82bd2d3291d244496f28d7d616c0b797d0c403e0b182a0041a"
+      },
+      {
+        "file": "park-320-9391221eae11.jpg",
+        "format": "jpg",
+        "width": 320,
+        "height": 135,
+        "bytes": 9290,
+        "sha256": "9391221eae111c260001ab275775fa65045a8a84bf7bbda74e7b8b0b250a957d"
+      },
+      {
+        "file": "park-640-5b12ee6e8069.avif",
+        "format": "avif",
+        "width": 640,
+        "height": 270,
+        "bytes": 12236,
+        "sha256": "5b12ee6e806950e1042d00facec7ed7c070ccfc735b8ee63389e4991c60dd068"
+      },
+      {
+        "file": "park-640-c9fb075505ad.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 270,
+        "bytes": 19862,
+        "sha256": "c9fb075505ad2779d4a850121a026034eade683c78025b597ad01846969adb49"
+      },
+      {
+        "file": "park-640-5691f1d1b4a4.jpg",
+        "format": "jpg",
+        "width": 640,
+        "height": 270,
+        "bytes": 31671,
+        "sha256": "5691f1d1b4a452420b5450f3e5ec6f5ead0bd857c07461912fb0e7c170ed546e"
+      },
+      {
+        "file": "park-1200-000d6b92e0d0.avif",
+        "format": "avif",
+        "width": 1200,
+        "height": 507,
+        "bytes": 38990,
+        "sha256": "000d6b92e0d0087f110b0a75a2107b3a489122dea173b01ee7f85b16362494e0"
+      },
+      {
+        "file": "park-1200-9ce73da52f69.webp",
+        "format": "webp",
+        "width": 1200,
+        "height": 507,
+        "bytes": 68104,
+        "sha256": "9ce73da52f69793386d9ecb632018661f7cef8fd8833a4842edcf3b6ac070b3b"
+      },
+      {
+        "file": "park-1200-7e1216e16184.jpg",
+        "format": "jpg",
+        "width": 1200,
+        "height": 507,
+        "bytes": 105148,
+        "sha256": "7e1216e16184258ac2b943b3753aedcf3573e308f1ce4780a10138c01f949fc4"
+      }
+    ]
+  }
+}

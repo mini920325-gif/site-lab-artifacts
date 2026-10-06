@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mini920325-gif.github.io/site-lab-artifacts/sitemap.xml

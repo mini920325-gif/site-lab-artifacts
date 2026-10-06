@@ -1,0 +1,192 @@
+{
+  "sourceCommit": "2d8d15bc838d7c6b78e1bd213fa6ea0066389cc3",
+  "exportedOn": "2026-10-06",
+  "scope": "Allowlisted design preview, authored reports and synthetic structure sketches. No private repository history or board conversations.",
+  "originalFiles": [
+    {
+      "path": "publication/build.mjs",
+      "sha256": "96087de9b4a93efe66b549f678a6b365ff756eb1e5166f5236cb3c259d36f7db"
+    },
+    {
+      "path": "publication/content.mjs",
+      "sha256": "34d7264e517fa3edaf370db1882331b9b056a354b32f443c32e160bb6a9e9456"
+    },
+    {
+      "path": "publication/privacy.mjs",
+      "sha256": "e0fad6598b468c088115bcb0b91666010155cd3b63b6af1f8a6cf40b5512f6b8"
+    },
+    {
+      "path": "publication/studio-panel.mjs",
+      "sha256": "9d8db9101c8cf1420cf2eb7fe438dc8814811995010cc88ab68c515b31a2d7c5"
+    },
+    {
+      "path": "publication/studio-model.mjs",
+      "sha256": "c0a637884b4b18beead7625d2da801d6a8088f43e758281c4463e065e615da50"
+    },
+    {
+      "path": "publication/ui.js",
+      "sha256": "6fe2020434c80988b450ca4bad0a700e863692b39905f45381a91b46382d16dc"
+    },
+    {
+      "path": "publication/style.css",
+      "sha256": "5c4f58389e025b06bd69fefd27467b8363bcc4566a96a5440c71e6474027a609"
+    },
+    {
+      "path": "publication/studio.css",
+      "sha256": "5f11caa5f69d37c5709ca037be58f6c04ce6464c564b41c057f6cef0fa3030d5"
+    },
+    {
+      "path": "publication/media-manifest.json",
+      "sha256": "41b7bc20adef332e660685cdb1fa97c7d06a5db1597c294013cf5320b78d0faa"
+    },
+    {
+      "path": "publication/release-policy.json",
+      "sha256": "ffc452c155d00229039b0304d4696a4902e3f5c802fd9163c28f8b1c594dba46"
+    },
+    {
+      "path": "publication/publication.test.mjs",
+      "sha256": "df37dcdc91b175c4a776e943997854e880c6de7ada58b752a330b9274c934aad"
+    },
+    {
+      "path": "publication/studio.test.mjs",
+      "sha256": "4634e0824b3c552fc3d2133fe35f369eed46fe727327aadb8e71d143244e7bb9"
+    },
+    {
+      "path": "publication/media/books-320-76b9771153d9.jpg",
+      "sha256": "76b9771153d973d13503b0d8b83540a6da5128680eba48c7cc544ccc59b9b66d"
+    },
+    {
+      "path": "publication/media/park-1200-7e1216e16184.jpg",
+      "sha256": "7e1216e16184258ac2b943b3753aedcf3573e308f1ce4780a10138c01f949fc4"
+    },
+    {
+      "path": "publication/media/park-640-5691f1d1b4a4.jpg",
+      "sha256": "5691f1d1b4a452420b5450f3e5ec6f5ead0bd857c07461912fb0e7c170ed546e"
+    },
+    {
+      "path": "publication/media/park-1200-000d6b92e0d0.avif",
+      "sha256": "000d6b92e0d0087f110b0a75a2107b3a489122dea173b01ee7f85b16362494e0"
+    },
+    {
+      "path": "publication/media/books-640-0589603b7cd4.avif",
+      "sha256": "0589603b7cd46a0f74d722d7eddd3593791a00b583b0f88d56fdba4581c6393e"
+    },
+    {
+      "path": "publication/media/books-160-a02cd9a88c6b.jpg",
+      "sha256": "a02cd9a88c6b0d5c47dda1c7075c4f6ea11694c1c7547eb5d591116a165d81c8"
+    },
+    {
+      "path": "publication/media/park-1200-9ce73da52f69.webp",
+      "sha256": "9ce73da52f69793386d9ecb632018661f7cef8fd8833a4842edcf3b6ac070b3b"
+    },
+    {
+      "path": "publication/media/books-1200-f9ec4c101be1.webp",
+      "sha256": "f9ec4c101be1ee8e9bcf76526c7d6a984a678e206a54a4ff89a05d08b2d26a81"
+    },
+    {
+      "path": "publication/media/park-160-8f819f34239a.webp",
+      "sha256": "8f819f34239a06206b36d56080d156f65f32858585b153b34eab19fb42e23e88"
+    },
+    {
+      "path": "publication/media/books-1200-3ab85ad08001.jpg",
+      "sha256": "3ab85ad08001c136853a399ec57adaf4b1785d26496f1aaaeb689d555c73cf71"
+    },
+    {
+      "path": "publication/media/park-160-da866319ff82.avif",
+      "sha256": "da866319ff828e9605aacf8ed22c39d0bd6663e282c7005f7a85a764e17b1d86"
+    },
+    {
+      "path": "publication/media/books-640-f6cb3c365ecf.webp",
+      "sha256": "f6cb3c365ecf4a3162ae10a22bfb8c21f322cb72908ac3465eb1e99c78034dbf"
+    },
+    {
+      "path": "publication/media/park-160-5d6c31e68296.jpg",
+      "sha256": "5d6c31e68296a74aec37213282e7aca91b163a85bc9b2354f031e35e23b5b9eb"
+    },
+    {
+      "path": "publication/media/park-640-c9fb075505ad.webp",
+      "sha256": "c9fb075505ad2779d4a850121a026034eade683c78025b597ad01846969adb49"
+    },
+    {
+      "path": "publication/media/park-640-5b12ee6e8069.avif",
+      "sha256": "5b12ee6e806950e1042d00facec7ed7c070ccfc735b8ee63389e4991c60dd068"
+    },
+    {
+      "path": "publication/media/books-1200-07e08c272447.avif",
+      "sha256": "07e08c272447d8c0c7b3443dfa328f522b967b7f0473a74e745d46e9d94b9c3a"
+    },
+    {
+      "path": "publication/media/books-160-8563c1be8d61.avif",
+      "sha256": "8563c1be8d61c7d55a55bebd08a32fbe24b5de56ee624a9120a986d2e3ebf176"
+    },
+    {
+      "path": "publication/media/park-320-9391221eae11.jpg",
+      "sha256": "9391221eae111c260001ab275775fa65045a8a84bf7bbda74e7b8b0b250a957d"
+    },
+    {
+      "path": "publication/media/books-320-9b5b521ecd5f.webp",
+      "sha256": "9b5b521ecd5f933239855117c347cbe8837915e136376636c7961d9318af2c3f"
+    },
+    {
+      "path": "publication/media/park-320-1f8dd48fd6a7.webp",
+      "sha256": "1f8dd48fd6a79b82bd2d3291d244496f28d7d616c0b797d0c403e0b182a0041a"
+    },
+    {
+      "path": "publication/media/park-320-1767c31faebd.avif",
+      "sha256": "1767c31faebd5a8d11bede28a72faedad9d207f58e67e0a5ba6f9f5fd99a4e3f"
+    },
+    {
+      "path": "publication/media/books-640-5997aab3125f.jpg",
+      "sha256": "5997aab3125f68b7dfc390849489fe615d037ea1a5c2273bc72b6a77d1895c97"
+    },
+    {
+      "path": "publication/media/books-160-6e548a51d6bc.webp",
+      "sha256": "6e548a51d6bc479a4939ae4e548b27791f7ef829c5e165daa872ee17d10e8c91"
+    },
+    {
+      "path": "publication/media/books-320-5c105c46b52d.avif",
+      "sha256": "5c105c46b52d789e9726417ac336932d0e20455eb97cf2237318bdbb2021d585"
+    },
+    {
+      "path": "publication/vendor/flarum/LICENSE.md",
+      "sha256": "5945082b340fbdc4c507e87bc05c5a064ae22d0679759c738b5a2540fe4cc351"
+    },
+    {
+      "path": "publication/vendor/flarum/DiscussionList.less",
+      "sha256": "5a2a46cc40739a18839b855227339906edbb471d7c697f856d9363a940d1cbab"
+    },
+    {
+      "path": "publication/vendor/flarum/DiscussionListItem.less",
+      "sha256": "3fcb8bfa9d1e8f6068cfc4ef228ef8e16abb4431bb7d06ba91ed62bb5e9cc4d5"
+    },
+    {
+      "path": "docs/community-design-media.md",
+      "sha256": "461c4bea979d7f71e3d51b6e3f026dd21849b25b1574157990df63d060833f15"
+    },
+    {
+      "path": "docs/website-plan.md",
+      "sha256": "e237306ab7c04f4b4510dcf27dc79cf75fa895a5ad9bc485e506d67f62cee99c"
+    },
+    {
+      "path": "agent-board/artifacts/governance_engine/sketch.html",
+      "sha256": "a9255e54f36a5a8a6a57120a466ceb45c5f5bc6ab5fc7a67e07e9def64637c91"
+    },
+    {
+      "path": "agent-board/artifacts/governance_docs/question-workbench.html",
+      "sha256": "5705d6a2bb0b41344e8720985b03888c8418fa24ef7ce70353bb2bf5da1ce153"
+    },
+    {
+      "path": "agent-board/artifacts/externalGrok/quote-sentence.html",
+      "sha256": "c3e9dfb66f12a150b8567344007fc36e1c3143c3ce35246853831c731bf8279a"
+    },
+    {
+      "path": "publication/server.mjs",
+      "sha256": "e5659b262ba6fc7a83a0cdede4b3c123e3a5276ff37e34df6b32f9b7012b8c05"
+    }
+  ],
+  "adaptations": [
+    "publication/build.mjs route validator accepts nested safe GitHub Pages base paths; static preview only.",
+    "publication/studio-model.mjs accepts only known preview page routes under the original or GitHub Pages base; preserves nested page memo routes through save/import/export.",
+    "publication/ui.js derives portable page fallback and internal navigation base from bundled pages."
+  ]
+}

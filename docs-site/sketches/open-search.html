@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>열린 검색대 · 구조 스케치</title>
+  <style>
+:root{color:#202522;background:#f5f3ee;font-family:system-ui,sans-serif;line-height:1.65;font-size:100%}
+:root.large-text{font-size:200%}
+*{box-sizing:border-box}
+body{margin:0}
+a{color:#245c47;text-underline-offset:.22em}
+button,input,select,textarea{font:inherit}
+button,input,select,textarea{border:1px solid #7b877d;border-radius:.18rem;padding:.6rem .75rem;max-width:100%}
+button{background:#245c47;color:white;cursor:pointer;min-height:2.75rem;white-space:normal}
+input,select,textarea{background:#fff;color:#202522;min-width:0;width:100%}
+label{display:block;margin-top:.65rem;font-weight:600}
+:focus-visible{outline:3px solid #916421;outline-offset:3px}
+.skip{position:absolute;left:.5rem;top:-5rem;background:white;padding:.7rem;z-index:2}
+.skip:focus{top:.5rem}
+.site-header,main,footer{max-width:75rem;margin:auto;padding:1.25rem clamp(1rem,4vw,3rem)}
+.site-header{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid #c8cfc7}
+.working-name{font-weight:700}
+nav{display:flex;gap:1rem;flex-wrap:wrap}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.25;margin:.5rem 0 1.3rem}
+h2{font-size:1.35rem;line-height:1.4}
+p{margin:.5rem 0 1rem}
+.demo{padding:.75rem 1rem;background:#e7ece5;border-left:3px solid #245c47}
+.search-desk{padding:1rem 0 1.8rem;border-bottom:1px solid #c8cfc7}
+.search-row{display:flex;gap:.65rem;align-items:start;flex-wrap:wrap}
+.search-row input{flex:1 1 16rem}
+.search-row button{flex:0 1 auto}
+.workspace{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:2rem;margin-top:1.75rem}
+.section-top{display:flex;gap:1rem;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.hint,.meta{color:#55625a}
+.post{border-top:1px solid #c8cfc7;padding:1rem 0;overflow-wrap:anywhere}
+.post summary{cursor:pointer;font-weight:650;font-size:1.12rem;line-height:1.5}
+.post .preview{margin:.5rem 0}
+.post .full-text{margin:1rem 0;white-space:pre-wrap}
+.post .post-actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:1rem 0}
+.comments{border-left:2px solid #c8cfc7;padding-left:1rem}
+.comment{margin:.5rem 0;padding:.5rem 0;overflow-wrap:anywhere}
+.reply-form{margin-top:1rem}
+.reply-form button{margin-top:.65rem}
+aside{border-left:1px solid #c8cfc7;padding-left:1.25rem;overflow-wrap:anywhere}
+#compose{margin-top:2rem;border-top:1px solid #c8cfc7;padding-top:1rem}
+#compose-form{max-width:48rem;display:grid;gap:.4rem}
+#compose-form button{justify-self:start;margin-top:.7rem}
+footer{font-size:.95rem;color:#55625a}
+[hidden]{display:none!important}
+@media(max-width:48rem){.workspace{grid-template-columns:minmax(0,1fr);gap:1rem}aside{border-left:0;border-top:1px solid #c8cfc7;padding:1rem 0}.search-row input{flex-basis:100%}.site-header{align-items:flex-start}.post summary{font-size:1.08rem}}
+
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <a class="working-name" href="#main">커뮤니티 구조 실험</a>
+    <nav aria-label="기본 이동"><a href="#post-list">전체 글</a><a href="#compose">새 글 쓰기</a></nav>
+    <button id="text-size" type="button" aria-pressed="false">글자 200% 확대</button>
+  </header>
+  <main id="main">
+    <p class="demo">구조 스케치입니다. 글과 댓글은 합성 시연 자료이며, 입력은 이 페이지 메모리에만 남습니다.</p>
+    <section class="search-desk" aria-labelledby="search-title">
+      <h1 id="search-title">어떤 이야기를 찾나요?</h1>
+      <form id="search-form" role="search">
+        <label for="query">글 제목과 본문에서 찾기</label>
+        <div class="search-row"><input id="query" name="query" type="search" placeholder="찾을 말을 입력하세요"><button type="submit">찾기</button><button id="clear-search" type="button">전체 글 보기</button></div>
+      </form>
+      <p id="search-status" role="status" aria-live="polite">검색어 없이도 모든 글을 읽을 수 있습니다.</p>
+    </section>
+    <div class="workspace">
+      <section id="post-list" aria-labelledby="list-title">
+        <div class="section-top"><h2 id="list-title">펼쳐진 글 목록</h2><a href="#compose">새 글 쓰기</a></div>
+        <p class="hint">제목을 열면 같은 자리에서 전문과 댓글을 읽습니다.</p>
+        <div id="posts"></div>
+        <p id="empty" hidden>일치하는 글이 없습니다. 검색어를 바꾸거나 아래에서 새 글을 써 보세요.</p>
+      </section>
+      <aside aria-labelledby="topics-title">
+        <h2 id="topics-title">이야기 주제</h2>
+        <p>주제는 제품의 확정 메뉴가 아닌 동일 시연 자료의 분류입니다.</p>
+        <form id="topic-form"><label for="topic">주제로 좁히기</label><select id="topic" name="topic"><option value="">모든 주제</option><option>전직</option><option>취업</option><option>교육</option><option>생활</option><option>보훈</option></select></form>
+        <p>읽기 → 댓글 → 새 글 쓰기 경로를 비교합니다. 인기 수치나 가짜 응답률은 표시하지 않습니다.</p>
+      </aside>
+    </div>
+    <section id="compose" aria-labelledby="compose-title">
+      <h2 id="compose-title">새 글 쓰기 · 시연</h2>
+      <p id="reference-status">참조 글 없이 새 글을 쓸 수 있습니다.</p>
+      <form id="compose-form">
+        <label for="new-title">제목</label><input id="new-title" name="title" required>
+        <label for="new-topic">주제</label><select id="new-topic" name="topic"><option>전직</option><option>취업</option><option>교육</option><option>생활</option><option>보훈</option></select>
+        <label for="new-body">내용</label><textarea id="new-body" name="body" rows="5" required></textarea>
+        <button type="submit">시연 글 추가</button>
+      </form>
+      <p id="compose-status" role="status" aria-live="polite">실제 회원 인증과 서버 저장은 연결하지 않았습니다.</p>
+    </section>
+  </main>
+  <footer><p>계획한 구조를 설명하는 로컬 스케치입니다. 실제 브라우저 화면, 키보드 순서, 모바일 폭, 글자 200% 결과는 확인하지 않았습니다.</p></footer>
+  <script>
+window.BOARD_FIXTURE=[
+  {
+    "id": "demo-101",
+    "topic": "전직",
+    "title": "경력 기술서를 다시 쓸 때 무엇부터 정리할까요?",
+    "body": "기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. 이것은 디자인 실험용 합성 질문입니다.",
+    "comments": [
+      "직무별로 필요한 경험을 먼저 나눠 보는 안은 어떨까요?",
+      "문장보다 사례를 먼저 모아 보자는 반박도 비교해 주세요."
+    ]
+  },
+  {
+    "id": "demo-102",
+    "topic": "교육",
+    "title": "퇴근 후 교육 과정을 비교할 때 볼 기준",
+    "body": "시간·비용·방식을 비교할 칸이 필요할지 토론합니다. 실제 과정이나 가격 정보는 넣지 않았습니다.",
+    "comments": []
+  },
+  {
+    "id": "demo-103",
+    "topic": "생활",
+    "title": "필요한 서류를 한곳에 모아 두는 방법",
+    "body": "기록과 자료를 찾는 동선을 비교하는 합성 글입니다. 실제 지원 자격이나 제출 서류를 안내하지 않습니다.",
+    "comments": []
+  },
+  {
+    "id": "demo-104",
+    "topic": "보훈",
+    "title": "제도 자료와 경험 질문을 함께 읽는 순서",
+    "body": "공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. 검증된 제도 설명은 아직 연결하지 않았습니다.",
+    "comments": []
+  }
+];
+
+</script>
+  <script>
+"use strict";
+const posts=window.BOARD_FIXTURE.map(post=>({...post,comments:[...post.comments]}));
+const query=document.getElementById("query"),topic=document.getElementById("topic");
+const container=document.getElementById("posts");
+let reference=null;
+function node(tag,text,className){const element=document.createElement(tag);if(text!==undefined)element.textContent=text;if(className)element.className=className;return element;}
+function render(){
+ const term=query.value.trim().toLowerCase();let visible=0;container.replaceChildren();
+ for(const post of posts){
+  if((topic.value&&post.topic!==topic.value)||!`${post.title} ${post.body}`.toLowerCase().includes(term))continue;
+  visible++;const article=node("article",undefined,"post");article.dataset.demo="true";article.id=post.id;
+  const details=node("details"),summary=node("summary",post.title);details.append(summary);
+  details.append(node("p",`${post.topic} · 합성 시연 글`,"meta"));
+  details.append(node("div",post.body,"full-text"));
+  const actions=node("div",undefined,"post-actions"),refer=node("button","이 글을 참고해 새 글 쓰기");refer.type="button";
+  refer.addEventListener("click",()=>{reference=post;document.getElementById("reference-status").textContent=`참조하는 시연 글: ${post.title}`;document.getElementById("new-title").focus();});actions.append(refer);details.append(actions);
+  const comments=node("section",undefined,"comments");comments.setAttribute("aria-label",`${post.title} 댓글`);comments.append(node("h3","댓글 · 시연"));
+  const list=node("div");for(const comment of post.comments)list.append(node("p",comment,"comment"));comments.append(list);
+  const form=node("form",undefined,"reply-form"),id=`reply-${post.id}`,label=node("label","한 줄 보태기 · 이 페이지에서만 저장"),input=node("textarea"),submit=node("button","시연 댓글 추가");label.htmlFor=id;input.id=id;input.name="comment";input.rows=3;input.required=true;submit.type="submit";
+  form.append(label,input,submit);form.addEventListener("submit",event=>{event.preventDefault();const text=input.value.trim();if(!text)return;post.comments.push(text);list.append(node("p",text,"comment"));input.value="";});comments.append(form);details.append(comments);article.append(details,node("p",post.body.split("\n")[0],"preview"));container.append(article);
+ }
+ document.getElementById("empty").hidden=visible!==0;document.getElementById("search-status").textContent=`현재 조건에 맞는 시연 글 ${visible}개입니다. 실제 인기나 활동량을 뜻하지 않습니다.`;
+}
+document.getElementById("search-form").addEventListener("submit",event=>{event.preventDefault();render();});
+document.getElementById("clear-search").addEventListener("click",()=>{query.value="";topic.value="";render();});
+topic.addEventListener("change",render);document.getElementById("topic-form").addEventListener("submit",event=>event.preventDefault());
+document.getElementById("text-size").addEventListener("click",event=>{const enlarged=document.documentElement.classList.toggle("large-text");event.currentTarget.setAttribute("aria-pressed",String(enlarged));event.currentTarget.textContent=enlarged?"글자 기본 크기":"글자 200% 확대";});
+document.getElementById("compose-form").addEventListener("submit",event=>{event.preventDefault();const title=document.getElementById("new-title").value.trim(),body=document.getElementById("new-body").value.trim();if(!title||!body)return;posts.unshift({id:`local-${Date.now()}`,topic:document.getElementById("new-topic").value,title:`${title} · 시연`,body,comments:[],reference:reference?reference.id:null});query.value="";topic.value="";render();event.currentTarget.reset();reference=null;document.getElementById("reference-status").textContent="참조 글 없이 새 글을 쓸 수 있습니다.";document.getElementById("compose-status").textContent="시연 글을 이 페이지 메모리에 추가했습니다. 새로고침하면 없어집니다.";});
+render();
+
+</script>
+</body>
+</html>

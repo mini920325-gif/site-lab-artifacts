@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fixture-sha256" content="36f274743ce429b654e480f774e6b9b82d43a4f887b5edd10ceb3bd9b7a72b91">
+<title>구조 비교 · 선택해서 여는 질문 작업대</title>
+<style>
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; color: #17201c; background: #f4f1e8; font-size: 100%; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #245847; text-underline-offset: .2em; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #245847; outline-offset: 4px; }
+.skip { position: absolute; top: .5rem; left: .5rem; padding: .7rem; background: white; transform: translateY(-200%); }
+.skip:focus { transform: translateY(0); }
+.shell { max-width: 80rem; margin: auto; padding: clamp(1rem, 3vw, 2.6rem); }
+.scope { margin: 0; padding: .8rem 1rem; border-bottom: 1px solid #b8bcae; background: #e8e7dc; font-size: .875rem; line-height: 1.7; }
+header { border-bottom: 3px solid #17201c; padding: 1.5rem 0; }
+.eyebrow { margin: 0 0 .7rem; font-size: .875rem; letter-spacing: .03em; }
+h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.25; overflow-wrap: anywhere; }
+.intro { max-width: 45rem; margin: 1rem 0 0; font-size: 1rem; line-height: 1.7; }
+.top-links { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin-top: 1.2rem; }
+.top-links a { display: inline-block; padding: .45rem 0; }
+.workspace { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 2.5rem; padding-top: 1.8rem; align-items: start; }
+main, aside { min-width: 0; }
+h2 { margin: 0 0 1rem; font-size: 1.125rem; line-height: 1.5; }
+h3 { margin: 0 0 .65rem; font-size: 1rem; }
+.post { border-bottom: 1px solid #b8bcae; }
+.post > summary { display: flex; gap: .75rem; align-items: baseline; padding: 1.1rem 0; cursor: pointer; line-height: 1.5; list-style: none; }
+.post > summary::-webkit-details-marker { display: none; }
+.post > summary::before { content: "+"; flex: 0 0 1ch; font-weight: 700; }
+.post[open] > summary::before { content: "−"; }
+.topic { font-size: .875rem; color: #245847; flex: 0 0 auto; }
+.post-title { font-size: 1.125rem; font-weight: 650; overflow-wrap: anywhere; }
+.post[open] .post-title { font-size: clamp(1.3rem, 2.2vw, 1.75rem); }
+.post-body { font-size: 1.0625rem; line-height: 1.75; margin: .7rem 0 1.5rem; overflow-wrap: anywhere; }
+.comments { border-left: 3px solid #245847; padding-left: 1rem; }
+.comments ol { padding-left: 1.25rem; }
+.comments p { font-size: 1rem; line-height: 1.75; }
+.empty { color: #4f5b54; line-height: 1.7; }
+.return { padding: .75rem 0 1rem; font-size: .875rem; line-height: 1.8; }
+.tools { border-top: 3px solid #245847; }
+.tools > details { padding: 1rem 0; border-bottom: 1px solid #b8bcae; }
+.tools summary { cursor: pointer; font-size: 1rem; line-height: 1.6; font-weight: 650; }
+.tools p { font-size: .9375rem; line-height: 1.75; overflow-wrap: anywhere; }
+.material-list { list-style: none; padding: 0; margin-top: 1rem; }
+.material-list li { padding: .6rem 0; }
+label { display: block; margin: 1rem 0 .5rem; font-size: 1rem; line-height: 1.6; }
+textarea, input { width: 100%; min-width: 0; font: inherit; padding: .8rem; border: 1px solid #748277; border-radius: 0; background: #faf9f4; color: #344239; }
+textarea { min-height: 10rem; resize: vertical; }
+textarea:disabled, input:disabled { opacity: 1; }
+.unconnected { font-size: .875rem !important; }
+.index { margin-top: 2.2rem; padding-top: 1.5rem; border-top: 3px solid #17201c; }
+.index ul { list-style: none; padding: 0; }
+.index li { padding: .75rem 0; border-bottom: 1px solid #b8bcae; line-height: 1.7; }
+.index span { font-size: .875rem; margin-right: .5rem; }
+.topics { font-size: .875rem; line-height: 1.8; }
+.contract { margin-top: 2rem; font-size: .875rem; line-height: 1.8; border-top: 1px solid #b8bcae; padding-top: 1rem; }
+@media (max-width: 48rem) { .workspace { display: block; } .tools { margin-top: 2rem; } .post > summary { flex-wrap: wrap; gap: .4rem; } .post-title { flex: 1 1 100%; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#reader">본문으로 바로 가기</a>
+<p class="scope">디자인 비교용 합성 데모 — 실제 이용자 활동·지원 정보가 아님 · 정적 구조 스케치: 글 제출·저장·검색은 연결하지 않았습니다.</p>
+<div class="shell">
+<header>
+  <p class="eyebrow">배치 가설 · 실제 Codex 하위 에이전트 governance_docs</p>
+  <h1>읽는 글 곁에서, 필요한 면만 열기</h1>
+  <p class="intro">글과 댓글을 먼저 읽습니다. 비교할 내용이나 질문 초안 자리가 필요할 때 자료 면을 펼쳐 봅니다.</p>
+  <nav class="top-links" aria-label="주요 이동">
+    <a href="#reader">글과 댓글 읽기</a><a href="#all-posts">전체 글 찾기</a><a href="#draft-panel">질문 초안 자리</a><a href="#search-panel">검색 자리</a>
+  </nav>
+</header>
+<div class="workspace">
+  <main id="reader" tabindex="-1" aria-labelledby="reader-title">
+    <h2 id="reader-title">같은 데모 글을 읽는 면</h2>
+    <details class="post" id="demo-101" open>
+      <summary><span class="topic">전직</span><span class="post-title">경력 기술서를 다시 쓸 때 무엇부터 정리할까요?</span></summary>
+      <div class="post-content">
+        <p class="post-body">기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. 이것은 디자인 실험용 합성 질문입니다.</p>
+        <section class="comments" aria-label="이 글의 합성 댓글">
+          <h3>함께 읽는 댓글</h3><ol><li><p>직무별로 필요한 경험을 먼저 나눠 보는 안은 어떨까요?</p></li>
+<li><p>문장보다 사례를 먼저 모아 보자는 반박도 비교해 주세요.</p></li></ol>
+        </section>
+        <p class="return"><a href="#all-posts">다른 글 찾기</a> · <a href="#draft-panel">질문 초안 자리로 가기</a></p>
+      </div>
+    </details><details class="post" id="demo-102">
+      <summary><span class="topic">교육</span><span class="post-title">퇴근 후 교육 과정을 비교할 때 볼 기준</span></summary>
+      <div class="post-content">
+        <p class="post-body">시간·비용·방식을 비교할 칸이 필요할지 토론합니다. 실제 과정이나 가격 정보는 넣지 않았습니다.</p>
+        <section class="comments" aria-label="이 글의 합성 댓글">
+          <h3>함께 읽는 댓글</h3><ol><li class="empty">이 합성 데모에는 댓글이 없습니다.</li></ol>
+        </section>
+        <p class="return"><a href="#all-posts">다른 글 찾기</a> · <a href="#draft-panel">질문 초안 자리로 가기</a></p>
+      </div>
+    </details><details class="post" id="demo-103">
+      <summary><span class="topic">생활</span><span class="post-title">필요한 서류를 한곳에 모아 두는 방법</span></summary>
+      <div class="post-content">
+        <p class="post-body">기록과 자료를 찾는 동선을 비교하는 합성 글입니다. 실제 지원 자격이나 제출 서류를 안내하지 않습니다.</p>
+        <section class="comments" aria-label="이 글의 합성 댓글">
+          <h3>함께 읽는 댓글</h3><ol><li class="empty">이 합성 데모에는 댓글이 없습니다.</li></ol>
+        </section>
+        <p class="return"><a href="#all-posts">다른 글 찾기</a> · <a href="#draft-panel">질문 초안 자리로 가기</a></p>
+      </div>
+    </details><details class="post" id="demo-104">
+      <summary><span class="topic">보훈</span><span class="post-title">제도 자료와 경험 질문을 함께 읽는 순서</span></summary>
+      <div class="post-content">
+        <p class="post-body">공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. 검증된 제도 설명은 아직 연결하지 않았습니다.</p>
+        <section class="comments" aria-label="이 글의 합성 댓글">
+          <h3>함께 읽는 댓글</h3><ol><li class="empty">이 합성 데모에는 댓글이 없습니다.</li></ol>
+        </section>
+        <p class="return"><a href="#all-posts">다른 글 찾기</a> · <a href="#draft-panel">질문 초안 자리로 가기</a></p>
+      </div>
+    </details>
+  </main>
+  <aside class="tools" aria-label="선택해서 여는 자료와 작성 면">
+    <details id="materials-panel">
+      <summary>비교할 자료 자리 펼치기</summary>
+      <ul class="material-list"><li><h3>자료 비교표 자리</h3><p>실제 자료 연결 전의 데모 항목</p></li>
+<li><h3>내 초안 자리</h3><p>사용자 입력·저장 기능을 구현한 것이 아닌 구조 스케치</p></li></ul>
+      <p class="unconnected">검증된 자료나 공식 출처는 아직 연결하지 않았습니다.</p>
+    </details>
+    <details id="draft-panel">
+      <summary>질문 초안 자리 펼치기</summary>
+      <p>읽은 글과 비교할 근거를 보면서 질문을 쓸 공간의 위치를 제안합니다.</p>
+      <label for="draft">질문 내용 자리</label>
+      <textarea id="draft" disabled aria-describedby="draft-limit" placeholder="내용을 입력하고 저장하는 기능은 이 스케치에 없습니다."></textarea>
+      <p id="draft-limit" class="unconnected">입력·게시·저장 미연결. 읽기와 작성 면의 관계만 보여 줍니다.</p>
+    </details>
+    <details id="search-panel">
+      <summary>검색 자리 펼치기</summary>
+      <label for="search">찾을 내용</label>
+      <input id="search" type="search" disabled placeholder="실제 검색 동작 미연결" aria-describedby="search-limit">
+      <p id="search-limit" class="unconnected">검색 기능을 삭제한 제품안이 아닙니다. 기존 검색 계약을 보존한 채 위치만 제안합니다.</p>
+    </details>
+  </aside>
+</div>
+<nav class="index" id="all-posts" aria-labelledby="index-title">
+  <h2 id="index-title">전체 데모 글로 돌아가기</h2>
+  <p class="topics">전체 비교 주제: 전직 · 취업 · 교육 · 생활 · 보훈</p>
+  <ul><li><a href="#demo-101"><span>전직</span> 경력 기술서를 다시 쓸 때 무엇부터 정리할까요?</a></li>
+<li><a href="#demo-102"><span>교육</span> 퇴근 후 교육 과정을 비교할 때 볼 기준</a></li>
+<li><a href="#demo-103"><span>생활</span> 필요한 서류를 한곳에 모아 두는 방법</a></li>
+<li><a href="#demo-104"><span>보훈</span> 제도 자료와 경험 질문을 함께 읽는 순서</a></li></ul>
+</nav>
+<footer class="contract">
+  <p>보존할 제품 동선: 비회원 읽기 · 목록 탐색 · 검색 · 글 상세 · 작성 · 댓글 · 목록 복귀</p>
+  <p>구조를 비교할 내용이며 원 제품의 기능 검사·사용자 검증을 대신하지 않는다</p>
+  <p>브랜드·디자인 채택·기능 통과·실사용 효과를 결정하지 않습니다. 390/768/1280px·글자 200%·키보드 순서의 실제 화면 검사는 미실행입니다.</p>
+</footer>
+</div>
+<script type="application/json" id="source-fixture">{"label": "디자인 비교용 합성 데모 — 실제 이용자 활동·지원 정보가 아님", "topics": ["전직", "취업", "교육", "생활", "보훈"], "posts": [{"id": "demo-101", "topic": "전직", "title": "경력 기술서를 다시 쓸 때 무엇부터 정리할까요?", "body": "기존 경험을 새 직무와 연결하는 순서를 비교해 보고 싶습니다. 이것은 디자인 실험용 합성 질문입니다.", "comments": ["직무별로 필요한 경험을 먼저 나눠 보는 안은 어떨까요?", "문장보다 사례를 먼저 모아 보자는 반박도 비교해 주세요."]}, {"id": "demo-102", "topic": "교육", "title": "퇴근 후 교육 과정을 비교할 때 볼 기준", "body": "시간·비용·방식을 비교할 칸이 필요할지 토론합니다. 실제 과정이나 가격 정보는 넣지 않았습니다.", "comments": []}, {"id": "demo-103", "topic": "생활", "title": "필요한 서류를 한곳에 모아 두는 방법", "body": "기록과 자료를 찾는 동선을 비교하는 합성 글입니다. 실제 지원 자격이나 제출 서류를 안내하지 않습니다.", "comments": []}, {"id": "demo-104", "topic": "보훈", "title": "제도 자료와 경험 질문을 함께 읽는 순서", "body": "공식 정보와 커뮤니티 대화를 구분해 보여 주는 구조를 비교합니다. 검증된 제도 설명은 아직 연결하지 않았습니다.", "comments": []}], "materials": [{"title": "자료 비교표 자리", "description": "실제 자료 연결 전의 데모 항목"}, {"title": "내 초안 자리", "description": "사용자 입력·저장 기능을 구현한 것이 아닌 구조 스케치"}], "preserve_contract": ["비회원 읽기", "목록 탐색", "검색", "글 상세", "작성", "댓글", "목록 복귀"], "scope": "구조를 비교할 내용이며 원 제품의 기능 검사·사용자 검증을 대신하지 않는다"}</script>
+</body>
+</html>
