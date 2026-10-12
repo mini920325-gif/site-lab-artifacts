@@ -1,0 +1,611 @@
+/* 폭별 구조 (2026-10-09 사이클 2). 기준점은 540 / 1024 두 개.
+   이 파일은 main.tsx 에서 마지막에 불러와 draft.css · journey.css · community.css 의 760·980·1000 규칙을 이긴다.
+   목록 행은 화면 폭(540·1024)에 더해, 목록 상자 폭이 글자 크기에 맞는지(rem 단위 컨테이너 질의)도 본다.
+   그래서 글자를 키우면 한 줄 행이 스스로 2줄 행으로 물러나고, 줄바꿈·잘림이 생기지 않는다. */
+
+/* ---------- 모든 폭: 머리·본문 바탕 통일, 안내띠 한 줄 ---------- */
+body,
+.draft.journey-design { background: #fff; }
+.draft.journey-design .header { background: transparent; border: 0; }
+.draft.journey-design .demo-banner { padding: 0; }
+.draft.journey-design .demo-banner > .container { padding-block: 0; min-height: 44px; flex-wrap: nowrap; }
+.draft.journey-design .demo-banner .banner-text { flex: 1 1 auto; min-width: 0; }
+.draft.journey-design .banner-short { display: none; }
+.draft.journey-design .search-toggle { display: none; }
+.draft.journey-design .header > .activity-compact { display: none; }
+.draft.journey-design .header > .auth-compact { display: none; }
+
+/* 분야 칩 안 구분점: 칩이 inline-flex 라 「 · 교육·취업」 앞 공백이 사라진다 — 간격으로 띄운다 */
+.draft.journey-design .topic-chip { column-gap: 0.3em; }
+
+/* 홈 끝칸 「사무소 답변」 앞말: inline-flex 라 공백이 사라져 간격으로 띄운다 */
+.draft.journey-design .status-prefix { margin-right: 0.25em; }
+
+/* 목록 댓글 칸: 숫자 또는 「없음」 한 칸. 「구성 예시」는 제목 칸 안 꼬리표 */
+.draft.journey-design .post-list .reply-count { display: inline-flex; flex-direction: row; align-items: center; gap: 0.25em; }
+.draft.journey-design .post-list .reply-count.is-none { color: #596477; font-weight: 400; }
+.draft.journey-design .title-first-list .sample-chip {
+  padding: 0; background: transparent; color: #6a7281; font-size: 0.875rem; font-weight: 400; white-space: nowrap;
+}
+/* 「구성 예시」 꼬리표는 두 자리에 그려지지만 화면에는 언제나 하나만 보인다(레이아웃 무관).
+   기본: 메타 줄(분야·댓글 옆)에 보이고, 제목 안 꼬리표는 화면에서만 숨긴다.
+   한 줄 행(rows, 541 이상·상자 30rem 이상)에서만 제목 칸 끝으로 옮긴다 — 아래 폭별 블록.
+   메타 줄 꼬리표는 aria-hidden 이고 제목 안 꼬리표는 늘 읽히므로, 제목 링크 이름은 폭·레이아웃과 무관하게
+   「제목 구성 예시」 하나다. */
+.draft.journey-design .title-first-list .sample-in-meta { display: inline; }
+.draft.journey-design .title-first-list .sample-in-title { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* 목록 상자: 테두리 카드를 없애고 가는 가로선으로 구분 */
+.draft.journey-design[data-layout='rows'] :is(.post-list, .conversation-list) {
+  container: rows / inline-size;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+}
+.draft.journey-design[data-layout='rows'] .title-first-list > :is(.title-row, .post-row) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  padding: 4px 4px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.draft.journey-design[data-layout='rows'] .title-first-list .row-content { display: contents; }
+.draft.journey-design[data-layout='rows'] .title-first-list .title-row-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; margin: 0; order: 2;
+}
+.draft.journey-design[data-layout='rows'] .title-first-list .post-title {
+  order: 1;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+/* 2줄 행 제목은 꼬리표가 글줄 안에 이어지도록 블록으로 두고 세로 가운데만 맞춘다 */
+.draft.journey-design[data-layout='rows'] .post-list .post-title { display: block; align-content: center; }
+.draft.journey-design[data-layout='rows'] .title-first-list .post-preview { display: none; }
+.draft.journey-design[data-layout='rows'] .title-first-list .topic-chip { white-space: nowrap; order: 0; }
+.draft.journey-design[data-layout='rows'] .title-first-list .reply-count { order: 1; }
+.draft.journey-design[data-layout='rows'] .title-first-list :is(.status-open, .status-answered) { order: 2; white-space: nowrap; }
+.draft.journey-design[data-layout='rows'] .title-first-list .sample-in-meta { order: 3; }
+.draft.journey-design[data-layout='rows'] .title-first-list .reply-count {
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  color: #596477;
+  font-size: 0.875rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.draft.journey-design[data-layout='rows'] .conversation-list .reply-count::before { content: '댓글 '; }
+.draft.journey-design .list-head { display: none; }
+
+/* ---------- 540 이하: 2줄 행, 한 줄 머리, 검색은 아이콘 ---------- */
+@media (max-width: 540px) {
+  .draft.journey-design .container { width: calc(100% - 24px); }
+  .draft.journey-design .banner-full {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .draft.journey-design .banner-short { display: inline; font-weight: 650; }
+
+  .draft.journey-design .header {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; min-height: 0; padding-block: 6px 0;
+  }
+  .draft.journey-design .header > .brand { flex: 1 1 auto; min-width: 0; }
+  .draft.journey-design .brand-state { display: none; }
+  .draft.journey-design .brand-name { font-size: 1.25rem; }
+  .draft.journey-design .header > .search-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; min-width: 44px; height: 44px; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--ink);
+  }
+  .draft.journey-design .header > .search-toggle[aria-expanded='true'] { color: var(--accent); }
+  .draft.journey-design .header > button:not(.search-toggle) { flex: 0 0 auto; white-space: nowrap; }
+  .draft.journey-design .board-nav {
+    order: 3; flex: 1 0 100%; display: flex; flex-wrap: wrap; gap: 0; border: 0; background: transparent;
+  }
+  .draft.journey-design .board-nav button {
+    min-height: 44px; min-width: 44px; padding: 0 8px; font-size: 0.9375rem; white-space: nowrap;
+    border: 0; border-bottom: 2px solid transparent;
+  }
+  .draft.journey-design .board-nav button.active { border-bottom-color: var(--accent); }
+  /* 내 활동: 탭 줄이 두 줄로 밀리지 않게 머리 줄(로고 옆 아이콘 버튼)로 옮긴다 */
+  .draft.journey-design .board-nav .activity-link { display: none; }
+  .draft.journey-design .header > .activity-compact {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; min-width: 44px; height: 44px; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--ink);
+  }
+  .draft.journey-design .header > .auth-compact { display: inline-flex; }
+  .draft.journey-design .header > .auth-wide { display: none; }
+  .draft.journey-design .header > .search {
+    order: 4; flex: 1 0 100%; display: none; max-width: none; margin: 4px 0 6px;
+  }
+  .draft.journey-design .header > .search[data-open] { display: flex; }
+
+  .draft.journey-design .workspace { padding-top: 8px; gap: 1rem; }
+  .draft.journey-design .breadcrumb { display: none; }
+  .draft.journey-design .section-heading { margin-bottom: 8px; gap: 8px; }
+  .draft.journey-design .section-heading p { display: none; }
+  .draft.journey-design .write-action { flex: 0 0 auto; white-space: nowrap; }
+  .draft.journey-design .board-filter {
+    flex-wrap: wrap; gap: 4px; margin-bottom: 4px;
+  }
+  .draft.journey-design :is(.board-filter, .feed-tabs) button { padding: 0 6px; min-width: 44px; font-size: 0.875rem; flex: 1 1 auto; }
+  .draft.journey-design .secondary-filters { padding-bottom: 0; gap: 0 12px; }
+  .draft.journey-design .list-tools { padding: 4px 0; }
+}
+/* 분야 칩: 칸에 다 들어가면 한 줄로 두고, 모자라는 폭에서는 가로로 밀어 볼 수 있다.
+   글자를 키워 칸이 모자라면(rem 기준) 줄바꿈으로 물러나 잘리지 않는다. */
+.draft.journey-design .community-filters { container: chips / inline-size; }
+@media (max-width: 540px) {
+  @container chips (min-width: 19rem) {
+    .draft.journey-design .board-filter {
+      flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+      background:
+        linear-gradient(to right, #fff 30%, transparent) left / 24px 100% no-repeat local,
+        linear-gradient(to left, #fff 30%, transparent) right / 24px 100% no-repeat local,
+        linear-gradient(to right, rgb(0 0 0 / .18), transparent) left / 10px 100% no-repeat scroll,
+        linear-gradient(to left, rgb(0 0 0 / .18), transparent) right / 10px 100% no-repeat scroll;
+    }
+    .draft.journey-design .board-filter button { flex: 1 0 auto; }
+  }
+}
+
+/* ---------- 541 이상: 모바일을 늘린 모양 종료 — 머리는 로고 · 탭 · 검색 · 로그인 한 줄 ---------- */
+@media (min-width: 541px) {
+  .draft.journey-design .header {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 64px; padding-block: 10px;
+  }
+  .draft.journey-design .header > .brand { flex: 0 0 auto; width: auto; max-width: 100%; }
+  .draft.journey-design .brand-state { display: none; }
+  .draft.journey-design .board-nav {
+    flex: 0 1 auto; order: 0; display: flex; flex-wrap: wrap; gap: 2px; border: 0; background: transparent;
+  }
+  .draft.journey-design .board-nav button {
+    min-height: 44px; min-width: 44px; padding: 0 10px; font-size: 0.9375rem; white-space: nowrap;
+    border: 0; border-bottom: 2px solid transparent;
+  }
+  .draft.journey-design .board-nav button.active { border-bottom-color: var(--accent); }
+  .draft.journey-design .board-nav .activity-link { margin-left: 0; }
+  .draft.journey-design .header > .search {
+    display: flex; flex: 1 1 7.5rem; min-width: 7rem; max-width: 24rem; width: auto; margin: 0 0 0 auto; order: 0;
+  }
+  .draft.journey-design .header > button:not(.search-toggle) { flex: 0 0 auto; white-space: nowrap; }
+  .draft.journey-design .workspace { padding-top: 16px; }
+  .draft.journey-design .section-heading { margin-bottom: 12px; }
+  .draft.journey-design .board-filter { margin-bottom: 4px; }
+  .draft.journey-design .list-tools { padding: 8px 0; }
+}
+@media (min-width: 541px) and (max-width: 1023px) {
+  .draft.journey-design .workspace { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .draft.journey-design .rail { border-left: 0; border-top: 1px solid var(--line); padding: 1.5rem 0 0; }
+}
+
+/* 한 줄 행: [분야] 제목(신축, 꼬리표 포함) ··· 끝칸. 두 목록 모두 세 칸.
+   커뮤니티 목록(.post-list) 끝칸 = 댓글 · 자료실 첫 화면(.conversation-list) 끝칸 = 사무소 답변(댓글과 다른 정보) */
+@media (min-width: 541px) {
+  @container rows (min-width: 30rem) {
+    .draft.journey-design[data-layout='rows'] .title-first-list > :is(.title-row, .post-row) {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas: 'chip title end';
+      column-gap: 12px;
+      padding: 2px 8px;
+      min-height: 48px;
+    }
+    .draft.journey-design[data-layout='rows'] .title-first-list .title-row-meta { display: contents; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .post-title { grid-area: title; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .topic-chip { grid-area: chip; }
+    .draft.journey-design[data-layout='rows'] .post-list .reply-count,
+    .draft.journey-design[data-layout='rows'] .conversation-list :is(.status-open, .status-answered) { grid-area: end; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .sample-in-meta { display: none; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .sample-in-title { display: inline; position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .post-title {
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+      align-self: center; box-sizing: border-box; font-size: 1rem; line-height: 1.4; padding-block: 10px; min-height: 44px;
+    }
+    .draft.journey-design[data-layout='rows'] .title-first-list .topic-sub { display: none; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .topic-chip { justify-self: start; }
+    .draft.journey-design[data-layout='rows'] .post-list .reply-count { color: var(--accent); font-weight: 650; }
+    .draft.journey-design[data-layout='rows'] .post-list .reply-count.is-none { color: #596477; font-weight: 400; }
+    /* 머리글 줄이 없는 폭(1024 미만 등)에서는 「댓글 3」「댓글 없음」을 글자로 보인다. 머리글 있는 표에서만 숨김(아래). */
+  }
+}
+
+/* ---------- 1024 이상: 표형 + 머리글 줄 + 오른쪽 안내 기둥 ---------- */
+@media (min-width: 1024px) {
+  .draft.journey-design .brand-state { display: inline; }
+  .draft.journey-design .workspace { grid-template-columns: minmax(0, 1fr) 240px; gap: 2rem; }
+  .draft.journey-design .rail { border-left: 1px solid var(--line); border-top: 0; padding: 0 0 0 1.6rem; }
+  .draft.journey-design .header { gap: 4px 20px; }
+  /* 표: 분야(상황 포함) · 제목 · 끝칸. 머리글과 행이 같은 칸 나눔을 쓴다. */
+  @container rows (min-width: 40rem) {
+    .draft.journey-design[data-layout='rows'] :is(.post-list > .list-head, .post-list > .post-row) {
+      grid-template-columns: 11rem minmax(0, 1fr) 4rem;
+      column-gap: 16px;
+    }
+    .draft.journey-design[data-layout='rows'] :is(.conversation-list > .list-head, .conversation-list > .title-row) {
+      grid-template-columns: 11rem minmax(0, 1fr) 7rem;
+      column-gap: 16px;
+    }
+    .draft.journey-design[data-layout='rows'] .list-head {
+      display: grid; align-items: center; padding: 8px 8px; border-bottom: 1px solid var(--line);
+      font-size: 0.875rem; color: #596477; font-weight: 650;
+    }
+    .draft.journey-design[data-layout='rows'] .list-head > :nth-child(3) { text-align: right; }
+    .draft.journey-design[data-layout='rows'] .title-first-list .topic-sub { display: inline; }
+    /* 머리글(aria-hidden)이 「댓글」「사무소 답변」을 보여 주므로 앞말은 화면에서만 숨기고 스크린리더에는 남긴다 */
+    .draft.journey-design[data-layout='rows'] .post-list .reply-label,
+    .draft.journey-design[data-layout='rows'] .title-first-list .status-prefix { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .draft.journey-design[data-layout='rows'] .title-first-list :is(.reply-count, .status-open, .status-answered) { justify-self: end; }
+  }
+}
+
+/* ---------- 틀 하나 · 같은 역할 같은 모양 (2026-10-12 사이클 4, D-15·D-16) ----------
+   앱이 data-frame="main"(본문 열) · data-frame="rail"(오른쪽 기둥) · data-role="page-title"(화면 제목)을 단다.
+   기둥 있는 화면(목록·상세·글쓰기·안내)은 같은 본문 열·같은 기둥 자리를 쓰고, 열 안 시작선(왼쪽)·끝선(오른쪽)에 맞춘다. */
+
+/* 화면 제목: 모든 화면 같은 크기(540 이하 1.375rem, 그 위 1.75rem). 글자 배율은 rem 이라 같이 변한다 */
+.draft.journey-design [data-role='page-title'] {
+  font-size: 1.75rem; font-weight: 700; line-height: 1.4; letter-spacing: -0.03em; margin-block: 0 0.4rem; word-break: keep-all;
+}
+@media (max-width: 540px) {
+  .draft.journey-design [data-role='page-title'] { font-size: 1.375rem; }
+}
+.draft.journey-design .community-heading { padding-block: 0.5rem 1.25rem; }
+.draft.journey-design .community-heading p { margin-top: 0.4rem; }
+
+/* 분야 칩: 목록·홈·상세 같은 모양 */
+.draft.journey-design .topic-chip {
+  display: inline-flex; align-items: center; background: #eef1f6; color: #445578; border-radius: 3px;
+  padding: 0.12rem 0.4rem; font-size: 0.875rem; font-weight: 400; line-height: 1.4;
+}
+
+
+/* 선 맞춤: 행 안쪽 가로 여백 0 — 칩·제목이 본문 선에, 끝칸이 열 오른쪽 선에 선다 */
+.draft.journey-design[data-layout='rows'] .title-first-list > :is(.title-row, .post-row) { padding-inline: 0; }
+.draft.journey-design[data-layout='rows'] .list-head { padding-inline: 0; }
+.draft.journey-design .list-footnote { text-align: left; }
+.draft.journey-design .optional-filter summary { padding-inline: 0; }
+.draft.journey-design .situation-tools { padding-inline: 0; }
+
+/* 이용 안내·약관 등: 테두리 상자 없이 상세와 같은 평면 */
+.draft.journey-design .form-panel.info { background: transparent; border: 0; border-radius: 0; padding: 0; }
+.draft.journey-design .form-panel.info h1 { margin-top: 0.4rem; }
+.draft.journey-design .form-panel.info p { font-size: 1.0625rem; line-height: 1.85; }
+@media (max-width: 540px) {
+  .draft.journey-design .form-panel.info p { font-size: 1rem; }
+}
+
+/* 「아래 글은 모두 구성 예시입니다」 한 줄: 낱말 중간에서 끊지 않고, 위아래로 숨 쉴 자리 */
+.draft.journey-design .sample-context { margin: 0; padding: 0.75rem 0; word-break: keep-all; }
+/* 홈 끝칸(사무소 답변)도 열 오른쪽 선에 */
+.draft.journey-design .title-first-list :is(.status-open, .status-answered) { padding-inline: 0; }
+
+/* ---------- 사이클 4 수리 (2026-10-12, D-18~D-22 · Fable 결함 1~11) ---------- */
+
+/* 결함 1: 글자를 키우면 기둥이 좁아지던 것.
+   기둥 칸은 max(240px, 13.75rem) — 100% 에서는 지금 그대로 240px(안쪽 213px),
+   그보다 크면 안쪽 폭이 12rem 을 넉넉히 넘게 넓힌다(13.75rem − 1.6rem 왼쪽 여백 − 1px 선 ≈ 12.1rem).
+   13.6rem 은 안쪽이 딱 12rem − 1px(125% 에서 239px = 11.95em)이라 문턱과 같은 수에서 반올림으로 깨졌다.
+   본문이 40rem 을 못 받는 폭(틀 폭 < 56rem — 40 + 13.75 + 2 = 55.75)이면 기둥을 본문 아래로 접는다.
+   틀(.frame)이 크기 질의 상자 — 화면 폭이 아니라 본문+기둥이 실제로 받는 폭을 rem 으로 본다. */
+.draft.journey-design .frame { container: frame / inline-size; }
+@media (min-width: 1024px) {
+  .draft.journey-design .workspace { grid-template-columns: minmax(0, 1fr) max(240px, 13.75rem); }
+  @container frame (max-width: 55.999rem) {
+    .draft.journey-design .workspace { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .draft.journey-design .rail { border-left: 0; border-top: 1px solid var(--line); padding: 1.5rem 0 0; }
+  }
+}
+
+/* D-19: 홈·자료실은 기둥 없는 전폭. 빵부스러기·제목은 다른 화면과 같은 자리·같은 크기(위 journey.css 에서 숨김 해제) */
+.draft.journey-design:is([data-view='home'], [data-view='guides']) .workspace { padding-top: var(--section-space); }
+@media (min-width: 541px) {
+  .draft.journey-design:is([data-view='home'], [data-view='guides']) .workspace { padding-top: 16px; }
+}
+@media (max-width: 540px) {
+  .draft.journey-design:is([data-view='home'], [data-view='guides']) .workspace { padding-top: 8px; }
+}
+.draft.journey-design .section-heading { display: flex; justify-content: space-between; }
+
+/* D-18: 홈 구획 머리(커뮤니티 · 자료실 바로가기) — 제목 왼쪽 선, 글자 단추 잉크는 오른쪽 선 */
+.draft.journey-design .home-community { border-top: 0; padding-top: 0; margin-bottom: 2.5rem; }
+.draft.journey-design .home-resources { margin-bottom: 2rem; }
+.draft.journey-design .home-section-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.25rem 1rem;
+  margin-bottom: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.draft.journey-design .home-section-head h2 { margin: 0; font-size: 1.25rem; letter-spacing: -0.03em; }
+.draft.journey-design .resource-actions { margin-bottom: 0; }
+.draft.journey-design .home-office { margin-top: 0; }
+
+/* 결함 3·4: 투명 테두리 글자 단추 — 안쪽 가로 여백을 0 으로 해 잉크(글자+아이콘)가 열 선에 닿게 */
+.draft.journey-design :is(.text-action, .login-invite button, .rail-actions button, .rail-link, .operator-entry, .office-guide a, .office-guide button, .office-byline button) {
+  display: flex; align-items: center; gap: 0.35em; padding-inline: 0; text-align: left; justify-content: flex-start;
+}
+.draft.journey-design button.text-action { display: inline-flex; min-height: 44px; border: 0; background: transparent; color: var(--ink); font-size: 0.9375rem; font-weight: 600; }
+/* 기둥 아래 두 단추는 모든 폭에서 세로 한 줄씩(좁은 폭에서 가로로 놓이면 둘째 단추가 오른쪽 선 근처에 어중간하게 뜬다) */
+.draft.journey-design .rail-actions { flex-direction: column; align-items: flex-start; gap: 0; }
+
+/* 결함 5: 머리띠 — 로그인 단추가 둘째 줄로 떨어져도 잉크가 선에 닿게, 안내띠 단추는 한 줄 */
+.draft.journey-design .header > .auth-wide { padding-inline: 0; }
+.draft.journey-design .demo-banner button { flex: 0 0 auto; white-space: nowrap; }
+
+/* D-22 · 결함 2: 낱말 단위 줄바꿈은 짧은 화면 글(제목·단추·링크·라벨·칩·카드 제목)에만. 본문 문장(p)은 그대로.
+   overflow-wrap 은 break-word — anywhere 는 최소 폭 계산을 음절 단위로 줄여 다시 낱말 중간에서 끊긴다. */
+.draft.journey-design :is(h1, h2, h3, button, a, label, summary, strong, .topic-chip, .eyebrow, .section-eyebrow, .breadcrumb),
+.draft.journey-design :is(button, a) * {
+  word-break: keep-all; overflow-wrap: break-word;
+}
+.modal :is(h2, button, label) { word-break: keep-all; overflow-wrap: break-word; }
+
+/* 결함 7: 자료실 2열 — 칸 안쪽 가로 여백 대신 열 간격. 화살표는 어느 폭이든 각 칸 오른쪽 끝 */
+.draft.journey-design .guide-directory { column-gap: 2rem; }
+.draft.journey-design .guide-directory > a,
+.draft.journey-design .guide-directory > a:nth-child(even) { padding-inline: 0; }
+
+/* 결함 9: 분야 칩 뒤 상황(「 · 교육·취업」)은 머리글 있는 표(1024 이상 · 상자 40rem 이상)에서만.
+   좁은 폭은 넓은 폭보다 짧거나 같게 — 390·768 은 「전직」, 표에서는 「전직 · 교육·취업」. 상세의 칩은 글 하나라 그대로 */
+.draft.journey-design[data-layout='rows'] .title-first-list .topic-sub { display: none; }
+@media (min-width: 1024px) {
+  @container rows (min-width: 40rem) {
+    .draft.journey-design[data-layout='rows'] .title-first-list .topic-sub { display: inline; }
+  }
+}
+
+/* 결함 10: 이용 안내의 상태 표시는 분야 칩(채운 회청색 네모)과 다른 역할 — 테두리만 있는 둥근 상태 표지 */
+.draft.journey-design .status-tag {
+  display: inline-flex; align-items: center; gap: 0.4em; background: transparent; color: #7a5a1e;
+  border: 1px solid #d9c391; border-radius: 999px; padding: 0.1rem 0.65rem; font-size: 0.875rem; line-height: 1.6;
+}
+.draft.journey-design .status-tag::before { content: ''; width: 0.45em; height: 0.45em; border-radius: 50%; background: currentColor; }
+
+/* 결함 11: 화살표·체브론 아이콘은 글자 크기를 따라간다(px 고정 → em) */
+.draft.journey-design :is(button, a) > svg.lucide { width: 1.05em; height: 1.05em; flex-shrink: 0; }
+.draft.journey-design .header svg.lucide { width: 1.25em; height: 1.25em; }
+.draft.journey-design .guide-directory svg.lucide { width: 1.4em; height: 1.4em; }
+.draft.journey-design .resource-action > svg.lucide { width: 1.15em; height: 1.15em; }
+
+/* D-20: 둘째 줄(모든 글 / 댓글 없는 글)은 연한 칩 + 글자 — 첫 줄(분야) 채움 칩보다 한 단 아래 */
+.draft.journey-design .feed-tabs button {
+  border: 1px solid transparent; background: transparent; color: var(--muted); border-radius: 4px;
+  font-size: 0.9375rem; font-weight: 400; min-height: 2.75rem; padding: 0.45rem 0.65rem;
+}
+.draft.journey-design .feed-tabs button[aria-pressed='true'] {
+  color: var(--accent); font-weight: 650; background: color-mix(in srgb, var(--accent) 9%, #fff); border-color: transparent;
+}
+/* 자료실 바로가기 머리 위는 바로 앞 목록의 끝선이 있어 선을 겹치지 않는다 */
+.draft.journey-design .home-resources .home-section-head { border-top: 0; padding-top: 0; }
+/* 결함 6: 기둥 구성은 모든 화면·모든 폭에서 같다 — 좁은 폭(draft.css ≤760)에서 「읽기와 참여」 를 접던 규칙을 되돌린다 */
+.draft.journey-design .rail-intro { display: block; }
+/* 바닥글 링크: 44px 최소 폭 안에서 가운데 정렬되면 짧은 「도움말」 이 선보다 2px 안쪽에 선다 — 글자를 왼쪽에 */
+.draft.journey-design :is(.footer-top nav a, .footer-tools a) { justify-content: flex-start; }
+
+/* ---------- 사이클 4 마무리 (2026-10-12, 채점자 2차) ---------- */
+/* 2: 화면 제목 아래 첫 선은 사이트 전체가 1px 연한 선(목록 걸러보기 아래·상세 글머리 아래·홈 구획 머리 위).
+   자료실만 2px 진한 선(#252a36)이라 홈과 다른 모양이었다 — 같은 역할이므로 1px 연한 선으로 맞춘다.
+   진한 선은 상세 「댓글」 머리처럼 본문 안 구획 머리에만 남는다. */
+.draft.journey-design .guide-directory { border-top: 1px solid var(--line); }
+/* 4: 홈만 사무소 소개 아래 선 + 바닥글 위 선이 80px 띠를 두고 겹쳐 있었다. 선은 바닥글 위 하나만,
+   마지막 글과 바닥글 선 사이는 자료실 화면과 같은 간격(약 64px)으로 */
+.draft.journey-design .home-office { border-bottom: 0; padding-bottom: 0; }
+.draft.journey-design .resource-home { padding-bottom: 1.5rem; }
+/* 6-1: 글자를 키워 머리 한 줄에 로고·탭·검색·로그인이 다 안 들어가면(1280·1440 × 200%) 「체험 로그인」 하나가
+   둘째 줄에 홀로 떨어졌다. 머리띠 폭을 rem 으로 보고(머리 자신이 크기 질의 상자), 모자라면 검색 칸을 둘째 줄 전폭으로
+   내리고 로그인은 첫 줄 오른쪽 끝에 둔다. 한 줄에 필요한 폭 ≈ 로고 10 + 탭 16 + 검색 최소 7 + 로그인 4.3rem + 간격 60px
+   → 41rem 미만이면 접는다. 100%·125% 의 1024 이상은 늘 한 줄(1024/100 = 61rem). */
+@media (min-width: 541px) {
+  .draft.journey-design .header { container: headbar / inline-size; }
+  @container headbar (max-width: 40.999rem) {
+    .draft.journey-design .header > .search { order: 5; flex: 1 1 100%; max-width: none; margin: 0; }
+    .draft.journey-design .header > .auth-wide { margin-left: auto; }
+  }
+  /* 더 좁으면(1024 × 200% 등, 로고+탭+로그인도 한 줄에 못 듦) 로그인이 또 홀로 줄을 차지하므로 검색 칸 오른쪽에 붙인다 */
+  @container headbar (max-width: 31.999rem) {
+    .draft.journey-design .header > .search { flex: 1 1 10rem; }
+    .draft.journey-design .header > .auth-wide { order: 6; margin-left: 0; }
+  }
+}
+/* 6-2: 390 × 200% 쪽번호 「다음」 이 홀로 둘째 줄. 누름 칸은 44px 그대로 두고 가로 안쪽 여백·간격만 줄여 한 줄에 */
+@media (max-width: 540px) {
+  .draft.journey-design .pagination { gap: 0.25rem; }
+  .draft.journey-design .pagination button { min-width: 44px; padding-inline: 0.5rem; }
+}
+/* 390 × 125%: 「상황으로 좁히기」 가 첫 줄 끝에 걸려 열 오른쪽 선보다 15px 안쪽에 섰다(측정 off_line 1).
+   넓은 폭처럼 남은 칸을 채우고 글자는 오른쪽 선에 — 같은 줄이든 다음 줄이든 잉크가 선에 닿는다 */
+@media (max-width: 540px) {
+  .draft.journey-design .optional-filter { flex: 1 1 auto; margin-left: 0; }
+  .draft.journey-design .optional-filter summary { text-align: right; }
+}
+
+
+/* Public design workbench: shared functional screens, independently combined visual choices. */
+body:has(.journey-design) { background: var(--page, #f4f1e9); }
+.draft.journey-design { background: var(--page); color: var(--ink); min-height:100vh; --radius:8px; --row-pad:16px; --display-font:inherit; }
+.draft.journey-design[data-corners='square'] { --radius:0px; }
+.draft.journey-design[data-corners='round'] { --radius:20px; }
+.draft.journey-design[data-spacing='compact'] { --row-pad:10px; }
+.draft.journey-design[data-spacing='roomy'] { --row-pad:25px; }
+.draft.journey-design[data-type='serif'] { --display-font:'AppleMyungjo','Batang',serif; }
+.draft.journey-design .container { width:min(calc(100% - 64px),1180px); }
+.draft.journey-design .demo-banner { background:var(--ink); color:var(--page); border:0; }
+.draft.journey-design .demo-banner > .container { min-height:36px; }
+.draft.journey-design .demo-banner span { font-weight:400; color:inherit; font-size:.75rem; }
+.draft.journey-design .demo-banner button { min-height:36px; border:0; background:transparent; color:inherit; border-radius:0; font-size:.75rem; padding:4px 0 4px 16px; }
+.draft.journey-design .header { min-height:88px; gap:12px 24px; padding-block:16px; border-bottom:1px solid var(--line); }
+.draft.journey-design .header > .brand { margin-right:16px; }
+.draft.journey-design .brand-name { font-size:1.55rem; font-weight:800; letter-spacing:-.055em; color:var(--ink); }
+.draft.journey-design .brand-name:before { display:none; }
+.draft.journey-design .board-nav button { color:var(--muted); font-weight:500; padding-inline:8px; }
+.draft.journey-design .board-nav button.active { color:var(--ink); border-bottom-color:var(--ink); font-weight:700; }
+.draft.journey-design .header > .search { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); max-width:19rem; }
+.draft.journey-design .search input { background:transparent; color:var(--ink); font-size:.875rem; }
+.draft.journey-design .search input::placeholder { color:var(--muted); }
+.draft.journey-design .workspace { padding-top:28px; gap:40px; }
+.draft.journey-design[data-view='home'] .workspace { padding-top:0; }
+.draft.journey-design[data-view='home'] .breadcrumb { display:none; }
+.draft.journey-design :is(h1,h2,h3,.post-title,.brand,.text-action) { color:var(--ink); }
+.draft.journey-design :is(.breadcrumb,.section-heading p,.detail-meta,.sample-context,.rail p,.footer) { color:var(--muted); }
+.draft.journey-design :is(.primary,.write-action) { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--ink); border:1px solid var(--ink); color:var(--page); border-radius:var(--radius); padding:10px 20px; font-size:.875rem; font-weight:600; }
+.draft.journey-design :is(.primary,.write-action):hover { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.draft.journey-design .board-filter button { border:0; border-bottom:2px solid transparent; border-radius:0; color:var(--muted); background:transparent; padding:8px 12px; }
+.draft.journey-design .board-filter button[aria-pressed='true'] { background:transparent; color:var(--ink); border-bottom-color:var(--ink); font-weight:700; }
+.draft.journey-design .feed-tabs button[aria-pressed='true'] { background:var(--soft); color:var(--ink); border-radius:var(--radius); }
+.draft.journey-design :is(.topic-chip,.answer-tag) { background:transparent; color:var(--muted); padding-inline:0; }
+.draft.journey-design .title-first-list .post-title { font-weight:500; color:var(--ink); }
+.draft.journey-design[data-layout='rows'] .title-first-list .post-title { padding-block:12px; }
+.draft.journey-design .rail { border-color:var(--line); }
+.draft.journey-design :is(.post-list,.resource-action,.form-panel,.comment-form,.detail-panel) { background:var(--paper); border-color:var(--line); border-radius:var(--radius); }
+.draft.journey-design input,.draft.journey-design textarea,.draft.journey-design select { color:var(--ink); background-color:var(--paper); border-color:var(--line); }
+.draft.journey-design :is(.footer,.rail-section,.guide-directory,.guide-directory > a,.secondary-filters,.post-row,.detail-meta,.post-actions) { border-color:var(--line); }
+.draft.journey-design .footer { margin-top:48px; padding-block:24px 32px; }
+.draft.journey-design .footer p { font-size:.8125rem; margin:8px 0; }
+.draft.journey-design .footer-tools { margin:0 0 16px; gap:8px 24px; }
+.draft.journey-design .footer-top { margin:0 0 12px; }
+.draft.journey-design .footer-top nav { gap:16px; }
+.draft.journey-design[data-symbols='none'] :is(.write-action,.text-action,.frontpage-more,.frontpage-sources a,.office-guide a,.rail-link) > svg,
+.draft.journey-design[data-symbols='minimal'] :is(.write-action,.text-action,.frontpage-more,.rail-link) > svg { display:none; }
+.frontpage { padding-bottom:8px; }
+.frontpage-masthead { display:grid; grid-template-columns:1.25fr 1fr; align-items:center; gap:48px; padding:42px 0 40px; border-bottom:1px solid var(--line); margin-bottom:36px; }
+.frontpage-opening > span { display:block; font-size:.75rem; letter-spacing:.12em; color:var(--muted); margin-bottom:16px; }
+.frontpage-opening > p { font-family:var(--display-font); font-size:clamp(2.1rem,3.7vw,3.25rem)!important; font-weight:500; line-height:1.28; letter-spacing:-.055em; margin:0 0 20px; word-break:keep-all; }
+.frontpage-opening em { color:var(--accent); font-style:normal; }
+.frontpage-opening > div { color:var(--muted); font-size:.875rem; line-height:1.7; }
+.frontpage-art { position:relative; overflow:hidden; background:var(--soft); border-radius:var(--radius); min-height:230px; padding:20px 24px; display:flex; flex-direction:column; justify-content:space-between; }
+.frontpage-art-label { font-size:.625rem; letter-spacing:.18em; }
+.frontpage-art-sheet { align-self:center; padding:16px 44px; background:var(--accent); color:var(--on-accent); transform:rotate(-7deg); display:flex; gap:4px; flex-direction:column; font-family:'AppleMyungjo','Batang',serif; font-size:2.2rem; line-height:1.1; border-radius:var(--radius); }
+.frontpage-art-caption { font-size:.6875rem; text-align:right; margin-top:14px; }
+.frontpage-grid { display:grid; grid-template-columns:minmax(0,1fr) 264px; gap:48px; align-items:start; }
+.frontpage-feed,.frontpage-side { min-width:0; }
+.frontpage-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+.draft.journey-design .frontpage-heading h1 { font-size:1.5rem; margin:0; line-height:1.4; letter-spacing:-.045em; }
+.draft.journey-design .frontpage-heading p { color:var(--muted); font-size:.8125rem; margin:5px 0 0; }
+.frontpage-topics { display:flex; flex-wrap:wrap; gap:0 16px; border-bottom:1px solid var(--ink); }
+.frontpage-topics button { font-size:.875rem; color:var(--muted); min-width:44px; padding:10px 0; border:0; border-radius:0; border-bottom:2px solid transparent; margin-bottom:-1px; }
+.frontpage-topics button[aria-pressed='true'] { color:var(--accent); border-bottom-color:var(--accent); font-weight:700; }
+.draft.journey-design .frontpage-sample { font-size:.75rem; display:flex; flex-wrap:wrap; gap:4px 12px; padding:12px 0; margin:0; color:var(--muted); border-bottom:1px solid var(--line); }
+.frontpage-sample > span { font-weight:400; }
+.frontpage-row { display:grid; grid-template-columns:3rem minmax(0,1fr); align-items:baseline; gap:8px 16px; padding:var(--row-pad) 0; border-bottom:1px solid var(--line); }
+.frontpage-topic { color:var(--muted); font-size:.75rem; }
+.frontpage-title { display:block; font-size:1rem; font-weight:450; line-height:1.55; letter-spacing:-.02em; overflow-wrap:anywhere; }
+.frontpage-title:hover { color:var(--accent); text-decoration:underline; text-underline-offset:4px; }
+.frontpage-replies { color:var(--accent); font-size:.8125rem; margin-left:8px; }
+.frontpage-author { grid-column:2; font-size:.75rem; color:var(--muted); }
+.frontpage-excerpt { display:none; }
+.frontpage-more { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; font-size:.8125rem; color:var(--muted); padding:12px; border-bottom:1px solid var(--line); border-radius:0; }
+.frontpage-directory { padding:24px; background:var(--soft); border-radius:var(--radius); }
+.frontpage-kicker { font-size:.6875rem; color:var(--muted); }
+.frontpage-directory h2 { font-family:var(--display-font); font-size:1.5rem; margin:4px 0 18px; font-weight:600; }
+.frontpage-sources > a { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:14px 0; border-top:1px solid color-mix(in srgb,var(--ink) 16%,transparent); }
+.frontpage-sources strong { display:block; font-size:.875rem; font-weight:650; }
+.frontpage-sources small { display:block; font-size:.75rem!important; color:var(--muted); margin-top:4px; }
+.draft.journey-design .frontpage-directory .text-action { font-size:.75rem; margin-top:12px; text-decoration:underline; text-underline-offset:4px; }
+.frontpage-help { padding:28px 4px 0; }
+.frontpage-help h2 { font-size:.9375rem; margin:0 0 12px; }
+.draft.journey-design .frontpage-help p { color:var(--muted); font-size:.8125rem; line-height:1.8; margin:0 0 12px; }
+.draft.journey-design .frontpage-help .text-action { display:flex; width:100%; font-size:.8125rem; font-weight:400; border-bottom:1px solid var(--line); }
+/* Layout choices alter content arrangement as well as color. */
+.draft.journey-design[data-layout='forum'] .frontpage-row { padding-block:calc(var(--row-pad) * .6); }
+.draft.journey-design[data-layout='forum'] .frontpage-title { font-size:.9375rem; }
+.draft.journey-design[data-layout='preview'] .frontpage-posts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-top:16px; }
+.draft.journey-design[data-layout='preview'] .frontpage-row { display:flex; flex-direction:column; gap:8px; padding:var(--row-pad); background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); }
+.draft.journey-design[data-layout='preview'] .frontpage-title { font-size:1.125rem; font-weight:600; }
+.draft.journey-design[data-layout='preview'] .frontpage-excerpt { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; font-size:.875rem; line-height:1.7; color:var(--muted); margin:0; }
+.draft.journey-design[data-type='large'] :is(.frontpage-title,.post-title) { font-size:1.2rem; }
+.draft.journey-design[data-type='serif'] :is(.frontpage-heading h1,.detail-title) { font-family:var(--display-font); font-weight:600; }
+.draft.journey-design[data-frame-style='commons'] .frontpage-masthead { padding:32px; background:var(--soft); border-radius:var(--radius); border:0; margin-block:28px 32px; gap:24px; }
+.draft.journey-design[data-frame-style='commons'] .frontpage-art { background:transparent; }
+.draft.journey-design[data-frame-style='commons'] .frontpage-art-sheet { border-radius:90px 90px var(--radius) var(--radius); transform:rotate(6deg); padding:24px 44px; }
+.draft.journey-design[data-frame-style='atlas'] .frontpage-masthead { grid-template-columns:minmax(0,1fr) minmax(240px,.6fr); border-bottom:2px solid var(--accent); }
+.draft.journey-design[data-frame-style='atlas'] .frontpage-art { border:1px solid var(--line); }
+.draft.journey-design[data-frame-style='atlas'] .frontpage-opening > p { font-weight:800; }
+.draft.journey-design[data-frame-style='forum'] .frontpage-masthead { display:none; }
+.draft.journey-design[data-frame-style='forum'] .frontpage-grid { padding-top:32px; gap:32px; }
+.draft.journey-design[data-frame-style='forum'] .frontpage-directory { background:transparent; border-top:3px solid var(--accent); border-radius:0; padding:16px 0; }
+.draft.journey-design[data-frame-style='journal'] .frontpage-masthead { display:block; text-align:center; padding:36px 0; border-bottom:3px double var(--ink); }
+.draft.journey-design[data-frame-style='journal'] .frontpage-opening > p br { display:none; }
+.draft.journey-design[data-frame-style='journal'] .frontpage-art { display:none; }
+.draft.journey-design[data-frame-style='journal'] .frontpage-grid { grid-template-columns:minmax(0,1fr); }
+.draft.journey-design[data-frame-style='journal'] .frontpage-side { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.draft.journey-design[data-frame-style='journal'] .frontpage-posts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:32px; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-masthead { display:flex; padding-block:28px; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-art { display:none; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-opening > p { font-size:2rem!important; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-opening > p br { display:none; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-grid { grid-template-columns:264px minmax(0,1fr); }
+.draft.journey-design[data-frame-style='directory'] .frontpage-feed { grid-column:2; grid-row:1; }
+.draft.journey-design[data-frame-style='directory'] .frontpage-side { grid-column:1; grid-row:1; }
+.draft.journey-design[data-preview='true'] .demo-banner,.draft.journey-design[data-preview='true'] .footer-tools { display:none; }
+@media(max-width:1000px) {
+ .draft.journey-design .container { width:calc(100% - 40px); }
+ .frontpage-grid { grid-template-columns:minmax(0,1fr) 220px; gap:28px; }
+ .frontpage-masthead { gap:28px; }
+ .frontpage-directory { padding:18px; }
+ .draft.journey-design[data-frame-style='directory'] .frontpage-grid { grid-template-columns:220px minmax(0,1fr); }
+}
+@container frame (max-width:45rem) {
+ .frontpage-grid,.draft.journey-design[data-frame-style='directory'] .frontpage-grid { grid-template-columns:minmax(0,1fr); }
+ .draft.journey-design[data-frame-style='directory'] :is(.frontpage-feed,.frontpage-side) { grid-column:auto; grid-row:auto; }
+ .frontpage-side { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+ .frontpage-help { padding-top:12px; }
+ .frontpage-masthead { gap:20px; }
+ .frontpage-art { min-height:200px; }
+}
+@media(max-width:540px) {
+ .draft.journey-design .container { width:calc(100% - 32px); }
+ .draft.journey-design .header { gap:4px; min-height:0; padding-block:10px 0; }
+ .draft.journey-design .header > .brand { margin:0; }
+ .draft.journey-design .brand-name { font-size:1.35rem; }
+ .draft.journey-design .board-nav { margin-top:4px; }
+ .draft.journey-design .board-nav button { padding:8px 14px; font-size:.875rem; }
+ .draft.journey-design .board-nav button:first-child { padding-left:0; }
+ .draft.journey-design .workspace { padding-top:20px; }
+ .frontpage-masthead { display:block; padding:28px 0; margin-bottom:24px; }
+ .frontpage-opening > span { margin-bottom:12px; }
+ .frontpage-opening > p { font-size:2.15rem!important; margin-bottom:12px; }
+ .frontpage-art { display:none; }
+ .frontpage-grid { gap:28px; }
+ .frontpage-side,.draft.journey-design[data-frame-style='journal'] .frontpage-side { display:block; }
+ .frontpage-heading { gap:12px; margin-bottom:16px; }
+ .draft.journey-design .frontpage-heading h1 { font-size:1.375rem; }
+ .frontpage-heading .write-action { padding:8px 14px; }
+ .frontpage-topics { gap:0 12px; }
+ .frontpage-topics button { min-width:32px; font-size:.8125rem; }
+ .frontpage-row { grid-template-columns:2rem minmax(0,1fr); column-gap:10px; }
+ .frontpage-title { font-size:.9375rem; }
+ .draft.journey-design[data-layout='preview'] .frontpage-posts,.draft.journey-design[data-frame-style='journal'] .frontpage-posts { grid-template-columns:minmax(0,1fr); }
+ .draft.journey-design[data-frame-style='commons'] .frontpage-masthead { padding:24px; margin-block:20px 28px; }
+ .draft.journey-design[data-frame-style='atlas'] .frontpage-masthead { display:block; }
+ .draft.journey-design[data-frame-style='forum'] .frontpage-grid { padding-top:24px; }
+ .frontpage-help { padding:24px 0 0; }
+}
+@container frame (max-width:25rem) {
+ .frontpage-masthead { display:block; }
+ .frontpage-art { display:none; }
+ .frontpage-side,.draft.journey-design[data-frame-style='journal'] .frontpage-side { display:block; }
+ .frontpage-heading { flex-wrap:wrap; }
+ .frontpage-row { grid-template-columns:minmax(0,1fr); gap:4px; }
+ .frontpage-author { grid-column:auto; }
+ .draft.journey-design[data-layout='preview'] .frontpage-posts,.draft.journey-design[data-frame-style='journal'] .frontpage-posts { grid-template-columns:minmax(0,1fr); }
+}
+/* Shared reading and input surfaces follow the same palette, including dark combinations. */
+.draft.journey-design[data-layout='preview'] .post-list.title-first-list .post-row { background:var(--paper); border-color:var(--line); border-radius:var(--radius); }
+.draft.journey-design :is(.notice,.community-announcement,.login-invite,.staff-answer-card,.correction) { background:var(--soft); color:var(--ink); border-color:var(--accent); }
+.draft.journey-design :is(.source-note,.source-note p,.source-note strong,.guide-directory p,.guide-checked,.sample-note,.list-footnote,.post-preview,.title-row-meta span,.list-head,.reply-count.is-none) { color:var(--muted); }
+.draft.journey-design :is(.article-body,.comment p,.detail-title,.form-panel label) { color:var(--ink); }
+.draft.journey-design :is(.staff-role,.staff-source dt,.staff-source-pending,.status-tag) { color:var(--ink); }
+.draft.journey-design .pagination [aria-current='page'] { background:var(--ink); color:var(--page); }
+.modal { background:var(--paper,#fff); color:var(--ink,#202735); border-color:var(--line,#dce2eb); }
+.modal :is(input,textarea,select) { background:var(--page,#fff); color:var(--ink,#202735); border-color:var(--line,#dce2eb); }
+.modal .primary { background:var(--accent,#2648a1); color:var(--on-accent,#fff); border-color:var(--accent,#2648a1); }
+.modal :is(.modal-description,.fine) { color:var(--muted,#596477); }
+
+.draft.journey-design[data-layout='rows'] .post-list.title-first-list > .post-row { padding-block:calc(var(--row-pad) * .25); }
+.draft.journey-design[data-type='large'][data-layout='rows'] .post-list.title-first-list .post-title { font-size:1.2rem; }
+.draft.journey-design .post-list .reply-count { background:var(--soft); color:var(--ink); }
+.draft.journey-design .post-list .reply-count .reply-label { color:var(--muted); }
+.draft.journey-design .list-tools strong { color:var(--accent); }

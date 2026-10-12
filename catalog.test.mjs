@@ -14,7 +14,7 @@ test('unknown direct-link sort and filter parameters default to a usable catalog
   const works={children:cards,append(){}};let href='';
   const context={URLSearchParams,location:{search,pathname:'/site-lab-artifacts/',hash:''},history:{replaceState(a,b,url){href=url}},document:{getElementById:id=>fields[id],querySelector:()=>({addEventListener(){}})},setTimeout};
   context.document.getElementById=id=>id==='works'?works:fields[id];vm.runInNewContext(script,context);
-  assert.equal(fields.sort.value,'recent');assert.equal(fields.count.textContent,'17개 / 전체 17개');assert.equal(href,'/site-lab-artifacts/');
+  assert.equal(fields.sort.value,'recent');assert.equal(fields.count.textContent,`${data.artifacts.length}개 / 전체 ${data.artifacts.length}개`);assert.equal(href,'/site-lab-artifacts/');
  }
 });
 test('nested GitHub Pages memos survive normalization, JSON and Markdown exports',()=>{
@@ -27,8 +27,25 @@ test('nested GitHub Pages memos survive normalization, JSON and Markdown exports
  for(const route of ['https://bad.test/','/site-lab-artifacts/preview/../../secret/','/site-lab-artifacts/preview/unknown/'])assert.equal(normalizeDraft({notes:[{route,text:'test'}]}).notes[0].route,'/public-preview/');
 });
 test('catalog connects every unique artifact to an existing screen and source',async()=>{
- assert.equal(data.artifacts.length,17);assert.equal(new Set(data.artifacts.map(a=>a.id)).size,17);
+ assert.ok(data.artifacts.length>=17);assert.equal(new Set(data.artifacts.map(a=>a.id)).size,data.artifacts.length);
  for(const a of data.artifacts){assert.ok(a.description&&a.author&&a.status);assert.ok(a.sourceURL.startsWith(data.repository+'/blob/main/'));await stat(a.sourcePath);const path=a.relativeURL.split('?')[0];await stat(join('docs-site',path.endsWith('/')?path+'index.html':path));}
+});
+test('current candidates retain distinct source versions and the editor remains a separate route',async()=>{
+ const expected={claude:'38a207dc074782be9e525f618facda148420a404',fable:'577ce8bf8f7822771dfd674ae69a61f68aaa36d6'};
+ const html=await readFile('docs-site/index.html','utf8');
+ for(const [id,commit] of Object.entries(expected)){
+  const candidate=data.artifacts.find(a=>a.id==='candidate-'+id);
+  assert.ok(candidate);assert.equal(candidate.sourceCommit,commit);
+  assert.equal(candidate.relativeURL,'candidates/'+id+'/?view=home');
+  assert.equal(candidate.sourcePath,'candidates/'+id+'/main.tsx');
+  assert.ok(candidate.limitations.includes('메모리 시연'));
+  assert.ok(html.includes('href="'+candidate.relativeURL+'"'));
+ }
+ for(const id of ['master-plan','pre-settings-handoff'])assert.ok(data.artifacts.some(a=>a.id===id));
+ assert.ok(html.includes('기존 디자인 편집기'));
+ assert.ok(html.includes('편집기의 설정·메모는 기능 체험판에 반영되지 않습니다'));
+ const handoff=await readFile('docs/pre-settings-handoff.md','utf8');
+ for(let n=1;n<=7;n++)assert.ok(handoff.includes('E'+n+' ·'));
 });
 test('all generated preview paths stay in the GitHub project and retain demo status',async()=>{
  const html=await readFile('docs-site/preview/index.html','utf8');
@@ -36,8 +53,8 @@ test('all generated preview paths stay in the GitHub project and retain demo sta
  const notices=await readFile('docs-site/preview/THIRD_PARTY_NOTICES.txt','utf8');assert.ok(notices.includes('MIT License'));assert.ok(notices.includes('CC0'));
 });
 test('public allowlist has no local paths, session identifiers or token patterns',async()=>{
- async function walk(dir){let files=[];for(const entry of await readdir(dir,{withFileTypes:true})){if(entry.name==='.git')continue;const path=join(dir,entry.name);files.push(...(entry.isDirectory()?await walk(path):[path]));}return files;}
- for(const file of await walk('.')){if(file.endsWith('catalog.test.mjs'))continue;if(!/\.(html|js|mjs|json|md|txt|yml|css)$/.test(file))continue;const text=await readFile(file,'utf8');assert.ok(!/\/Users\/|session_reference|sk-proj-[A-Za-z0-9]|gh[pousr]_[A-Za-z0-9]{20}|Bearer\s+[A-Za-z0-9]/.test(text),file);}
+ async function walk(dir){let files=[];for(const entry of await readdir(dir,{withFileTypes:true})){if(['.git','node_modules','qa-local'].includes(entry.name))continue;const path=join(dir,entry.name);files.push(...(entry.isDirectory()?await walk(path):[path]));}return files;}
+ for(const file of await walk('.')){if(file.endsWith('catalog.test.mjs'))continue;if(!/\.(html|js|mjs|ts|tsx|json|md|txt|yml|css)$/.test(file))continue;const text=await readFile(file,'utf8');assert.ok(!/\/Users\/|session_reference|sk-proj-[A-Za-z0-9]|gh[pousr]_[A-Za-z0-9]{20}|Bearer\s+[A-Za-z0-9]/.test(text),file);}
 });
 test('index and static agent catalogs offer every artifact without fetching an API',async()=>{
  const html=await readFile('docs-site/index.html','utf8'),md=await readFile('ARTIFACTS.md','utf8'),js=await readFile('docs-site/catalog.js','utf8');

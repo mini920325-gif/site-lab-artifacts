@@ -1,0 +1,57 @@
+/* 상세·글쓰기 폭별 구조 (2026-10-09 사이클 3). layout.css 다음에 불러온다. 기준점은 layout.css 와 같은 540 / 1024.
+   테두리 카드와 안쪽 회색 상자를 걷고 읽는 면 + 가는 가로선으로 구분한다. 색·글꼴은 그대로. */
+
+/* ---------- 모든 폭: 읽는 면 ----------
+   본문은 목록과 같은 열을 가득 채운다(D-15) — 예전 44rem·43rem 읽기 폭 제한 삭제. */
+.draft.journey-design[data-view='detail'] .detail-panel {
+  background: transparent; border: 0; border-radius: 0; padding: 0;
+}
+.draft.journey-design[data-view='detail'] .detail-title {
+  margin-top: 0.4rem;
+}
+.draft.journey-design[data-view='detail'] .detail-meta { padding-bottom: 0.75rem; line-height: 1.6; }
+.draft.journey-design[data-view='detail'] .article-body { margin-block: 1.25rem; font-size: 1.0625rem; line-height: 1.85; }
+
+/* 「구성 예시」 안내: 상자 대신 한 줄 꼬리표 */
+.draft.journey-design[data-view='detail'] .source-note {
+  border: 0; background: transparent; padding: 0; margin: 0 0 0.5rem;
+}
+.draft.journey-design[data-view='detail'] .source-note p { margin: 0; font-size: 0.875rem; color: #6a7281; }
+
+/* 글 동작: 본문 아래 가는 선 한 줄 */
+.draft.journey-design[data-view='detail'] .post-actions {
+  margin-top: 0; padding-top: 0.5rem; border-top: 1px solid var(--line); gap: 0.25rem;
+}
+.draft.journey-design[data-view='detail'] .post-actions button { border: 0; background: transparent; padding-inline: 0 1rem; min-width: 44px; }
+.draft.journey-design[data-view='detail'] .post-actions [aria-pressed='true'] { background: transparent; color: var(--accent); font-weight: 650; }
+
+/* 정정 안내: 상자 대신 왼쪽 선 */
+.draft.journey-design[data-view='detail'] .correction { background: transparent; padding: 0.25rem 0 0.25rem 0.9rem; }
+
+/* 댓글: 선으로만 구분 */
+.draft.journey-design[data-view='detail'] .comments { margin-top: 1.5rem; }
+.draft.journey-design[data-view='detail'] .comments > h2 { border-bottom: 1px solid var(--ink); padding-bottom: 0.6rem; font-size: 1.0625rem; }
+.draft.journey-design[data-view='detail'] .comment { padding: 1rem 0; }
+.draft.journey-design[data-view='detail'] .comment.operator { background: transparent; padding: 1rem 0 1rem 0.9rem; border-left: 3px solid var(--accent); }
+.draft.journey-design[data-view='detail'] .comment p { font-size: 1rem; }
+.draft.journey-design[data-view='detail'] .comment-form { border: 0; border-top: 1px solid var(--line); padding: 1rem 0 0; margin-top: 0; }
+.draft.journey-design[data-view='detail'] .comment-form textarea { font-size: 1rem; }
+.draft.journey-design[data-view='detail'] .login-invite { border: 0; padding: 0; }
+.draft.journey-design[data-view='detail'] .empty.small { padding: 1rem 0; }
+
+/* 글쓰기: 카드 대신 면 */
+.draft.journey-design[data-view='compose'] .form-panel { background: transparent; border: 0; border-radius: 0; padding: 0; }
+.draft.journey-design[data-view='compose'] .form-panel textarea { font-size: 1rem; }
+.draft.journey-design[data-view='compose'] .form-panel .actions { margin-top: 1.25rem; }
+.draft.journey-design[data-view='compose'] .empty { border: 0; background: transparent; padding: 1rem 0; text-align: left; }
+
+/* ---------- 540 이하: 한 단, 본문 전폭 ---------- */
+@media (max-width: 540px) {
+  .draft.journey-design[data-view='detail'] .article-body { font-size: 1rem; margin-block: 1rem; }
+  .draft.journey-design[data-view='detail'] .comment.nested { margin-left: 0.5rem; padding-left: 0.75rem; }
+  .draft.journey-design[data-view='compose'] .form-panel .actions > button { flex: 1 1 auto; }
+}
+
+/* ---------- 541~1023: 본문 한 단, 기둥은 아래(layout.css) ---------- */
+
+/* 글쓰기 기둥은 다른 화면과 같은 구성·같은 머리(사이클 4 수리). 되풀이되는 「글쓰기」 단추만 Draft.tsx 에서 뺀다. */

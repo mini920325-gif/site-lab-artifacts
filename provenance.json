@@ -188,5 +188,359 @@
     "publication/build.mjs route validator accepts nested safe GitHub Pages base paths; static preview only.",
     "publication/studio-model.mjs accepts only known preview page routes under the original or GitHub Pages base; preserves nested page memo routes through save/import/export.",
     "publication/ui.js derives portable page fallback and internal navigation base from bundled pages."
+  ],
+  "candidateImports": [
+    {
+      "id": "claude",
+      "sourceCommit": "38a207dc074782be9e525f618facda148420a404",
+      "importedOn": "2026-10-13",
+      "files": [
+        {
+          "sourcePath": "community/CommunityTools.tsx",
+          "path": "candidates/claude/CommunityTools.tsx",
+          "originalSha256": "b7d00ff00739b0b2d936d6e7d7e57e1b23c655115a4c4438e61d26cb3886b881",
+          "publicSha256": "b7d00ff00739b0b2d936d6e7d7e57e1b23c655115a4c4438e61d26cb3886b881"
+        },
+        {
+          "sourcePath": "community/DesignExplorer.tsx",
+          "path": "candidates/claude/DesignExplorer.tsx",
+          "originalSha256": "25612247d3aa32db6566c8eedba14c79b1833220f32ee32456180886284ccb10",
+          "publicSha256": "54059e0f15cbdba8f13e3283084c422108bfe2880ce7336f88c8c3610ccd2df6"
+        },
+        {
+          "sourcePath": "community/Draft.tsx",
+          "path": "candidates/claude/Draft.tsx",
+          "originalSha256": "3870de87f05edf2b6e11cd2df5b2f992ef40857b8b4be1fa5f7df09e22a7f908",
+          "publicSha256": "0ad765c1df9e90274f2032d01c936bb0dfd111b3c20f241f752de4fd02b9b9ed"
+        },
+        {
+          "sourcePath": "community/JourneyHome.tsx",
+          "path": "candidates/claude/JourneyHome.tsx",
+          "originalSha256": "63dce8618bc5bb97686454e10e602460e623aa4d60d11e0091998ad582cc9b01",
+          "publicSha256": "1007e5987e8301af8fa261a7309a29a941239dbc56dd1067d814aabe73ca270f"
+        },
+        {
+          "sourcePath": "community/StudioView.tsx",
+          "path": "candidates/claude/StudioView.tsx",
+          "originalSha256": "aeed7da70b729e171d21bcd0e4b4579b01bd6902e367f68b86117e4584127692",
+          "publicSha256": "aeed7da70b729e171d21bcd0e4b4579b01bd6902e367f68b86117e4584127692"
+        },
+        {
+          "sourcePath": "community/community.css",
+          "path": "candidates/claude/community.css",
+          "originalSha256": "17805dcffe4af696e3a52544ed5adea018ba0a0edd57c52cd583a1f969562ec9",
+          "publicSha256": "17805dcffe4af696e3a52544ed5adea018ba0a0edd57c52cd583a1f969562ec9"
+        },
+        {
+          "sourcePath": "community/design.ts",
+          "path": "candidates/claude/design.ts",
+          "originalSha256": "194999b1496e49081c973def23f35f851f5a91aaac8e05f59125c6ede1292574",
+          "publicSha256": "e5c6c04e929e7d72db1a9c52ff8bea0d73c8d49d1f55d5c7995a0ee97581921d"
+        },
+        {
+          "sourcePath": "community/detail.css",
+          "path": "candidates/claude/detail.css",
+          "originalSha256": "e082da6395199bedc23a28380a3cf7390dfd0c0b72b49c46501252468adb3a08",
+          "publicSha256": "e082da6395199bedc23a28380a3cf7390dfd0c0b72b49c46501252468adb3a08"
+        },
+        {
+          "sourcePath": "community/domain.test.ts",
+          "path": "candidates/claude/domain.test.ts",
+          "originalSha256": "22586ed38aeb751aed86b946bbf0f1140ef6de5ca19c88d04f37433858b7495d",
+          "publicSha256": "322dc29fa5da6ed8faf2954d15afe96462c0dfdac0818470e4e8e9d79f886b7c"
+        },
+        {
+          "sourcePath": "community/domain.ts",
+          "path": "candidates/claude/domain.ts",
+          "originalSha256": "32e68c53f6942a3f69517fdc77c7156bb174118e3d35f58619a30843c042956b",
+          "publicSha256": "7e0e7c2c133288946eab13e3db4318aaa55cda3122cbff028d99d387a03ec06d"
+        },
+        {
+          "sourcePath": "community/draft.css",
+          "path": "candidates/claude/draft.css",
+          "originalSha256": "5976e2b8b66f85c26d5a6a02ab3f24373f07c2e86b8e749d5c5636ad54766f3d",
+          "publicSha256": "5976e2b8b66f85c26d5a6a02ab3f24373f07c2e86b8e749d5c5636ad54766f3d"
+        },
+        {
+          "sourcePath": "community/fixture.json",
+          "path": "candidates/claude/fixture.json",
+          "originalSha256": "0ebe5da346ff33a0dc03785c0d9ff82243efad8a585c6b85b0242f0c7f5aaf7e",
+          "publicSha256": "0ebe5da346ff33a0dc03785c0d9ff82243efad8a585c6b85b0242f0c7f5aaf7e"
+        },
+        {
+          "sourcePath": "community/index.html",
+          "path": "candidates/claude/index.html",
+          "originalSha256": "3197b002484201168bd78dd70f2fbe06b2669a6695c0aba8e0511f1f1457fcd4",
+          "publicSha256": "db74c7c424312bf784dd16afc2c839326593b5e7e0c3963ab70b62308a76e9fa"
+        },
+        {
+          "sourcePath": "community/journey-content.ts",
+          "path": "candidates/claude/journey-content.ts",
+          "originalSha256": "10287b65172b1395c103191ef8a31ac298dffe2d5b6478e33352aa3881a72b3a",
+          "publicSha256": "10287b65172b1395c103191ef8a31ac298dffe2d5b6478e33352aa3881a72b3a"
+        },
+        {
+          "sourcePath": "community/journey.css",
+          "path": "candidates/claude/journey.css",
+          "originalSha256": "b040062eefce4feda1e89f8587b0cc85d6fd78d3f8981cfd86b8f7b25bd578f5",
+          "publicSha256": "b040062eefce4feda1e89f8587b0cc85d6fd78d3f8981cfd86b8f7b25bd578f5"
+        },
+        {
+          "sourcePath": "community/layout.css",
+          "path": "candidates/claude/layout.css",
+          "originalSha256": "217c7ac682681b47133b8acda0a70a634e38f7ff2e32f9817bf2f17f232fb1f8",
+          "publicSha256": "11f5fdb7cc5deed886f4677a58e8e824c70f18852ca4553c3095dc20c398ed56"
+        },
+        {
+          "sourcePath": "community/main.tsx",
+          "path": "candidates/claude/main.tsx",
+          "originalSha256": "caf21b5d3958c3a99c2d40677688b35f9bbdea6c19083653525702ef02a8a9ba",
+          "publicSha256": "caf21b5d3958c3a99c2d40677688b35f9bbdea6c19083653525702ef02a8a9ba"
+        },
+        {
+          "sourcePath": "community/package-lock.json",
+          "path": "candidates/claude/package-lock.json",
+          "originalSha256": "e38b82b06c432b15b6406d7be2a4dd9442a535acaa783dbfbb1376705054ac5d",
+          "publicSha256": "e38b82b06c432b15b6406d7be2a4dd9442a535acaa783dbfbb1376705054ac5d"
+        },
+        {
+          "sourcePath": "community/package.json",
+          "path": "candidates/claude/package.json",
+          "originalSha256": "33dd74a244c108c952cc4a50ad509c668bf313ba9d5a2d1daeaccf280919f05a",
+          "publicSha256": "33dd74a244c108c952cc4a50ad509c668bf313ba9d5a2d1daeaccf280919f05a"
+        },
+        {
+          "sourcePath": "community/public/THIRD_PARTY_NOTICES.txt",
+          "path": "candidates/claude/public/THIRD_PARTY_NOTICES.txt",
+          "originalSha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac",
+          "publicSha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "sourcePath": "community/site-config.ts",
+          "path": "candidates/claude/site-config.ts",
+          "originalSha256": "c8ee0ad322bfd5bab7b98f31be67321cf7c27f6dacc01a552e26c2d5dfc0b3ef",
+          "publicSha256": "35657249e52b49597d7c3c9ad311df149ac1a53f8bc0a33dbf06e111f5287286"
+        },
+        {
+          "sourcePath": "community/tsconfig.json",
+          "path": "candidates/claude/tsconfig.json",
+          "originalSha256": "daecd2504266c17a1063f365525e6b53d964ae8c5905a84178020e2e123ef99b",
+          "publicSha256": "daecd2504266c17a1063f365525e6b53d964ae8c5905a84178020e2e123ef99b"
+        },
+        {
+          "sourcePath": "community/vite.config.ts",
+          "path": "candidates/claude/vite.config.ts",
+          "originalSha256": "38fbf2f2ca1dee399639a570f5a82db258be75f790b8d1e8fc562083c74471ac",
+          "publicSha256": "669203c7afc759c1eaa326e0b687c0a9c15e4c52df379a0341913b53963ab817"
+        }
+      ],
+      "adaptations": [
+        "GitHub Pages candidate base path and internal navigation",
+        "Public catalog and handoff links replace private experiment links",
+        "Distinct public-preview browser setting keys",
+        "Original synthetic content and memory-only authentication/storage retained",
+        "Codex visual integration: 32 starting combinations, seven independent design axes, actual page comparison, cancel/apply with browser persistence; original synthetic post data and memory-only service logic retained"
+      ],
+      "buildFiles": [
+        {
+          "path": "docs-site/candidates/claude/THIRD_PARTY_NOTICES.txt",
+          "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "path": "docs-site/candidates/claude/assets/index-C3SsKDtT.css",
+          "sha256": "b5d8720620d6dff8436ae68811ba82073d8392000527f9b7fd99cf5fc4a7c9fd"
+        },
+        {
+          "path": "docs-site/candidates/claude/assets/index-Drz9hs2q.js",
+          "sha256": "ed220caf7fdfa910133e05fe45dae6e39e008d55c2665ebc7ddfeb08754d86c7"
+        },
+        {
+          "path": "docs-site/candidates/claude/index.html",
+          "sha256": "d23a3e6f89c0739f185bf89a84280569b582132d19cb98192a5b787058206b55"
+        }
+      ],
+      "createdFiles": [
+        {
+          "path": "candidates/claude/design-explorer.css",
+          "author": "Codex",
+          "sha256": "c3435a57f754eca1edcd0770d0c78f55570899bd04c0e395bac6ace795e42206"
+        },
+        {
+          "path": "candidates/claude/design.test.ts",
+          "author": "Codex",
+          "sha256": "1aa8d1daa68705f558013f4bf9e6c70aa45113e0b0ea0c6dc7116e3b92686900"
+        }
+      ]
+    },
+    {
+      "id": "fable",
+      "sourceCommit": "577ce8bf8f7822771dfd674ae69a61f68aaa36d6",
+      "importedOn": "2026-10-13",
+      "files": [
+        {
+          "sourcePath": "community/CommunityTools.tsx",
+          "path": "candidates/fable/CommunityTools.tsx",
+          "originalSha256": "ba8a66c5aa04d8a434f180f6d60c1bcf413c92480a96dc22aa001ec696ec2102",
+          "publicSha256": "ba8a66c5aa04d8a434f180f6d60c1bcf413c92480a96dc22aa001ec696ec2102"
+        },
+        {
+          "sourcePath": "community/DesignExplorer.tsx",
+          "path": "candidates/fable/DesignExplorer.tsx",
+          "originalSha256": "600d987564cda6f495787052c89a596b4b5ea08b21036b734bfea531e346a9af",
+          "publicSha256": "600d987564cda6f495787052c89a596b4b5ea08b21036b734bfea531e346a9af"
+        },
+        {
+          "sourcePath": "community/Draft.tsx",
+          "path": "candidates/fable/Draft.tsx",
+          "originalSha256": "f424e53ce85bb45d5056b7fc2eba6b00cd377a5b4bf7aac6c771982e8012770d",
+          "publicSha256": "1554fecb49093b2f304308a9027cde0f61d94422fbeea05dc44d75b01d2d955e"
+        },
+        {
+          "sourcePath": "community/JourneyHome.tsx",
+          "path": "candidates/fable/JourneyHome.tsx",
+          "originalSha256": "c79015c41b3cd76d944249a2dbcd2faee2488caf1b8f0ae7f6ecdaf3fb730cef",
+          "publicSha256": "c79015c41b3cd76d944249a2dbcd2faee2488caf1b8f0ae7f6ecdaf3fb730cef"
+        },
+        {
+          "sourcePath": "community/PageHead.tsx",
+          "path": "candidates/fable/PageHead.tsx",
+          "originalSha256": "6606ccb8ac35d3602f02e8a1991afe707695ab665c47c2b3a34f73a8d6cca648",
+          "publicSha256": "6606ccb8ac35d3602f02e8a1991afe707695ab665c47c2b3a34f73a8d6cca648"
+        },
+        {
+          "sourcePath": "community/PostRows.tsx",
+          "path": "candidates/fable/PostRows.tsx",
+          "originalSha256": "3b64211c43933ae46898861d07d2df7a361900da46b94a8344503ccee6b6641f",
+          "publicSha256": "3b64211c43933ae46898861d07d2df7a361900da46b94a8344503ccee6b6641f"
+        },
+        {
+          "sourcePath": "community/StudioView.tsx",
+          "path": "candidates/fable/StudioView.tsx",
+          "originalSha256": "e3e81f1428273f0d41304963d13a1633453e5536be1f480f3fe0fa5f7991e38c",
+          "publicSha256": "e3e81f1428273f0d41304963d13a1633453e5536be1f480f3fe0fa5f7991e38c"
+        },
+        {
+          "sourcePath": "community/community.css",
+          "path": "candidates/fable/community.css",
+          "originalSha256": "f38248d03b366fb646b7c8339671e871cde786482f204d892f2d55f8e18c5643",
+          "publicSha256": "6c5e4958c4b8818ba42ce078252fb88bce7c2e0080afddf5ed932ab443306d7e"
+        },
+        {
+          "sourcePath": "community/design.ts",
+          "path": "candidates/fable/design.ts",
+          "originalSha256": "52026e2d9914ba68000da6497fdf5b32b0cf9c9f349c04ff0f6927e235ffba65",
+          "publicSha256": "28bb1148ba95de373983a957994c425107c64ecb877c47b9cff5c71f82d47708"
+        },
+        {
+          "sourcePath": "community/domain.test.ts",
+          "path": "candidates/fable/domain.test.ts",
+          "originalSha256": "15adf8994fa4354d5d5c770a77ea7baffebfe6a8da72bd56b1acbf25b44d1d1f",
+          "publicSha256": "dd0de758e210bd31f859624b2720143c6bb3eedfd5fcaeb0cc6f162b47e943d6"
+        },
+        {
+          "sourcePath": "community/domain.ts",
+          "path": "candidates/fable/domain.ts",
+          "originalSha256": "eb0bf41bcccffa6e124b5722fa2a38ef192706269fefe17f23dcdf4cfa2c5041",
+          "publicSha256": "1d9ce0d3776fcf5344774f530b43f87ca320a62d17ef537a9f5b723e2cde0e09"
+        },
+        {
+          "sourcePath": "community/draft.css",
+          "path": "candidates/fable/draft.css",
+          "originalSha256": "ed03a70ba5f1dd33aee3b0f0c075857c7cf2bead2a49003f1e69d67ce1fbd993",
+          "publicSha256": "ed03a70ba5f1dd33aee3b0f0c075857c7cf2bead2a49003f1e69d67ce1fbd993"
+        },
+        {
+          "sourcePath": "community/fixture.json",
+          "path": "candidates/fable/fixture.json",
+          "originalSha256": "5dd9e86e3f13e7cdb17c21c6a1e7ca6b1e693d436e9c190d9d9c980d8e3f55ee",
+          "publicSha256": "5dd9e86e3f13e7cdb17c21c6a1e7ca6b1e693d436e9c190d9d9c980d8e3f55ee"
+        },
+        {
+          "sourcePath": "community/index.html",
+          "path": "candidates/fable/index.html",
+          "originalSha256": "3197b002484201168bd78dd70f2fbe06b2669a6695c0aba8e0511f1f1457fcd4",
+          "publicSha256": "db74c7c424312bf784dd16afc2c839326593b5e7e0c3963ab70b62308a76e9fa"
+        },
+        {
+          "sourcePath": "community/journey-content.ts",
+          "path": "candidates/fable/journey-content.ts",
+          "originalSha256": "7ecfc4ce50a5756e5395ef361b35d2d352831f7a7c1373211fb8912bbc8793f1",
+          "publicSha256": "7ecfc4ce50a5756e5395ef361b35d2d352831f7a7c1373211fb8912bbc8793f1"
+        },
+        {
+          "sourcePath": "community/journey.css",
+          "path": "candidates/fable/journey.css",
+          "originalSha256": "3c6f51df26ffde713ec3daaa94e53d29b67e1b830d03af34d74163fa413c9605",
+          "publicSha256": "3c6f51df26ffde713ec3daaa94e53d29b67e1b830d03af34d74163fa413c9605"
+        },
+        {
+          "sourcePath": "community/main.tsx",
+          "path": "candidates/fable/main.tsx",
+          "originalSha256": "bb44988597d72cf7e028c3eb93e80f841227b992fe2d4779e9ab8ffb78eae3e1",
+          "publicSha256": "bb44988597d72cf7e028c3eb93e80f841227b992fe2d4779e9ab8ffb78eae3e1"
+        },
+        {
+          "sourcePath": "community/package-lock.json",
+          "path": "candidates/fable/package-lock.json",
+          "originalSha256": "e38b82b06c432b15b6406d7be2a4dd9442a535acaa783dbfbb1376705054ac5d",
+          "publicSha256": "e38b82b06c432b15b6406d7be2a4dd9442a535acaa783dbfbb1376705054ac5d"
+        },
+        {
+          "sourcePath": "community/package.json",
+          "path": "candidates/fable/package.json",
+          "originalSha256": "33dd74a244c108c952cc4a50ad509c668bf313ba9d5a2d1daeaccf280919f05a",
+          "publicSha256": "33dd74a244c108c952cc4a50ad509c668bf313ba9d5a2d1daeaccf280919f05a"
+        },
+        {
+          "sourcePath": "community/public/THIRD_PARTY_NOTICES.txt",
+          "path": "candidates/fable/public/THIRD_PARTY_NOTICES.txt",
+          "originalSha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac",
+          "publicSha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "sourcePath": "community/site-config.ts",
+          "path": "candidates/fable/site-config.ts",
+          "originalSha256": "c8ee0ad322bfd5bab7b98f31be67321cf7c27f6dacc01a552e26c2d5dfc0b3ef",
+          "publicSha256": "c8ee0ad322bfd5bab7b98f31be67321cf7c27f6dacc01a552e26c2d5dfc0b3ef"
+        },
+        {
+          "sourcePath": "community/tsconfig.json",
+          "path": "candidates/fable/tsconfig.json",
+          "originalSha256": "daecd2504266c17a1063f365525e6b53d964ae8c5905a84178020e2e123ef99b",
+          "publicSha256": "daecd2504266c17a1063f365525e6b53d964ae8c5905a84178020e2e123ef99b"
+        },
+        {
+          "sourcePath": "community/vite.config.ts",
+          "path": "candidates/fable/vite.config.ts",
+          "originalSha256": "38fbf2f2ca1dee399639a570f5a82db258be75f790b8d1e8fc562083c74471ac",
+          "publicSha256": "bb5ae7ec685205148f5391ec4cbc03406fd1adbb905d178636d545162ce62efa"
+        }
+      ],
+      "adaptations": [
+        "GitHub Pages candidate base path and internal navigation",
+        "Public catalog and handoff links replace private experiment links",
+        "Distinct public-preview browser setting keys",
+        "Original synthetic content and memory-only authentication/storage retained",
+        "Keep My Activity reachable in the mobile navigation; no design preference changed"
+      ],
+      "buildFiles": [
+        {
+          "path": "docs-site/candidates/fable/THIRD_PARTY_NOTICES.txt",
+          "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "path": "docs-site/candidates/fable/assets/index-Bh0c6zDQ.js",
+          "sha256": "60f904cef28a6db120d359ac555068c9b346e59bd8badbf7774dd57a183cc14a"
+        },
+        {
+          "path": "docs-site/candidates/fable/assets/index-DMqFR24w.css",
+          "sha256": "1c56f5f9855c31fadf9a6818e156e7f237ca24ca2f165ee8e9eccfa892bc2a1a"
+        },
+        {
+          "path": "docs-site/candidates/fable/index.html",
+          "sha256": "6eccff303f08b8b41fc4354c9af8779982aea43ac9ed1cd653778e822eced50c"
+        }
+      ]
+    }
   ]
 }
