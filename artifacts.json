@@ -1,11 +1,43 @@
 {
   "schemaVersion": 1,
   "title": "커뮤니티 산출물 모음",
-  "updated": "2026-10-06",
+  "updated": "2026-10-13",
   "repository": "https://github.com/mini920325-gif/site-lab-artifacts",
   "previewOnly": true,
   "sourceCommit": "2d8d15bc838d7c6b78e1bd213fa6ea0066389cc3",
+  "stage": "상세설정 직전 준비",
+  "stageURL": "https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html",
   "artifacts": [
+    {
+      "id": "candidate-claude",
+      "title": "Claude 기반 · 디자인 조합 체험판",
+      "type": "기능 체험판",
+      "author": "Claude Code · Codex",
+      "updated": "2026-10-13",
+      "status": "디자인 조합 가능",
+      "description": "기존 기능에 32개 출발 조합과 7개 디자인 축, 실제 화면 비교·취소·적용을 연결했습니다. 최종 채택 전이며 메모·다른 이름 저장은 별도 정적 편집기에 있습니다.",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/claude/?view=home",
+      "relativeURL": "candidates/claude/?view=home",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/main.tsx",
+      "sourcePath": "candidates/claude/main.tsx",
+      "sourceCommit": "38a207dc074782be9e525f618facda148420a404",
+      "limitations": "합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다."
+    },
+    {
+      "id": "candidate-fable",
+      "title": "Fable · 비교 후보",
+      "type": "기능 체험판",
+      "author": "Claude Code · Fable",
+      "updated": "2026-10-13",
+      "status": "비교 후보",
+      "description": "화면별 옆 안내와 게시판·문답·카드 구성을 비교하는 후보. 기본판으로 최종 채택한 상태는 아닙니다.",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/fable/?view=home",
+      "relativeURL": "candidates/fable/?view=home",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/fable/main.tsx",
+      "sourcePath": "candidates/fable/main.tsx",
+      "sourceCommit": "577ce8bf8f7822771dfd674ae69a61f68aaa36d6",
+      "limitations": "합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다."
+    },
     {
       "id": "editorial",
       "title": "A · 에디토리얼",
@@ -251,6 +283,38 @@
       "sourcePath": "docs/website-plan.md",
       "sourceCommit": "2d8d15bc838d7c6b78e1bd213fa6ea0066389cc3",
       "sha256": "e237306ab7c04f4b4510dcf27dc79cf75fa895a5ad9bc485e506d67f62cee99c"
+    },
+    {
+      "id": "master-plan",
+      "title": "통합 실행 플랜",
+      "type": "조사·계획",
+      "author": "Codex · root",
+      "updated": "2026-10-13",
+      "status": "현행 계획",
+      "description": "전체 진행 순서와 이번 상세설정 직전 작업의 범위 · 과거 계획과 현재 실행 구분",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/reports/master-plan.html",
+      "relativeURL": "reports/master-plan.html",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md",
+      "sourcePath": "docs/community-master-plan.md",
+      "sourceCommit": null,
+      "sha256": "13d49e126e76160288f2420968b255fd25c1488221b3419bf57f65691dd3f508",
+      "sourceRevision": "2026-10-13"
+    },
+    {
+      "id": "pre-settings-handoff",
+      "title": "현재 단계와 종료 조건",
+      "type": "조사·계획",
+      "author": "Codex · root",
+      "updated": "2026-10-13",
+      "status": "진행 상태",
+      "description": "상세설정 직전까지의 E1–E7 확인 상태 · 다음에 사용자가 조절할 항목",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html",
+      "relativeURL": "reports/pre-settings-handoff.html",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/pre-settings-handoff.md",
+      "sourcePath": "docs/pre-settings-handoff.md",
+      "sourceCommit": null,
+      "sha256": "9b9d351d553abba0b7f454c3b60994f87d1cd88d93f719839d07c74152d0668e",
+      "sourceRevision": "2026-10-13"
     }
   ]
 }
