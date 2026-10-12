@@ -18,12 +18,12 @@ export function JourneyHome({ loc, posts, go, compose, showSamples = true }: {
 
   return (
     <div className="frontpage">
-      <div className="frontpage-masthead">
+      <div className="frontpage-masthead" data-review-target="home-intro" data-review-label="홈 도입부">
         <div className="frontpage-opening"><span>일 · 배움 · 생활</span><p>각자의 다음을,<br /><em>함께</em> 찾아가는 곳.</p><div>서로 다른 경험이 모여 다음 이야기가 됩니다.</div></div>
         <div className="frontpage-art" aria-hidden="true"><span className="frontpage-art-label">OUR NEXT CHAPTER</span><div className="frontpage-art-sheet"><span>다음</span><span>이야기</span></div><div className="frontpage-art-caption">여섯 가지 주제, 다양한 목소리.</div></div>
       </div>
       <div className="frontpage-grid">
-        <section className="frontpage-feed" aria-labelledby="home-community-title">
+        <section className="frontpage-feed" data-review-target="home-feed" data-review-label="홈 글 목록" aria-labelledby="home-community-title">
           <div className="frontpage-heading">
             <div>
               <h1 id="home-community-title" data-role="page-title">최근 이야기</h1>
@@ -59,7 +59,7 @@ export function JourneyHome({ loc, posts, go, compose, showSamples = true }: {
           <button className="frontpage-more" onClick={() => go({ view: 'list', post: '', page: 1, board: 'all', q: '', situation: 'all' })}>전체 글 보기 <ChevronRight size={16} aria-hidden="true" /></button>
         </section>
 
-        <aside className="frontpage-side" aria-label="자료와 이용 안내">
+        <aside className="frontpage-side" data-review-target="home-resources" data-review-label="자료·이용 안내" aria-label="자료와 이용 안내">
           <section className="frontpage-directory">
             <span className="frontpage-kicker">필요할 때 찾아보기</span>
             <h2>공식 자료</h2>
@@ -85,7 +85,7 @@ export function JourneyHome({ loc, posts, go, compose, showSamples = true }: {
 
 export function GuideDirectory() {
   return (
-    <section className="guide-page">
+    <section className="guide-page" data-review-target="guide-directory" data-review-label="자료실">
       <div className="section-heading">
         <div>
           <h1 data-role="page-title">자료실</h1>

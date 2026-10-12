@@ -44,6 +44,9 @@ import { StudioView } from './StudioView';
 import { siteConfig, type Accent } from './site-config';
 import { CommunityFilters } from './CommunityTools';
 import { DesignExplorer } from './DesignExplorer';
+import { ReviewWorkspace } from './ReviewWorkspace';
+import { readReviewBundle } from './review';
+import { exportReviewHTML } from './review-export';
 import { readDesign, saveDesign, designTokens, type Design } from './design';
 import { JourneyHome, GuideDirectory } from './JourneyHome';
 import { allSampleNotice } from './journey-content';
@@ -72,6 +75,7 @@ export default function Draft({
   initialPath?: string;
 }) {
   const designPreview = new URLSearchParams(initialSearch).get('designPreview') === '1';
+  const [reviewInitial] = useState(() => designPreview ? null : readReviewBundle(readDesign()));
   const [loc, setLoc] = useState(() =>
     readLocation(initialSearch, initialPath),
   );
@@ -118,8 +122,8 @@ export default function Draft({
   const [announcement, setAnnouncement] = useState<string>(
     siteConfig.announcement,
   );
-  const [design, setDesign] = useState<Design>(readDesign);
-  const [appliedDesign, setAppliedDesign] = useState<Design>(design);
+  const [design, setDesign] = useState<Design>(() => reviewInitial?.state.working.design ?? readDesign());
+  const [appliedDesign, setAppliedDesign] = useState<Design>(readDesign);
   const [designOpen, setDesignOpen] = useState(false);
   const accent: Accent = design.color;
   const [scale, setScale] = useState('100');
@@ -581,7 +585,7 @@ export default function Draft({
           }}>{designOpen ? '비교 닫기' : '디자인 비교'}</button>
         </div>
       </div>
-      <header className="header container">
+      <header className="header container" data-review-target="header" data-review-label="상단 메뉴">
         <a
           className="brand"
           href={href({ ...defaultLocation, view: 'home', variant: loc.variant })}
@@ -704,9 +708,13 @@ export default function Draft({
           setAppliedDesign(design); setDesignOpen(false);
           setNotice(stored ? '화면 조합을 적용했어요. 이 브라우저에서 다음에도 사용할 수 있어요.' : '화면 조합을 적용했어요. 브라우저 저장이 제한되어 현재 화면에만 적용됩니다.');
         }} />}
+      {!designPreview && <ReviewWorkspace design={design} route={loc.view} initialReview={reviewInitial ?? undefined}
+        onDesign={(next) => { setDesign(next); setAppliedDesign(next); saveDesign(next); setDesignOpen(false); }}
+        onNavigate={(view) => go({ view: view as LocationState['view'], post: '' })}
+        sourcePreviewHTML={(review) => exportReviewHTML(review, loc.view)} />}
       <div className="container frame">
       <div className="workspace">
-        <main id="main" ref={main} tabIndex={-1} data-frame="main">
+        <main id="main" ref={main} tabIndex={-1} data-frame="main" data-review-target="page" data-review-label="페이지 전체">
           <div className="breadcrumb">
             홈
             {crumbs.map((c, i) => (
@@ -789,7 +797,7 @@ export default function Draft({
                 </div>
               ) : (
                 <form
-                  className="form-panel compose-minimal"
+                  className="form-panel compose-minimal" data-review-target="compose" data-review-label="글쓰기"
                   onSubmit={(e) => {
                     e.preventDefault();
                     savePost();
@@ -889,7 +897,7 @@ export default function Draft({
                   <ArrowLeft size={17} />
                   {returnView === 'home' ? '홈으로' : '목록으로'}
                 </button>
-                <article className="detail-panel">
+                <article className="detail-panel" data-review-target="detail" data-review-label="글 상세">
                   <span className="topic-chip">
                     {boards[active.board]}
                     {active.situation && (
@@ -1149,7 +1157,7 @@ export default function Draft({
               {allSample && list.total > 0 && (
                 <p className="sample-context">{allSampleNotice}</p>
               )}
-              <div className="post-list title-first-list">
+              <div className="post-list title-first-list" data-review-target="post-list" data-review-label="게시글 목록">
                 {list.total > 0 && (
                   <div className="list-head" aria-hidden="true">
                     <span>분야</span>
@@ -1252,7 +1260,7 @@ export default function Draft({
             </>
           )}
         </main>
-        <aside className="rail" data-frame="rail">
+        <aside className="rail" data-frame="rail" data-review-target="rail" data-review-label="오른쪽 안내">
           <div className="rail-intro">
             <span className="eyebrow">읽기와 참여</span>
             <h2>
@@ -1321,7 +1329,7 @@ export default function Draft({
         </aside>
       </div>
       </div>
-      <footer className="container footer">
+      <footer className="container footer" data-review-target="footer" data-review-label="하단">
         <div className="footer-tools"><a href="/site-lab-artifacts/">산출물 모음</a><a href="/site-lab-artifacts/reports/pre-settings-handoff.html">이번 준비와 종료 조건</a>
           <button onClick={() => open({ type: 'reading' })}>읽기 설정</button>
           <button onClick={() => go({ view: 'studio' })}>

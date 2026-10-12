@@ -199,7 +199,7 @@
           "sourcePath": "community/CommunityTools.tsx",
           "path": "candidates/claude/CommunityTools.tsx",
           "originalSha256": "b7d00ff00739b0b2d936d6e7d7e57e1b23c655115a4c4438e61d26cb3886b881",
-          "publicSha256": "b7d00ff00739b0b2d936d6e7d7e57e1b23c655115a4c4438e61d26cb3886b881"
+          "publicSha256": "bb129d25906542d87be984780fa58ace385cafd68f132d17a26b61261b2d11b2"
         },
         {
           "sourcePath": "community/DesignExplorer.tsx",
@@ -211,13 +211,13 @@
           "sourcePath": "community/Draft.tsx",
           "path": "candidates/claude/Draft.tsx",
           "originalSha256": "3870de87f05edf2b6e11cd2df5b2f992ef40857b8b4be1fa5f7df09e22a7f908",
-          "publicSha256": "0ad765c1df9e90274f2032d01c936bb0dfd111b3c20f241f752de4fd02b9b9ed"
+          "publicSha256": "e65936142e69d0d7205f99686576894c45f1cbfd5e77e07327020cf9d2a7d964"
         },
         {
           "sourcePath": "community/JourneyHome.tsx",
           "path": "candidates/claude/JourneyHome.tsx",
           "originalSha256": "63dce8618bc5bb97686454e10e602460e623aa4d60d11e0091998ad582cc9b01",
-          "publicSha256": "1007e5987e8301af8fa261a7309a29a941239dbc56dd1067d814aabe73ca270f"
+          "publicSha256": "98d78eec8d8d8914579eddb36aa58762fa78085113e748e7cda9c79a7043fd61"
         },
         {
           "sourcePath": "community/StudioView.tsx",
@@ -339,7 +339,8 @@
         "Public catalog and handoff links replace private experiment links",
         "Distinct public-preview browser setting keys",
         "Original synthetic content and memory-only authentication/storage retained",
-        "Codex visual integration: 32 starting combinations, seven independent design axes, actual page comparison, cancel/apply with browser persistence; original synthetic post data and memory-only service logic retained"
+        "Codex visual integration: 32 starting combinations, seven independent design axes, actual page comparison, cancel/apply with browser persistence; original synthetic post data and memory-only service logic retained",
+        "Codex review workspace: anchored local notes, named snapshots and Save As, multi-tab conflict protection, strict JSON import, Markdown requests and isolated synthetic offline HTML export with licenses; existing static editor preserved"
       ],
       "buildFiles": [
         {
@@ -347,16 +348,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-C3SsKDtT.css",
-          "sha256": "b5d8720620d6dff8436ae68811ba82073d8392000527f9b7fd99cf5fc4a7c9fd"
+          "path": "docs-site/candidates/claude/assets/index-BBBCfXZo.js",
+          "sha256": "67ed385c12acd5b8efc3d558bec635c477f1fd382e3b4e4da9c0e29dd6809de6"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-Drz9hs2q.js",
-          "sha256": "ed220caf7fdfa910133e05fe45dae6e39e008d55c2665ebc7ddfeb08754d86c7"
+          "path": "docs-site/candidates/claude/assets/index-cjlxIHQR.css",
+          "sha256": "e451f7d6e732b1d34344df19fe5190323b582d748080cb38493f1fae77a1306e"
         },
         {
           "path": "docs-site/candidates/claude/index.html",
-          "sha256": "d23a3e6f89c0739f185bf89a84280569b582132d19cb98192a5b787058206b55"
+          "sha256": "03efefdb1e99569fbb58de5adaea04a8c13d0227177a81f954d0611be55a6e20"
         }
       ],
       "createdFiles": [
@@ -369,6 +370,31 @@
           "path": "candidates/claude/design.test.ts",
           "author": "Codex",
           "sha256": "1aa8d1daa68705f558013f4bf9e6c70aa45113e0b0ea0c6dc7116e3b92686900"
+        },
+        {
+          "path": "candidates/claude/ReviewWorkspace.tsx",
+          "author": "Codex",
+          "sha256": "d70a63964d629bb6f9fa19b687a04be784cda357cc8238217dd16885aba4cab7"
+        },
+        {
+          "path": "candidates/claude/review.ts",
+          "author": "Codex",
+          "sha256": "2c6268deef681af2290fc17add29018413f803a73e07935ecc820bcd0a4f9d0e"
+        },
+        {
+          "path": "candidates/claude/review.test.ts",
+          "author": "Codex",
+          "sha256": "9046b2cc178fc99d45dd0ea74ded1376be540ab97a0b6428586e338267520a7b"
+        },
+        {
+          "path": "candidates/claude/review-export.ts",
+          "author": "Codex",
+          "sha256": "dc5b900c02e235e954b011cd072dd1a4c8b8d784f35c27d252b6240264315eca"
+        },
+        {
+          "path": "candidates/claude/review-workspace.css",
+          "author": "Codex",
+          "sha256": "6ef81386890ef3fe8c44b7b15c69a6cbcae3436e13416fda166c26558854b7b5"
         }
       ]
     },

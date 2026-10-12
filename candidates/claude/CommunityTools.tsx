@@ -9,7 +9,7 @@ export function CommunityFilters({
   go: (p: Partial<LocationState>) => void;
 }) {
   return (
-    <section className="community-filters" aria-label="이야기 찾기">
+    <section className="community-filters" data-review-target="list-filters" data-review-label="목록 필터" aria-label="이야기 찾기">
       <div className="board-filter" aria-label="질문 분야">
         {Object.entries({ all: '모든 분야', ...boards }).map(([id, label]) => (
           <button
