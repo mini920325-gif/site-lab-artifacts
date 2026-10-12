@@ -4,9 +4,9 @@
 
 ## Claude 기반 · 디자인 조합 체험판
 
-- 종류: 기능 체험판 / 상태: 디자인 조합 가능
+- 종류: 기능 체험판 / 상태: 디자인·메모 검증 중
 - 작성자: Claude Code · Codex / 변경일: 2026-10-13
-- 설명: 기존 기능에 32개 출발 조합과 7개 디자인 축, 실제 화면 비교·취소·적용을 연결했습니다. 최종 채택 전이며 메모·다른 이름 저장은 별도 정적 편집기에 있습니다.
+- 설명: 32개 출발 조합·7개 축·실제 화면 비교에 위치 메모·다른 이름 저장·JSON/Markdown/시각 참고 HTML 전달을 연결했습니다. 추가분은 로컬 검증을 완료했으며 공개 확인 전입니다.
 - 기준 버전: 38a207dc074782be9e525f618facda148420a404
 - 한계: 합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다.
 - [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/candidates/claude/?view=home)
@@ -182,7 +182,7 @@
 
 - 종류: 조사·계획 / 상태: 현행 계획
 - 작성자: Codex · root / 변경일: 2026-10-13
-- 설명: 전체 진행 순서와 이번 상세설정 직전 작업의 범위 · 과거 계획과 현재 실행 구분
+- 설명: 전체 진행 순서와 디자인·메모·이름 저장·전달의 이번 범위 · 과거 결과와 현재 실행 구분
 - 기준 버전: 2026-10-13
 - [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/reports/master-plan.html)
 - [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md)
@@ -191,7 +191,7 @@
 
 - 종류: 조사·계획 / 상태: 진행 상태
 - 작성자: Codex · root / 변경일: 2026-10-13
-- 설명: 상세설정 직전까지의 E1–E7 확인 상태 · 다음에 사용자가 조절할 항목
+- 설명: 메모·이름 저장·전달 추가분의 E1–E7 확인 상태 · 로컬 검증 완료, 공개 확인 전
 - 기준 버전: 2026-10-13
 - [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html)
 - [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/pre-settings-handoff.md)
