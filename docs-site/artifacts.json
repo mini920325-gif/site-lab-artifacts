@@ -5,7 +5,7 @@
   "repository": "https://github.com/mini920325-gif/site-lab-artifacts",
   "previewOnly": true,
   "sourceCommit": "2d8d15bc838d7c6b78e1bd213fa6ea0066389cc3",
-  "stage": "메모·이름 저장·전달 로컬 검증 완료, 공개 확인 전",
+  "stage": "메모·이름 저장·전달 공개 반영·검증 완료",
   "stageURL": "https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html",
   "artifacts": [
     {
@@ -14,8 +14,8 @@
       "type": "기능 체험판",
       "author": "Claude Code · Codex",
       "updated": "2026-10-13",
-      "status": "디자인·메모 검증 중",
-      "description": "32개 출발 조합·7개 축·실제 화면 비교에 위치 메모·다른 이름 저장·JSON/Markdown/시각 참고 HTML 전달을 연결했습니다. 추가분은 로컬 검증을 완료했으며 공개 확인 전입니다.",
+      "status": "디자인·메모 체험판",
+      "description": "32개 출발 조합·7개 축·실제 화면 비교에 위치 메모·다른 이름 저장·JSON/Markdown/시각 참고 HTML 전달을 연결했습니다. 추가분은 로컬·공개 검증을 완료한 상태입니다.",
       "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/claude/?view=home",
       "relativeURL": "candidates/claude/?view=home",
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/main.tsx",
@@ -297,7 +297,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md",
       "sourcePath": "docs/community-master-plan.md",
       "sourceCommit": null,
-      "sha256": "e1f21ea5138b40a4282ba0a350ddef89c9ad6a42b1ea93e880e4d7fe7ec3ef24",
+      "sha256": "fa356c51b73cd5f4ca7aaef9e268cde1d283499d4c3373848a31c8b55dcab92e",
       "sourceRevision": "2026-10-13"
     },
     {
@@ -307,13 +307,13 @@
       "author": "Codex · root",
       "updated": "2026-10-13",
       "status": "진행 상태",
-      "description": "메모·이름 저장·전달 추가분의 E1–E7 확인 상태 · 로컬 검증 완료, 공개 확인 전",
+      "description": "메모·이름 저장·전달 추가분의 E1–E7 확인 상태 · 공개 반영·검증 완료",
       "url": "https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html",
       "relativeURL": "reports/pre-settings-handoff.html",
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/pre-settings-handoff.md",
       "sourcePath": "docs/pre-settings-handoff.md",
       "sourceCommit": null,
-      "sha256": "11a124c27724616023563ce82d139572f86b95215b4a1642141d6a0a5b6af323",
+      "sha256": "9848c9ae6ce11f8b978dd649f0940aeab88c120dd4f8351386049a5cd8a23188",
       "sourceRevision": "2026-10-13"
     }
   ]
