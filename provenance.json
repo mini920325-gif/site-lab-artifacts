@@ -349,16 +349,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-Czodeu-6.js",
+          "path": "docs-site/candidates/claude/assets/index-Bn-VUW4Z.css",
+          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+        },
+        {
+          "path": "docs-site/candidates/claude/assets/index-DudqhRSN.js",
           "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-D5_2OQzq.css",
-          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
-        },
-        {
           "path": "docs-site/candidates/claude/index.html",
-          "sha256": "d0f0ce3ad0e0ba4e11b88a2ced10d769ee6d1d75e4699fe4841c47c27898057b"
+          "sha256": "59c9e01ebb30cae85fd064373b5eac1048f30cabecc85ba749c89c0911ff74e4"
         }
       ],
       "createdFiles": [
@@ -420,7 +420,7 @@
         {
           "path": "candidates/claude/editions.css",
           "author": "Codex",
-          "sha256": "3c5316f055b19ed0df489701ce4cfc8d11977cb8d785f9add66372bcb61f7a2c"
+          "sha256": "042a1c81f3d7750d5981e89b9ef3df58d9fa9d35f2a545b9b9b33913198810c1"
         },
         {
           "path": "candidates/claude/IPArchiveHome.tsx",
@@ -440,7 +440,7 @@
         {
           "path": "candidates/claude/ip-community.css",
           "author": "Codex",
-          "sha256": "648ed6b2681a31dca5a5ab279c64790886b2f9270a957cc492731aac5334a548"
+          "sha256": "c299a5fdb55bc6bad11f8effa800a49a31818cb42205b9e56537c4b7f5346486"
         }
       ]
     },
@@ -643,16 +643,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-Czodeu-6.js",
+          "path": "docs-site/candidates/ip-2/assets/index-Bn-VUW4Z.css",
+          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+        },
+        {
+          "path": "docs-site/candidates/ip-2/assets/index-DudqhRSN.js",
           "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-D5_2OQzq.css",
-          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
-        },
-        {
           "path": "docs-site/candidates/ip-2/index.html",
-          "sha256": "7713f4a2701cc3b98f3fe37d4b28176e1af7b237b3a90ed4e384eca7d44219de"
+          "sha256": "9f26ee4fe81bc77030ace83538ba6e71d979093789dc0a33a8bb4d7d714738ed"
         }
       ]
     },
@@ -673,7 +673,7 @@
         {
           "path": "candidates/claude/ip-community.css",
           "author": "Codex",
-          "sha256": "648ed6b2681a31dca5a5ab279c64790886b2f9270a957cc492731aac5334a548"
+          "sha256": "c299a5fdb55bc6bad11f8effa800a49a31818cb42205b9e56537c4b7f5346486"
         }
       ],
       "adaptations": [
@@ -685,16 +685,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-Czodeu-6.js",
+          "path": "docs-site/candidates/ip-3/assets/index-Bn-VUW4Z.css",
+          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+        },
+        {
+          "path": "docs-site/candidates/ip-3/assets/index-DudqhRSN.js",
           "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-D5_2OQzq.css",
-          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
-        },
-        {
           "path": "docs-site/candidates/ip-3/index.html",
-          "sha256": "3c313cec12e05798cacfc5f755ff3d2e62d45f046612528a6d3b860ff5a0dd26"
+          "sha256": "0b32a7d5bc4fc86aefb795254a05f20e3a2e7a57b6566111bc1ec126951156a3"
         }
       ]
     }

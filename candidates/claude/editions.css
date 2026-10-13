@@ -6,3 +6,4 @@
 @media(max-width:540px){.ed-toolbar{padding:8px 10px;gap:6px}.ed-toolbar nav{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.ed-toolbar a{min-width:0;display:block;padding:7px 5px}.ed-toolbar a b{display:block}.ed-toolbar a span{font-size:.75rem;overflow-wrap:anywhere}.ed-toolbar>button{width:100%}}
 
 .draft:is([data-edition='ip-2'],[data-edition='ip-3']) .footer strong{color:var(--ink)}
+.draft.journey-design:is([data-edition='ip-2'],[data-edition='ip-3']){--display-font:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}

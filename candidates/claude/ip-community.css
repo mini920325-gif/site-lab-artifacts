@@ -81,7 +81,7 @@
 .draft[data-edition='ip-3'][data-frame-style='journal'] .ip3-posts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:38px; }
 .draft[data-edition='ip-3'][data-frame-style='journal'] .ip3-sidebar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
 .draft[data-edition='ip-3'][data-frame-style='journal'] :is(.ip3-official,.ip3-about) { margin:0; }
-.draft[data-edition='ip-3'][data-frame-style='journal'] .ip3-intro h1 { font-family:'AppleMyungjo','Batang',serif; }
+.draft[data-edition='ip-3'][data-frame-style='journal'] .ip3-intro h1 { font-family:var(--display-font); }
 .draft[data-edition='ip-3'][data-frame-style='directory'] .ip3-columns { grid-template-columns:272px minmax(0,1fr); }
 .draft[data-edition='ip-3'][data-frame-style='directory'] .ip3-conversations { grid-column:2; grid-row:1; }
 .draft[data-edition='ip-3'][data-frame-style='directory'] .ip3-sidebar { grid-column:1; grid-row:1; }
