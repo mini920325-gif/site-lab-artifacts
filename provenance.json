@@ -350,16 +350,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-BFv9wdiJ.css",
-          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
+          "path": "docs-site/candidates/claude/assets/index-Cihck4Xd.css",
+          "sha256": "3d016d12357bdde0b2dc09bad2acb21278fb9584e56fbb91325d893842723f6f"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-BVvARwtL.js",
-          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
+          "path": "docs-site/candidates/claude/assets/index-DONJI9yh.js",
+          "sha256": "76e8ce44c42c720d4352cfc4d93c0e3636f57b2c22f7b96b9ce97234a9fed435"
         },
         {
           "path": "docs-site/candidates/claude/index.html",
-          "sha256": "fc62779b298c1154714f5a621c0d345d55031cc54e94ce4aa1004d34ec1eb1b7"
+          "sha256": "6d1bb514bb2e252334628d40247132265007c3e6b918ecc4e73c980824295ae9"
         }
       ],
       "createdFiles": [
@@ -401,7 +401,7 @@
         {
           "path": "candidates/claude/edition.ts",
           "author": "Codex",
-          "sha256": "5c59311446cc84c17538d0a61d321892584c337bd9b2eecdad5162639de8625c"
+          "sha256": "ddcdf38b6116abd05326bfee1c641fb80f7052e4c29a3f42459e4d075a8d906a"
         },
         {
           "path": "candidates/claude/edition.test.ts",
@@ -426,12 +426,12 @@
         {
           "path": "candidates/claude/IPArchiveHome.tsx",
           "author": "Codex",
-          "sha256": "1afee2095cc3295b90bfdadeb5bcaccc619d0a04f70fa1b4a95b2543f1019fe6"
+          "sha256": "4ff2f049eb7176338394e053bd937fae5a896a9b685f5969d8a438bd56664dfd"
         },
         {
           "path": "candidates/claude/ip-archive.css",
           "author": "Codex",
-          "sha256": "34b260e9ab4eeaf1a9455047822dce10378b49d5f1f5eb4787b988726f05dff5"
+          "sha256": "0d839e6804c90f008e4f2813d0d89c270a68acf3216231514459993c7de13fe5"
         },
         {
           "path": "candidates/claude/IPCommunityHome.tsx",
@@ -627,17 +627,18 @@
         {
           "path": "candidates/claude/IPArchiveHome.tsx",
           "author": "Codex",
-          "sha256": "1afee2095cc3295b90bfdadeb5bcaccc619d0a04f70fa1b4a95b2543f1019fe6"
+          "sha256": "4ff2f049eb7176338394e053bd937fae5a896a9b685f5969d8a438bd56664dfd"
         },
         {
           "path": "candidates/claude/ip-archive.css",
           "author": "Codex",
-          "sha256": "34b260e9ab4eeaf1a9455047822dce10378b49d5f1f5eb4787b988726f05dff5"
+          "sha256": "0d839e6804c90f008e4f2813d0d89c270a68acf3216231514459993c7de13fe5"
         }
       ],
       "adaptations": [
         "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets.",
-        "User-confirmed veterans and military/police career-transition focus for editions 2 and 3: original specialized examples, separate official resource destinations, preserved edition 1 fixtures and storage identifiers."
+        "User-confirmed veterans and military/police career-transition focus for editions 2 and 3: original specialized examples, separate official resource destinations, preserved edition 1 fixtures and storage identifiers.",
+        "Rebuilt edition 2 as a recent-post board with compact heading, category navigation and supporting resource lists; preserved review anchors, post identifiers, storage, exports and selectable design axes."
       ],
       "buildFiles": [
         {
@@ -645,16 +646,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-BFv9wdiJ.css",
-          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
+          "path": "docs-site/candidates/ip-2/assets/index-Cihck4Xd.css",
+          "sha256": "3d016d12357bdde0b2dc09bad2acb21278fb9584e56fbb91325d893842723f6f"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-BVvARwtL.js",
-          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
+          "path": "docs-site/candidates/ip-2/assets/index-DONJI9yh.js",
+          "sha256": "76e8ce44c42c720d4352cfc4d93c0e3636f57b2c22f7b96b9ce97234a9fed435"
         },
         {
           "path": "docs-site/candidates/ip-2/index.html",
-          "sha256": "8084bab3df352979d9f48e6319b030ba4b0713f0fe195f11d2d3c74dc2766934"
+          "sha256": "d80ad31876681b4eedad1c27617f9bb6882c3abeefc366e6bd32376b2444f8f8"
         }
       ]
     },
@@ -688,16 +689,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-BFv9wdiJ.css",
-          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
+          "path": "docs-site/candidates/ip-3/assets/index-Cihck4Xd.css",
+          "sha256": "3d016d12357bdde0b2dc09bad2acb21278fb9584e56fbb91325d893842723f6f"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-BVvARwtL.js",
-          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
+          "path": "docs-site/candidates/ip-3/assets/index-DONJI9yh.js",
+          "sha256": "76e8ce44c42c720d4352cfc4d93c0e3636f57b2c22f7b96b9ce97234a9fed435"
         },
         {
           "path": "docs-site/candidates/ip-3/index.html",
-          "sha256": "4287c9d8f1ede0afe2503efeb98a8baf88d02991620f4874dd7eb0f4fa9f1c66"
+          "sha256": "fc355936fc9e72e474c71c3ac533b8a2cb514903334428613c01945e67e04199"
         }
       ]
     }

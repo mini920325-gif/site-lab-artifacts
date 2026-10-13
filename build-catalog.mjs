@@ -32,7 +32,7 @@ for(const [id,title,author,status,description,sourceCommit] of [
  ['fable','Fable · 비교 후보','Claude Code · Fable','비교 후보','화면별 옆 안내와 게시판·문답·카드 구성을 비교하는 후보. 기본판으로 최종 채택한 상태는 아닙니다.','577ce8bf8f7822771dfd674ae69a61f68aaa36d6']])
  item('candidate-'+id,title,'기능 체험판',author,'2026-10-13',status,description,'candidates/'+id+'/?view=home','candidates/'+id+'/main.tsx',{sourceCommit,limitations:'합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다.'});
 for(const [id,title,source,description] of [
- ['ip-2','2안 · 제도와 일상','IPArchiveHome.tsx','보훈·군경 전직 편집 글 → 기관별 공식 원문 → 질문. 자료를 먼저 읽는 전문 커뮤니티.'],
+ ['ip-2','2안 · 제도와 일상','IPArchiveHome.tsx','보훈·군경 전직 최근 글을 중심에 두고, 분야 메뉴와 공식 자료를 양옆에 배치한 게시판.'],
  ['ip-3','3안 · 일상동료','IPCommunityHome.tsx','군 전역·경찰 퇴직의 대화 → 경험 목록 → 필요한 자료. 군·경과 가족의 질문을 먼저 보는 게시판.']])
  item('candidate-'+id,title,'기능 체험판','Codex · Claude 기반','2026-10-13','IP 비교 시안',description+' 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.','candidates/'+id+'/?view=home','candidates/claude/'+source,{sourceCommit:null,sourceRevision:'2026-10-13',derivedFrom:'184a0f38b809d76d1e29d4f21a05eeb67c945bce',limitations:'비교용 이름과 편집 예시. 합성 글과 체험 계정의 메모리 시연이며 실제 인증·DB와 연결되지 않습니다. 설정과 메모는 각 안별로 저장합니다.'});
 for(const [design,title,desc] of [['editorial','A · 에디토리얼','따뜻한 종이색, 큰 제목과 편집형 카드'],['commons','B · 커먼스','청록색, 간결한 도입과 촘촘한 목록'],['atlas','C · 아틀라스','짙은 바탕과 라임, 주제별 타일']])

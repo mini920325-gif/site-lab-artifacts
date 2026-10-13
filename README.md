@@ -15,7 +15,7 @@ OpenAI 로그인 없이 페이지·시안·조사 자료를 읽고 비교하기 
 ## 지금 볼 페이지
 
 - [1안 · 기존 기본안](https://mini920325-gif.github.io/site-lab-artifacts/candidates/claude/?view=home): 읽기·찾기·체험 작성 흐름 위에 디자인 조합 선택을 연결한 임시 기준. Claude 원본 `38a207dc074782be9e525f618facda148420a404`에 Codex가 홈 외관·디자인 선택·비교와 메모·이름 저장·전달 기능을 추가했습니다.
-- [2안 · 제도와 일상](https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home): 보훈·군경 전직의 편집 글·기관별 공식 자료·질문 순서의 화면.
+- [2안 · 제도와 일상](https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home): 보훈·군경 전직의 최근 글을 먼저 읽는 게시판. 분야 메뉴와 공식 자료를 함께 제공합니다.
 - [3안 · 일상동료](https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-3/?view=home): 군 전역·경찰 퇴직의 대화·경험 목록·필요한 자료 순서의 게시판.
 - [세 안의 차이와 이번 종료 조건](docs/ip-directions.md): 2·3안의 이름은 비교용 제안이며, 사용자가 확정한 보훈·군경 전직 주제를 자체 편집 글 3편과 합성 질문으로 구체화했습니다. 세 안의 설정·메모는 별도로 저장합니다.
 - [Fable 비교 후보](https://mini920325-gif.github.io/site-lab-artifacts/candidates/fable/?view=home): 화면별 안내와 게시판·문답·카드 구성 비교. 원본 `577ce8bf8f7822771dfd674ae69a61f68aaa36d6`.

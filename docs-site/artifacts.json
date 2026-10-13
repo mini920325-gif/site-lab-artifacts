@@ -45,7 +45,7 @@
       "author": "Codex · Claude 기반",
       "updated": "2026-10-13",
       "status": "IP 비교 시안",
-      "description": "보훈·군경 전직 편집 글 → 기관별 공식 원문 → 질문. 자료를 먼저 읽는 전문 커뮤니티. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
+      "description": "보훈·군경 전직 최근 글을 중심에 두고, 분야 메뉴와 공식 자료를 양옆에 배치한 게시판. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
       "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home",
       "relativeURL": "candidates/ip-2/?view=home",
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPArchiveHome.tsx",
@@ -301,7 +301,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/ip-directions.md",
       "sourcePath": "docs/ip-directions.md",
       "sourceCommit": null,
-      "sha256": "a236aed8c9b0e690b1800be26f73343e3ba8fe82bcdfdb309b4a5554bbe03352",
+      "sha256": "45c4c8749467145d385ed9b0b6ac5f0dd9dcd2fe9c263c6541535ca3ec228427",
       "sourceRevision": "2026-10-13"
     },
     {
@@ -347,7 +347,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md",
       "sourcePath": "docs/community-master-plan.md",
       "sourceCommit": null,
-      "sha256": "7e05937b105aa7b73caf24f749573d4af4b87cedcc4caba9644dc214d886cf95",
+      "sha256": "5546efcc889cd1911229e641472fd43589eb47bd4e37dc68b679c527d6481d7e",
       "sourceRevision": "2026-10-13"
     },
     {
