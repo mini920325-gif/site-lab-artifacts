@@ -5,12 +5,12 @@
   "repository": "https://github.com/mini920325-gif/site-lab-artifacts",
   "previewOnly": true,
   "sourceCommit": "2d8d15bc838d7c6b78e1bd213fa6ea0066389cc3",
-  "stage": "메모·이름 저장·전달 공개 반영·검증 완료",
-  "stageURL": "https://mini920325-gif.github.io/site-lab-artifacts/reports/pre-settings-handoff.html",
+  "stage": "1안 보존 · 자체 콘텐츠 2·3안 비교",
+  "stageURL": "https://mini920325-gif.github.io/site-lab-artifacts/reports/ip-directions.html",
   "artifacts": [
     {
       "id": "candidate-claude",
-      "title": "Claude 기반 · 디자인 조합 체험판",
+      "title": "1안 · 기존 디자인 조합 체험판",
       "type": "기능 체험판",
       "author": "Claude Code · Codex",
       "updated": "2026-10-13",
@@ -37,6 +37,40 @@
       "sourcePath": "candidates/fable/main.tsx",
       "sourceCommit": "577ce8bf8f7822771dfd674ae69a61f68aaa36d6",
       "limitations": "합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다."
+    },
+    {
+      "id": "candidate-ip-2",
+      "title": "2안 · 제도와 일상",
+      "type": "기능 체험판",
+      "author": "Codex · Claude 기반",
+      "updated": "2026-10-13",
+      "status": "IP 비교 시안",
+      "description": "직접 정리한 글 → 공식 원문 → 질문. 행정·일·생활 주제를 읽는 편집형 화면. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home",
+      "relativeURL": "candidates/ip-2/?view=home",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPArchiveHome.tsx",
+      "sourcePath": "candidates/claude/IPArchiveHome.tsx",
+      "sourceCommit": null,
+      "sourceRevision": "2026-10-13",
+      "derivedFrom": "184a0f38b809d76d1e29d4f21a05eeb67c945bce",
+      "limitations": "비교용 이름과 편집 예시. 합성 글과 체험 계정의 메모리 시연이며 실제 인증·DB와 연결되지 않습니다. 설정과 메모는 각 안별로 저장합니다."
+    },
+    {
+      "id": "candidate-ip-3",
+      "title": "3안 · 일상동료",
+      "type": "기능 체험판",
+      "author": "Codex · Claude 기반",
+      "updated": "2026-10-13",
+      "status": "IP 비교 시안",
+      "description": "분야별 대화 → 경험 목록 → 필요한 자료. 질문과 경험을 먼저 보는 게시판. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-3/?view=home",
+      "relativeURL": "candidates/ip-3/?view=home",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPCommunityHome.tsx",
+      "sourcePath": "candidates/claude/IPCommunityHome.tsx",
+      "sourceCommit": null,
+      "sourceRevision": "2026-10-13",
+      "derivedFrom": "184a0f38b809d76d1e29d4f21a05eeb67c945bce",
+      "limitations": "비교용 이름과 편집 예시. 합성 글과 체험 계정의 메모리 시연이며 실제 인증·DB와 연결되지 않습니다. 설정과 메모는 각 안별로 저장합니다."
     },
     {
       "id": "editorial",
@@ -255,6 +289,22 @@
       "limitations": "합성 자료·메모리 시연 또는 정적 스케치. 전체 기능·실사용·운영 준비 완료를 뜻하지 않음."
     },
     {
+      "id": "ip-directions",
+      "title": "1·2·3안 구성과 종료 조건",
+      "type": "조사·계획",
+      "author": "Codex · root",
+      "updated": "2026-10-13",
+      "status": "IP 비교 시안",
+      "description": "기존 1안 보존·직접 만든 콘텐츠를 담은 2·3안·안별 메모와 저장의 범위",
+      "url": "https://mini920325-gif.github.io/site-lab-artifacts/reports/ip-directions.html",
+      "relativeURL": "reports/ip-directions.html",
+      "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/ip-directions.md",
+      "sourcePath": "docs/ip-directions.md",
+      "sourceCommit": null,
+      "sha256": "5a2e2b2edc137652336ec2678233349488ae30917b26a329f42ee39f8933a881",
+      "sourceRevision": "2026-10-13"
+    },
+    {
       "id": "comparison",
       "title": "상용 커뮤니티·이미지 방식 비교",
       "type": "조사·계획",
@@ -297,7 +347,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md",
       "sourcePath": "docs/community-master-plan.md",
       "sourceCommit": null,
-      "sha256": "fa356c51b73cd5f4ca7aaef9e268cde1d283499d4c3373848a31c8b55dcab92e",
+      "sha256": "a578e1c1b835c2504b3892bdf1d8b417989d7d5aeb788d4a0970ea105e70c623",
       "sourceRevision": "2026-10-13"
     },
     {

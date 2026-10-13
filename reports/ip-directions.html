@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1·2·3안 구성과 종료 조건</title><link rel="stylesheet" href="../catalog.css"><body><main class="report"><a href="../">← 산출물 목록</a><h1>1·2·3안 구성과 종료 조건</h1><p><a href="https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/ip-directions.md">GitHub 문서로 읽기</a> · <a href="ip-directions.md">Markdown 원문</a></p><p>2026-10-13 · 구현·로컬 검증 완료. I1–I6 통과, I7 공개 반영 확인 대기.</p>
+<h2>세 안의 차이</h2>
+<ul><li><a href="https://mini920325-gif.github.io/site-lab-artifacts/candidates/claude/?view=home">1안 · 기존 기본안</a>: 지금까지 만든 홈과 기능을 기준으로 보존한다. 기존 URL과 브라우저 디자인·메모 저장 키를 유지한다.</li><li><a href="https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home">2안 · 제도와 일상</a>: 직접 정리한 글 → 공식 자료 → 질문 순서로 읽는 편집형 화면. 남색 선, 명조 제목, 넓은 본문 간격을 사용한다.</li><li><a href="https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-3/?view=home">3안 · 일상동료</a>: 분야별 대화 → 경험 목록 → 필요한 자료 순서의 게시판. 벽돌색, 간결한 도입, 촘촘한 목록을 사용한다.</li></ul>
+<p>‘제도와 일상’과 ‘일상동료’는 비교용 제안 이름이다. 최종 상호·상표·도메인은 결정하지 않았다. 상단에서 안을 이동하거나 세 기본 홈을 같은 폭으로 비교할 수 있다.</p>
+<h2>이번에 담은 정체성</h2>
+<p>공개 기획에 있는 행정사무소 목적과 전직·취업·창업·교육·생활·보훈의 연결을 출발점으로 삼았다. 그 분야를 읽고 질문하는 독자에게 쓸모 있는 편집 방식과 글을 직접 만들었다. 비공개 사건·상담 기록이나 실제 회원 글은 사용하지 않았다.</p>
+<ul><li>‘한 장으로 읽기’: 긴 공고문을 원문·시점·확인할 질문으로 나눠 읽는 방법.</li><li>‘경험의 언어’: 해온 일을 다음 일에 설명할 문장으로 정리하는 방법.</li><li>‘질문의 기술’: 막연한 질문을 한 장의 메모로 만드는 방법.</li></ul>
+<p>세 편 모두 편집 콘텐츠 예시다. 실제 상담 실적이나 회원 경험으로 표시하지 않는다. 공식 기관의 원문과 커뮤니티의 경험 글을 화면에서 구분하며, 기관 제휴나 전문가 자격·성과를 새로 주장하지 않는다. 특정 급여 자격이나 법률 결론을 제공하는 글은 이번 범위에 없다.</p>
+<h2>기존 기능과 저장</h2>
+<p>32개 출발 조합과 화면·색상·목록·글꼴·여백·모서리·기호의 독립 7축을 세 안 모두에서 유지한다. 2·3안은 색만 바꾼 프리셋이 아니라 홈의 구성과 읽기 순서가 다른 안이다. 세 안 비교는 기본 디자인으로, 각 안 안의 디자인 비교는 현재 조합과 변경 조합으로 동작한다.</p>
+<p>위치 메모·다른 이름 저장·저장본 관리·JSON 복원·Markdown 수정 요청·시각 참고 HTML도 유지한다. 각 안의 설정과 메모는 별도 브라우저 키에 보관한다. 다른 안의 JSON을 잘못 가져오면 해당 안으로 이동하도록 안내하며, 같은 안에서 가져올 때는 기존 저장본을 덮지 않는 사본으로 연다. JSON·Markdown·HTML에는 안 번호·이름·경로가 포함된다. 에이전트에게 자동 전송하지 않는다.</p>
+<p>현재 안을 다시 눌러도 작성 화면을 새로 불러오지 않는다. 다른 안으로 이동할 때 미등록 글·댓글이 있으면 확인한다. 작성한 체험 글·댓글은 기존처럼 메모리 시연이며 실제 인증·DB와 연결되지 않는다.</p>
+<p>기존 A/B/C 정적 편집기와 Fable 후보도 보존한다. A/B/C 편집기의 메모는 별도 형식이며 자동 이전하지 않는다.</p>
+<h2>소스와 출처</h2>
+<ul><li>변경 전 공개 기준: <a href="https://github.com/mini920325-gif/site-lab-artifacts/tree/184a0f38b809d76d1e29d4f21a05eeb67c945bce">184a0f3</a>.</li><li>공통 기능: <a href="https://github.com/mini920325-gif/site-lab-artifacts/tree/main/candidates/claude">candidates/claude</a>. Claude 기반 기능 위에 Codex가 안 분기·새 홈·직접 작성한 콘텐츠를 추가했다.</li><li>2안 홈: <a href="https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPArchiveHome.tsx">IPArchiveHome.tsx</a>.</li><li>3안 홈: <a href="https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPCommunityHome.tsx">IPCommunityHome.tsx</a>.</li><li>자체 편집 예시: <a href="https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/ip-content.ts">ip-content.ts</a>.</li></ul>
+<p>한 소스를 세 경로로 빌드한다. 파일·배포 해시는 공개 provenance.json에서 확인한다. 새 외부 코드·로고·이미지를 추가하지 않았으며 기존 라이선스 고지를 각 경로에 유지한다.</p>
+<h2>이번 작업의 종료 조건</h2>
+<ul><li>I1: 1안의 홈·기존 URL·저장 키·샘플 12개를 보존한다.</li><li>I2: 2·3안의 홈 구조와 자체 콘텐츠를 실제 페이지에서 비교할 수 있다.</li><li>I3: 각 안의 글·자료·게시판 링크가 해당 안 안에서 동작한다.</li><li>I4: 안별 메모·Save As·새로고침·JSON/HTML 전달이 동작하고 저장본을 서로 덮지 않는다.</li><li>I5: 390/768/1280px와 글자 200%에서 기본 홈이 가로로 넘치지 않으며 주요 버튼을 사용할 수 있다.</li><li>I6: 독립 기능·제품 검토에서 데이터 손실 등 공개를 막는 결함을 해소한다.</li><li>I7: GitHub의 소스와 Pages의 세 안이 로그인 없이 열리고 배포 파일이 검증된 파일과 일치한다.</li></ul>
+<p>이번 종료 뒤 자동으로 다른 시안을 더 만들거나 운영 DB·결제·인증 개발을 시작하지 않는다. 최종 이름·취향 선택과 상세 조정은 이 화면과 메모를 바탕으로 이어간다. 가능한 모든 디자인 조합을 전수 검증한 것으로 취급하지 않는다.</p>
+<h2>확인 결과</h2>
+<ul><li>후보 타입 검사·도메인·디자인·메모·안 분기 자동 검사 32개, 카탈로그·기존 편집기 자동 검사 21개, 총 53개 통과.</li><li>세 안의 기본 홈 × 390/768/1280px × 글자 100/200%, 18개 화면에서 가로 넘침·제목 구조·브라우저 오류 확인.</li><li>세 안 모두 체험 로그인 → 글 작성 → 댓글 → 저장 → 내 활동 → 다른 체험 계정 분리 → 새로고침 초기화 통과.</li><li>2·3안의 편집글 상세·메모·원본을 보존하는 Save As·새로고침·안별 색상 저장·JSON/Markdown/오프라인 HTML 확인. 다른 안의 JSON은 안내 후 거부하며 기존 상태를 보존.</li><li>세 안 나란히 비교의 별도 저장 없음과 비교 안의 중복 도구 없음, 390/1280px 글자 200%·키보드 접기 확인. 야간색·여유 간격·넓은 미리보기·모서리 조합을 추가 확인.</li><li>독립 기능 검토와 읽기 전용 제품·반영 검토 완료. 현재 안 재클릭과 다른 안 이동에서 미등록 글·댓글 손실 문제를 수정하고 재검증.</li></ul>
+<p>공개 화면·소스와 최종 파일 해시의 일치 여부는 배포 후 확인한다. 모든 조합이나 실제 회원 운영을 검증한 결과는 아니다.</p></main></body></html>
