@@ -45,7 +45,7 @@
       "author": "Codex · Claude 기반",
       "updated": "2026-10-13",
       "status": "IP 비교 시안",
-      "description": "직접 정리한 글 → 공식 원문 → 질문. 행정·일·생활 주제를 읽는 편집형 화면. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
+      "description": "보훈·군경 전직 편집 글 → 기관별 공식 원문 → 질문. 자료를 먼저 읽는 전문 커뮤니티. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
       "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home",
       "relativeURL": "candidates/ip-2/?view=home",
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPArchiveHome.tsx",
@@ -62,7 +62,7 @@
       "author": "Codex · Claude 기반",
       "updated": "2026-10-13",
       "status": "IP 비교 시안",
-      "description": "분야별 대화 → 경험 목록 → 필요한 자료. 질문과 경험을 먼저 보는 게시판. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
+      "description": "군 전역·경찰 퇴직의 대화 → 경험 목록 → 필요한 자료. 군·경과 가족의 질문을 먼저 보는 게시판. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.",
       "url": "https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-3/?view=home",
       "relativeURL": "candidates/ip-3/?view=home",
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPCommunityHome.tsx",
@@ -301,7 +301,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/ip-directions.md",
       "sourcePath": "docs/ip-directions.md",
       "sourceCommit": null,
-      "sha256": "6243aa055b74d7b64795255b23e230d874b3d850157081074c17fab9975a078f",
+      "sha256": "219642124bd78f2494fba83e72fee0f41fa5429dc8b492231305427edbbd3565",
       "sourceRevision": "2026-10-13"
     },
     {
@@ -347,7 +347,7 @@
       "sourceURL": "https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/community-master-plan.md",
       "sourcePath": "docs/community-master-plan.md",
       "sourceCommit": null,
-      "sha256": "60f5d5e7a32be1dcd6e70ba308948d691d90e717bcc8f76190a7f66111b97f78",
+      "sha256": "3ab1d91072f40f4615ca1939b14e5704fb555b2e0571cd952e91288565177d24",
       "sourceRevision": "2026-10-13"
     },
     {

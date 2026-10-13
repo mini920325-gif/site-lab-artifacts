@@ -21,7 +21,7 @@
 .draft[data-edition='ip-3'] .ip3-list-note { display:flex; flex-wrap:wrap; gap:6px 12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:.6875rem; color:var(--muted); }
 .draft[data-edition='ip-3'] .ip3-list-note > span { font-weight:650; color:var(--accent); }
 .draft[data-edition='ip-3'] .ip3-list-note p { margin:0; font-size:inherit; line-height:1.5; }
-.draft[data-edition='ip-3'] .ip3-post { display:grid; grid-template-columns:2.75rem minmax(0,1fr); gap:9px 15px; align-items:baseline; padding:var(--row-pad) 0; border-bottom:1px solid var(--line); }
+.draft[data-edition='ip-3'] .ip3-post { display:grid; grid-template-columns:4.5rem minmax(0,1fr); gap:9px 15px; align-items:baseline; padding:var(--row-pad) 0; border-bottom:1px solid var(--line); }
 .draft[data-edition='ip-3'] .ip3-board { font-size:.75rem; color:var(--muted); }
 .draft[data-edition='ip-3'] .ip3-post-body { min-width:0; }
 .draft[data-edition='ip-3'] .ip3-post-body > a { display:block; font-size:.9375rem; font-weight:500; line-height:1.65; letter-spacing:-.018em; overflow-wrap:anywhere; }

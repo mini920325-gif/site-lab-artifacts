@@ -50,7 +50,7 @@
 .draft[data-edition='ip-2'] .ip2-discussion-layout { display:grid; grid-template-columns:minmax(0,1fr) 15rem; gap:3rem; }
 .draft[data-edition='ip-2'] .ip2-posts { min-width:0; border-top:1px solid var(--ink,#172c48); }
 .draft[data-edition='ip-2'] .ip2-sample-notice { font-size:.75rem; color:var(--muted,#657182); line-height:1.7; padding:.8rem 0; border-bottom:1px solid var(--line,#d9dfe5); }
-.draft[data-edition='ip-2'] .ip2-post { display:grid; grid-template-columns:2.5rem minmax(0,1fr); align-items:baseline; gap:.3rem 1rem; padding:var(--row-pad,16px) 0; border-bottom:1px solid var(--line,#d9dfe5); }
+.draft[data-edition='ip-2'] .ip2-post { display:grid; grid-template-columns:4.5rem minmax(0,1fr); align-items:baseline; gap:.3rem 1rem; padding:var(--row-pad,16px) 0; border-bottom:1px solid var(--line,#d9dfe5); }
 .draft[data-edition='ip-2'] .ip2-post-topic { color:var(--muted,#657182); font-size:.75rem; }
 .draft[data-edition='ip-2'] .ip2-post > a { display:block; font-size:.9375rem; line-height:1.65; text-decoration:none; }
 .draft[data-edition='ip-2'] .ip2-post > a:hover { text-decoration:underline; text-underline-offset:.2em; }

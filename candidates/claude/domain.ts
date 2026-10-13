@@ -1,8 +1,8 @@
 import { activeEdition } from './edition.ts';
-import { ipFeatures } from './ip-content.ts';
+import { ipFeatures, ipDiscussionPosts } from './ip-content.ts';
 import fixture from './fixture.json' with { type: 'json' };
 export const situations = {
-  in_service: '복무·전역',
+  in_service: activeEdition.id === 'claude' ? '복무·전역' : '복무·재직·전역·퇴직',
   preparing: '보훈 신청',
   review: '심사·결과',
   support: '등록 후 지원',
@@ -15,13 +15,16 @@ export const situations = {
 export type Situation = keyof typeof situations;
 export type Followup = { body: string; nextAction: string; at: string };
 export type Board = 'benefits' | 'transition' | 'employment' | 'education' | 'life' | 'startup';
-export const boards: Record<Board, string> = {
+export const boards: Record<Board, string> = activeEdition.id === 'claude' ? {
   transition: '전직',
   employment: '취업',
   startup: '창업',
   education: '교육',
   life: '생활',
   benefits: '보훈',
+} : {
+  benefits: '보훈·지원', transition: '전역·퇴직', employment: '다음 일자리',
+  education: '교육·자격', startup: '창업 준비', life: '가족·생활',
 };
 export type SourceCitation = {
   lawName: string;
@@ -57,10 +60,10 @@ export type Post = {
   sample?: boolean;
 };
 export const initialPosts = (): Post[] => [
-  ...fixture.posts.map(p => ({
+  ...(activeEdition.id === 'claude' ? fixture.posts.map(p => ({
     id: p.id, owner: 'sample', board: p.board_id as Board, situation: p.situation as Situation,
     sample: true, title: p.title, body: p.body, at: p.published_at, replies: [],
-  })),
+  })) : ipDiscussionPosts.map(p => ({ ...p, replies: [] }))),
   ...(activeEdition.id === 'claude' ? [] : ipFeatures.map(p => ({
     id: p.id, owner: 'sample', board: p.board, sample: true,
     title: p.title, body: p.body, at: '2026-10-13T00:00:00Z', replies: [],

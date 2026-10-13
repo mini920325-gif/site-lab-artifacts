@@ -34,9 +34,9 @@ export function IPArchiveHome({ loc, posts, go, compose }: ArchiveHomeProps) {
     <div className="ip2-home">
       <section className="ip2-opening" data-review-target="home-intro" data-review-label="제도와 일상 · 도입부" aria-labelledby="ip2-title">
         <div className="ip2-lead">
-          <p className="ip2-overline">제도와 일상 <span>읽고, 묻고, 나누는 공간</span></p>
-          <h1 id="ip2-title" data-role="page-title">제도는 확인하고,<br />경험은 나눕니다.</h1>
-          <p className="ip2-deck">보훈부터 일과 생활까지.<br />필요한 안내와 사람들의 질문을 함께 읽습니다.</p>
+          <p className="ip2-overline">제도와 일상 <span>보훈·군경 전직을 위한 읽기</span></p>
+          <h1 id="ip2-title" data-role="page-title">보훈은 확인하고,<br />다음 일을 준비합니다.</h1>
+          <p className="ip2-deck">군 전역과 경찰 퇴직, 그 이후를 위한 커뮤니티.<br />보훈 안내·경력 전환·교육 자료를 읽고 질문을 나눕니다.</p>
         </div>
         <nav className="ip2-index" aria-label="주제별 이야기">
           <p>분야별로 찾아보기</p>
@@ -50,7 +50,7 @@ export function IPArchiveHome({ loc, posts, go, compose }: ArchiveHomeProps) {
 
       <section className="ip2-reading" aria-labelledby="ip2-reading-title">
         <div className="ip2-section-title">
-          <div><p className="ip2-overline">함께 읽을거리</p><h2 id="ip2-reading-title">질문하기 전에, 한 편.</h2></div>
+          <div><p className="ip2-overline">함께 읽을거리</p><h2 id="ip2-reading-title">보훈과 전직, 차근차근.</h2></div>
           <p className="ip2-caption">직접 정리한 편집 예시 3편<br />실제 상담 사례나 회원 경험담이 아닙니다.</p>
         </div>
         <div className="ip2-features">
@@ -67,7 +67,7 @@ export function IPArchiveHome({ loc, posts, go, compose }: ArchiveHomeProps) {
 
       <section className="ip2-resources" data-review-target="home-resources" data-review-label="제도와 일상 · 공식 자료" aria-labelledby="ip2-resources-title">
         <div className="ip2-section-title">
-          <div><p className="ip2-overline">확인할 때는 원문으로</p><h2 id="ip2-resources-title">공식 안내</h2></div>
+          <div><p className="ip2-overline">확인할 때는 원문으로</p><h2 id="ip2-resources-title">보훈·전직 공식 안내</h2></div>
           <button className="ip2-inline-button" onClick={() => go({ view: 'guides', post: '' })}>자료실 보기 <span className="ip2-arrow" aria-hidden="true">→</span></button>
         </div>
         <div className="ip2-source-grid">
@@ -79,12 +79,12 @@ export function IPArchiveHome({ loc, posts, go, compose }: ArchiveHomeProps) {
             </a>
           ))}
         </div>
-        <p className="ip2-resource-note">신청 조건과 일정은 기관 원문에서 확인하세요. 아래 커뮤니티의 경험과 구분해 읽습니다.</p>
+        <p className="ip2-resource-note">기관마다 안내 대상이 다릅니다. 군 전역자 지원을 경찰 퇴직자에게 그대로 적용하지 않으며, 조건과 일정은 해당 원문에서 확인합니다.</p>
       </section>
 
       <section className="ip2-conversation" data-review-target="home-feed" data-review-label="제도와 일상 · 질문과 경험" aria-labelledby="ip2-conversation-title">
         <div className="ip2-section-title">
-          <div><p className="ip2-overline">사람들의 이야기</p><h2 id="ip2-conversation-title">묻고 나누기</h2></div>
+          <div><p className="ip2-overline">군·경과 가족의 질문</p><h2 id="ip2-conversation-title">전역·퇴직 이후를 묻다</h2></div>
           <button className="ip2-compose" onClick={() => compose()}>글쓰기 <span className="ip2-arrow" aria-hidden="true">↗</span></button>
         </div>
         <div className="ip2-discussion-layout">
@@ -103,7 +103,7 @@ export function IPArchiveHome({ loc, posts, go, compose }: ArchiveHomeProps) {
           <aside className="ip2-margin-note" aria-label="이 공간의 이용 방식">
             <span className="ip2-overline">경험을 읽는 방법</span>
             <h3>같은 질문에도{' '}<br />상황은 다르니까.</h3>
-            <p>누군가의 경험은 좋은 참고가 됩니다. 내 상황에 적용되는 조건은 공식 안내에서 다시 확인해요.</p>
+            <p>군 전역과 경찰 퇴직의 경험을 함께 읽되, 지원 제도와 신청 경로는 구분합니다. 보훈 대상 여부를 경력만으로 판단하지 않습니다.</p>
             <button className="ip2-inline-button" onClick={() => go({ view: 'office', post: '' })}>이 공간에 대해 <span className="ip2-arrow" aria-hidden="true">→</span></button>
           </aside>
         </div>

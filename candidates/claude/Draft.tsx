@@ -53,7 +53,7 @@ import { readReviewBundle } from './review';
 import { exportReviewHTML } from './review-export';
 import { readDesign, saveDesign, designTokens, type Design } from './design';
 import { JourneyHome, GuideDirectory } from './JourneyHome';
-import { allSampleNotice } from './journey-content';
+import { allSampleNotice, sourceLinks } from './journey-content';
 import './draft.css';
 import './journey.css';
 type Modal = {
@@ -745,7 +745,7 @@ export default function Draft({
               compose={startQuestion}
             />
           ) : loc.view === 'guides' ? (
-            <GuideDirectory />
+            <GuideDirectory description={activeEdition.id === 'claude' ? undefined : '보훈·군경 전직의 공식 안내를 기관별로 확인합니다.'} scopeNote={activeEdition.id === 'claude' ? undefined : '군 전역자와 경찰 퇴직자의 지원 경로는 다를 수 있습니다. 기관별 대상을 확인하고, 경찰 관련 안내는 경찰청 공식 문의 경로를 이용하세요.'} />
           ) : loc.view === 'studio' ? (
             <StudioView
               settings={{ name, variant: loc.variant, announcement, accent }}
@@ -1132,7 +1132,7 @@ export default function Draft({
                         ? '내가 쓴 글'
                         : viewTitle}
                   </h1>
-                  <p>전직·취업·창업·교육·생활·보훈</p>
+                  <p>{activeEdition.id === 'claude' ? '전직·취업·창업·교육·생활·보훈' : siteConfig.description}</p>
                 </div>
                 <button className="write-action" onClick={compose}>
                   <PenLine size={18} />
@@ -1286,6 +1286,7 @@ export default function Draft({
           </div>
           <section className="rail-section office-guide">
             <h2>공식 안내로 확인하기</h2>
+            {activeEdition.id === 'claude' ? <>
             <a href="https://www.work24.go.kr/cm/main.do" target="_blank" rel="noopener noreferrer">고용24 취업·훈련 안내 <ArrowUpRight size={15} /></a>
             <a
               href="https://www.mpva.go.kr/mpva/contents.do?key=106"
@@ -1301,6 +1302,7 @@ export default function Draft({
             >
               온통청년 정책 찾기 <ArrowUpRight size={15} />
             </a>
+            </> : sourceLinks.map(source => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer">{source.agency} · {source.label} <ArrowUpRight size={15} /></a>)}
             <button onClick={() => go({ view: 'office' })}>
               소개와 운영 범위 <ChevronRight size={15} />
             </button>
@@ -1670,13 +1672,11 @@ function Info({
         {view === 'office' ? (
           <>
             <p>
-              전직·취업·창업·교육·생활·보훈을 묻고 나누는 커뮤니티를 준비합니다. 20~50대, 특히 2030이 읽고 필요할 때 참여하는 공간을 실험합니다. 이름과 첫 출시 범위는 아직 정하지 않았습니다.
+              {activeEdition.id === 'claude' ? '전직·취업·창업·교육·생활·보훈을 묻고 나누는 커뮤니티를 준비합니다. 20~50대, 특히 2030이 읽고 필요할 때 참여하는 공간을 실험합니다. 이름과 첫 출시 범위는 아직 정하지 않았습니다.' : '보훈·군경 전직에 집중한 전문 커뮤니티를 준비합니다. 군 복무 중이거나 전역한 분, 경찰로 재직 중이거나 퇴직한 분, 함께 준비하는 가족이 제도와 다음 진로를 살피는 공간입니다. 최종 이름은 미정입니다.'}
             </p>
-            <h2>질문과 경험이 쌓이는 곳</h2>
+            <h2>{activeEdition.id === 'claude' ? '질문과 경험이 쌓이는 곳' : '경험은 함께, 제도는 구분해서'}</h2>
             <p>
-              다음 일을 준비하며 궁금했던 점이나 일상에 관해 묻고 답할
-              수 있는 공간입니다. 개인의 경험과 사무소의 답변을 구분하고, 제도
-              안내는 공식 원문에서 확인할 수 있도록 합니다.
+              {activeEdition.id === 'claude' ? '다음 일을 준비하며 궁금했던 점이나 일상에 관해 묻고 답할 수 있는 공간입니다. 개인의 경험과 사무소의 답변을 구분하고, 제도 안내는 공식 원문에서 확인할 수 있도록 합니다.' : '보훈 안내 읽기, 군·경 경력의 설명, 전역·퇴직 준비를 자체 편집 콘텐츠로 정리합니다. 군 전역자 지원과 경찰 퇴직자 지원을 같은 제도로 취급하지 않으며, 자격 판단은 공식 안내에서 확인합니다.'}
             </p>
             <h2>운영 연결 전</h2>
             <p>

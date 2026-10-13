@@ -83,15 +83,16 @@ export function JourneyHome({ loc, posts, go, compose, showSamples = true }: {
   );
 }
 
-export function GuideDirectory() {
+export function GuideDirectory({ description = '취업·교육·생활·보훈의 공식 안내를 모았습니다.', scopeNote }: { description?: string; scopeNote?: string } = {}) {
   return (
     <section className="guide-page" data-review-target="guide-directory" data-review-label="자료실">
       <div className="section-heading">
         <div>
           <h1 data-role="page-title">자료실</h1>
-          <p>취업·교육·생활·보훈의 공식 안내를 모았습니다.</p>
+          <p>{description}</p>
         </div>
       </div>
+      {scopeNote && <p className="guide-checked">{scopeNote}</p>}
       <div className="guide-directory">
         {sourceLinks.map((s) => (
           <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">

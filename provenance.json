@@ -211,13 +211,13 @@
           "sourcePath": "community/Draft.tsx",
           "path": "candidates/claude/Draft.tsx",
           "originalSha256": "3870de87f05edf2b6e11cd2df5b2f992ef40857b8b4be1fa5f7df09e22a7f908",
-          "publicSha256": "39b2d3893f6feee93154cb0be9b20af2cb239756f08e1a475b117bd047801416"
+          "publicSha256": "968de985c344888a7ebd741e69e1a4eb6944763f23b520af9bbda4a7827ba48d"
         },
         {
           "sourcePath": "community/JourneyHome.tsx",
           "path": "candidates/claude/JourneyHome.tsx",
           "originalSha256": "63dce8618bc5bb97686454e10e602460e623aa4d60d11e0091998ad582cc9b01",
-          "publicSha256": "98d78eec8d8d8914579eddb36aa58762fa78085113e748e7cda9c79a7043fd61"
+          "publicSha256": "fc9f489bdcaf0cda4ff41a2f666862d390898e81422daa647be370bc1c526b50"
         },
         {
           "sourcePath": "community/StudioView.tsx",
@@ -253,7 +253,7 @@
           "sourcePath": "community/domain.ts",
           "path": "candidates/claude/domain.ts",
           "originalSha256": "32e68c53f6942a3f69517fdc77c7156bb174118e3d35f58619a30843c042956b",
-          "publicSha256": "3493bcabf2075f68a5d5ae1c53b499743852bbff0f3b0facab8503f80261582f"
+          "publicSha256": "e7047e9a07c0fca3bc46fe99353961d2d10ab06f76edee6526c36fab99f565ea"
         },
         {
           "sourcePath": "community/draft.css",
@@ -277,7 +277,7 @@
           "sourcePath": "community/journey-content.ts",
           "path": "candidates/claude/journey-content.ts",
           "originalSha256": "10287b65172b1395c103191ef8a31ac298dffe2d5b6478e33352aa3881a72b3a",
-          "publicSha256": "10287b65172b1395c103191ef8a31ac298dffe2d5b6478e33352aa3881a72b3a"
+          "publicSha256": "80e1f4474947e227a35eb239d308830f50cbae96496ac1a740b730953b36771e"
         },
         {
           "sourcePath": "community/journey.css",
@@ -319,7 +319,7 @@
           "sourcePath": "community/site-config.ts",
           "path": "candidates/claude/site-config.ts",
           "originalSha256": "c8ee0ad322bfd5bab7b98f31be67321cf7c27f6dacc01a552e26c2d5dfc0b3ef",
-          "publicSha256": "a4ab6603770f5b98f8861dd5308402b29b646ddad4ba8d46d7e7d37d7d64a892"
+          "publicSha256": "e8dd543198f03287634a136ce88eb6362066e184f837b0c0f900abb2e19af271"
         },
         {
           "sourcePath": "community/tsconfig.json",
@@ -341,7 +341,8 @@
         "Original synthetic content and memory-only authentication/storage retained",
         "Codex visual integration: 32 starting combinations, seven independent design axes, actual page comparison, cancel/apply with browser persistence; original synthetic post data and memory-only service logic retained",
         "Codex review workspace: anchored local notes, named snapshots and Save As, multi-tab conflict protection, strict JSON import, Markdown requests and isolated synthetic offline HTML export with licenses; existing static editor preserved",
-        "Retain edition 1 home, URL and storage keys; add independently stored editorial and community IP concepts at ip-2 and ip-3 using the shared functional source, original synthetic editorial content and explicit edition export identity."
+        "Retain edition 1 home, URL and storage keys; add independently stored editorial and community IP concepts at ip-2 and ip-3 using the shared functional source, original synthetic editorial content and explicit edition export identity.",
+        "User-confirmed veterans and military/police career-transition focus for editions 2 and 3: original specialized examples, separate official resource destinations, preserved edition 1 fixtures and storage identifiers."
       ],
       "buildFiles": [
         {
@@ -349,16 +350,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-Bn-VUW4Z.css",
-          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+          "path": "docs-site/candidates/claude/assets/index-BFv9wdiJ.css",
+          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-DudqhRSN.js",
-          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
+          "path": "docs-site/candidates/claude/assets/index-BVvARwtL.js",
+          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
         },
         {
           "path": "docs-site/candidates/claude/index.html",
-          "sha256": "59c9e01ebb30cae85fd064373b5eac1048f30cabecc85ba749c89c0911ff74e4"
+          "sha256": "fc62779b298c1154714f5a621c0d345d55031cc54e94ce4aa1004d34ec1eb1b7"
         }
       ],
       "createdFiles": [
@@ -400,7 +401,7 @@
         {
           "path": "candidates/claude/edition.ts",
           "author": "Codex",
-          "sha256": "2e1f7ae578d563cf8800a824e333b389570e72c3a32f3faa1aaf80068b66c19f"
+          "sha256": "5c59311446cc84c17538d0a61d321892584c337bd9b2eecdad5162639de8625c"
         },
         {
           "path": "candidates/claude/edition.test.ts",
@@ -410,7 +411,7 @@
         {
           "path": "candidates/claude/ip-content.ts",
           "author": "Codex",
-          "sha256": "1dc5afe6b249fd4eb445696847d5a6616ddd3c187e34450c50f7da8b6eaf6e05"
+          "sha256": "fdf1db2187f23efcb37118ea60bbc4db7e5ace8d6f47e15d9450f2128f11fb9d"
         },
         {
           "path": "candidates/claude/EditionSwitcher.tsx",
@@ -425,22 +426,22 @@
         {
           "path": "candidates/claude/IPArchiveHome.tsx",
           "author": "Codex",
-          "sha256": "3acb33b245320373ec9a43bf10061539f66f3501360d2710cbb2c8c99a5ef792"
+          "sha256": "1afee2095cc3295b90bfdadeb5bcaccc619d0a04f70fa1b4a95b2543f1019fe6"
         },
         {
           "path": "candidates/claude/ip-archive.css",
           "author": "Codex",
-          "sha256": "1de138b403ed993ab9b0acd99c4f79e7f7dd32368f3604c3e8bd968751a697e6"
+          "sha256": "34b260e9ab4eeaf1a9455047822dce10378b49d5f1f5eb4787b988726f05dff5"
         },
         {
           "path": "candidates/claude/IPCommunityHome.tsx",
           "author": "Codex",
-          "sha256": "ad14ef7f75283a6613226713fe79c635e51c4956430ec74d4dc6ce38e27f6339"
+          "sha256": "fe5663cfec98cbd5fc16003e5cf6b7ff2e542326fa2c1a259788ce167ceb98e4"
         },
         {
           "path": "candidates/claude/ip-community.css",
           "author": "Codex",
-          "sha256": "c299a5fdb55bc6bad11f8effa800a49a31818cb42205b9e56537c4b7f5346486"
+          "sha256": "ca6d0ae44f551cbedd841385753e8ddd3858d0ad031a18461fd775cb95f5fb29"
         }
       ]
     },
@@ -626,16 +627,17 @@
         {
           "path": "candidates/claude/IPArchiveHome.tsx",
           "author": "Codex",
-          "sha256": "3acb33b245320373ec9a43bf10061539f66f3501360d2710cbb2c8c99a5ef792"
+          "sha256": "1afee2095cc3295b90bfdadeb5bcaccc619d0a04f70fa1b4a95b2543f1019fe6"
         },
         {
           "path": "candidates/claude/ip-archive.css",
           "author": "Codex",
-          "sha256": "1de138b403ed993ab9b0acd99c4f79e7f7dd32368f3604c3e8bd968751a697e6"
+          "sha256": "34b260e9ab4eeaf1a9455047822dce10378b49d5f1f5eb4787b988726f05dff5"
         }
       ],
       "adaptations": [
-        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets."
+        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets.",
+        "User-confirmed veterans and military/police career-transition focus for editions 2 and 3: original specialized examples, separate official resource destinations, preserved edition 1 fixtures and storage identifiers."
       ],
       "buildFiles": [
         {
@@ -643,16 +645,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-Bn-VUW4Z.css",
-          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+          "path": "docs-site/candidates/ip-2/assets/index-BFv9wdiJ.css",
+          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
         },
         {
-          "path": "docs-site/candidates/ip-2/assets/index-DudqhRSN.js",
-          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
+          "path": "docs-site/candidates/ip-2/assets/index-BVvARwtL.js",
+          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
         },
         {
           "path": "docs-site/candidates/ip-2/index.html",
-          "sha256": "9f26ee4fe81bc77030ace83538ba6e71d979093789dc0a33a8bb4d7d714738ed"
+          "sha256": "8084bab3df352979d9f48e6319b030ba4b0713f0fe195f11d2d3c74dc2766934"
         }
       ]
     },
@@ -668,16 +670,17 @@
         {
           "path": "candidates/claude/IPCommunityHome.tsx",
           "author": "Codex",
-          "sha256": "ad14ef7f75283a6613226713fe79c635e51c4956430ec74d4dc6ce38e27f6339"
+          "sha256": "fe5663cfec98cbd5fc16003e5cf6b7ff2e542326fa2c1a259788ce167ceb98e4"
         },
         {
           "path": "candidates/claude/ip-community.css",
           "author": "Codex",
-          "sha256": "c299a5fdb55bc6bad11f8effa800a49a31818cb42205b9e56537c4b7f5346486"
+          "sha256": "ca6d0ae44f551cbedd841385753e8ddd3858d0ad031a18461fd775cb95f5fb29"
         }
       ],
       "adaptations": [
-        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets."
+        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets.",
+        "User-confirmed veterans and military/police career-transition focus for editions 2 and 3: original specialized examples, separate official resource destinations, preserved edition 1 fixtures and storage identifiers."
       ],
       "buildFiles": [
         {
@@ -685,16 +688,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-Bn-VUW4Z.css",
-          "sha256": "7ee08034056f73539078c92eb10e3438ef100f90bb09071100544bf8ac966781"
+          "path": "docs-site/candidates/ip-3/assets/index-BFv9wdiJ.css",
+          "sha256": "2e96d87cd7d4476ba0a35df7c72238dc7159d3014ec9980ea8f181baa363805d"
         },
         {
-          "path": "docs-site/candidates/ip-3/assets/index-DudqhRSN.js",
-          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
+          "path": "docs-site/candidates/ip-3/assets/index-BVvARwtL.js",
+          "sha256": "e6422f31c2aba8e164e26fcd74466b7d936159047e07819a07ee0bf91c343455"
         },
         {
           "path": "docs-site/candidates/ip-3/index.html",
-          "sha256": "0b32a7d5bc4fc86aefb795254a05f20e3a2e7a57b6566111bc1ec126951156a3"
+          "sha256": "4287c9d8f1ede0afe2503efeb98a8baf88d02991620f4874dd7eb0f4fa9f1c66"
         }
       ]
     }
