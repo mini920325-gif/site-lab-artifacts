@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 import { exportReview, normalizeReview, reviewRoutes, type SavedReview } from './review';
 import { initialPosts } from './domain';
+import { activeEdition } from './edition';
 import projectLicense from '../../LICENSE?raw';
 
 const publicBase = 'https://mini920325-gif.github.io';
@@ -11,7 +12,7 @@ const exportCSS = `body{margin:0}.export-heading,.export-notes{font:15px/1.6 sys
 export async function exportReviewHTML(input: SavedReview, currentRoute: string): Promise<string> {
   const draft = normalizeReview(input);
   const route = reviewRoutes.includes(currentRoute as typeof reviewRoutes[number]) ? currentRoute : 'home';
-  const url = new URL('/site-lab-artifacts/candidates/claude/', location.origin);
+  const url = new URL(activeEdition.path, location.origin);
   url.searchParams.set('view', route);
   url.searchParams.set('designPreview', '1');
   url.searchParams.set('design', JSON.stringify(draft.design));
@@ -52,7 +53,7 @@ export async function exportReviewHTML(input: SavedReview, currentRoute: string)
     const viewport = doc.createElement('meta'); viewport.name = 'viewport'; viewport.content = 'width=device-width,initial-scale=1'; doc.head.append(viewport);
     const style = doc.createElement('style'); style.textContent = css.join('\n') + '\n' + exportCSS; doc.head.append(style);
     const heading = doc.createElement('header'); heading.className = 'export-heading';
-    const title = doc.createElement('h1'); title.textContent = draft.name; heading.append(title);
+    const title = doc.createElement('h1'); title.textContent = `${activeEdition.number}안 · ${activeEdition.name} / ${draft.name}`; heading.append(title);
     for (const text of [
       `시각 참고 HTML · ${route} 화면 · ${draft.notes.length}개 메모`,
       '선택한 디자인을 예시 글로 재현한 정적 화면입니다. 체험 글·댓글·로그인·작성 중인 입력은 포함하지 않습니다.',

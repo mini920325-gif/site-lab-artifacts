@@ -1,3 +1,5 @@
+import { activeEdition } from './edition.ts';
+import { ipFeatures } from './ip-content.ts';
 import fixture from './fixture.json' with { type: 'json' };
 export const situations = {
   in_service: '복무·전역',
@@ -54,10 +56,16 @@ export type Post = {
   followup?: Followup;
   sample?: boolean;
 };
-export const initialPosts = (): Post[] => fixture.posts.map(p => ({
- id:p.id,owner:'sample',board:p.board_id as Board,situation:p.situation as Situation,
- sample:true,title:p.title,body:p.body,at:p.published_at,replies:[],
-}));
+export const initialPosts = (): Post[] => [
+  ...fixture.posts.map(p => ({
+    id: p.id, owner: 'sample', board: p.board_id as Board, situation: p.situation as Situation,
+    sample: true, title: p.title, body: p.body, at: p.published_at, replies: [],
+  })),
+  ...(activeEdition.id === 'claude' ? [] : ipFeatures.map(p => ({
+    id: p.id, owner: 'sample', board: p.board, sample: true,
+    title: p.title, body: p.body, at: '2026-10-13T00:00:00Z', replies: [],
+  }))),
+];
 export function clean(value: string, max: number, label: string) {
   const s = value.trim();
   if (!s || s.length > max)
@@ -254,7 +262,7 @@ export function href(loc: LocationState) {
   if (loc.mine) p.set('mine', '1');
   if (loc.situation !== 'all') p.set('situation', loc.situation);
   if (loc.feed !== 'all') p.set('feed', loc.feed);
-  return '/site-lab-artifacts/candidates/claude/?' + p;
+  return activeEdition.path + '?' + p;
 }
 export function selectPosts(
   posts: Post[],

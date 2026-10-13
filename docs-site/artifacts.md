@@ -2,7 +2,7 @@
 
 로그인 없이 읽는 공개 디자인 작업 모음입니다. 운영 서비스가 아닙니다.
 
-## Claude 기반 · 디자인 조합 체험판
+## 1안 · 기존 디자인 조합 체험판
 
 - 종류: 기능 체험판 / 상태: 디자인·메모 체험판
 - 작성자: Claude Code · Codex / 변경일: 2026-10-13
@@ -21,6 +21,26 @@
 - 한계: 합성 글과 체험 계정으로 동작하는 메모리 시연. 새로고침 시 작성 내용이 사라질 수 있으며 실제 인증·DB·서버 권한은 연결되지 않았습니다. 정적 디자인 편집기의 설정·메모와 연동되지 않습니다.
 - [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/candidates/fable/?view=home)
 - [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/fable/main.tsx)
+
+## 2안 · 제도와 일상
+
+- 종류: 기능 체험판 / 상태: IP 비교 시안
+- 작성자: Codex · Claude 기반 / 변경일: 2026-10-13
+- 설명: 직접 정리한 글 → 공식 원문 → 질문. 행정·일·생활 주제를 읽는 편집형 화면. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.
+- 기준 버전: 2026-10-13
+- 한계: 비교용 이름과 편집 예시. 합성 글과 체험 계정의 메모리 시연이며 실제 인증·DB와 연결되지 않습니다. 설정과 메모는 각 안별로 저장합니다.
+- [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-2/?view=home)
+- [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPArchiveHome.tsx)
+
+## 3안 · 일상동료
+
+- 종류: 기능 체험판 / 상태: IP 비교 시안
+- 작성자: Codex · Claude 기반 / 변경일: 2026-10-13
+- 설명: 분야별 대화 → 경험 목록 → 필요한 자료. 질문과 경험을 먼저 보는 게시판. 32개 출발 조합·7축·위치 메모·다른 이름 저장·파일 전달을 유지합니다.
+- 기준 버전: 2026-10-13
+- 한계: 비교용 이름과 편집 예시. 합성 글과 체험 계정의 메모리 시연이며 실제 인증·DB와 연결되지 않습니다. 설정과 메모는 각 안별로 저장합니다.
+- [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/candidates/ip-3/?view=home)
+- [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/candidates/claude/IPCommunityHome.tsx)
 
 ## A · 에디토리얼
 
@@ -159,6 +179,15 @@
 - 한계: 합성 자료·메모리 시연 또는 정적 스케치. 전체 기능·실사용·운영 준비 완료를 뜻하지 않음.
 - [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/sketches/quote-sentence.html)
 - [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/agent-board/artifacts/externalGrok/quote-sentence.html)
+
+## 1·2·3안 구성과 종료 조건
+
+- 종류: 조사·계획 / 상태: IP 비교 시안
+- 작성자: Codex · root / 변경일: 2026-10-13
+- 설명: 기존 1안 보존·직접 만든 콘텐츠를 담은 2·3안·안별 메모와 저장의 범위
+- 기준 버전: 2026-10-13
+- [화면·자료](https://mini920325-gif.github.io/site-lab-artifacts/reports/ip-directions.html)
+- [원본 파일](https://github.com/mini920325-gif/site-lab-artifacts/blob/main/docs/ip-directions.md)
 
 ## 상용 커뮤니티·이미지 방식 비교
 

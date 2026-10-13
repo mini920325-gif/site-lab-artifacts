@@ -1,4 +1,8 @@
 'use client';
+import { activeEdition } from './edition';
+import { EditionSwitcher } from './EditionSwitcher';
+import { IPArchiveHome } from './IPArchiveHome';
+import { IPCommunityHome } from './IPCommunityHome';
 import {
   useState,
   useEffect,
@@ -79,6 +83,7 @@ export default function Draft({
   const [loc, setLoc] = useState(() =>
     readLocation(initialSearch, initialPath),
   );
+  useEffect(() => { document.title = activeEdition.number + '안 · ' + activeEdition.name + ' | 커뮤니티 시안'; }, []);
   const ready = useSyncExternalStore(
     subscribeHydration,
     () => true,
@@ -558,6 +563,7 @@ export default function Draft({
     <div
       className="draft journey-design"
       data-variant={loc.variant}
+      data-edition={activeEdition.id}
       data-view={loc.view}
       data-layout={design.layout}
       data-spacing={design.spacing}
@@ -573,6 +579,7 @@ export default function Draft({
       <a href="#main" className="skip">
         본문으로 바로가기
       </a>
+      {!designPreview && <EditionSwitcher hasDraft={Boolean(draft.title || draft.body || comment)} />}
       <div className="office-notice demo-banner">
         <div className="container">
           <span className="banner-text" title={announcement || siteConfig.announcement}>
@@ -728,7 +735,9 @@ export default function Draft({
           >
             {notice}
           </output>
-          {loc.view === 'home' ? (
+          {loc.view === 'home' && activeEdition.id === 'ip-2' ? <IPArchiveHome loc={loc} posts={posts} go={go} compose={startQuestion} />
+          : loc.view === 'home' && activeEdition.id === 'ip-3' ? <IPCommunityHome loc={loc} posts={posts} go={go} compose={startQuestion} />
+          : loc.view === 'home' ? (
             <JourneyHome
               loc={loc}
               posts={posts}
@@ -1330,7 +1339,7 @@ export default function Draft({
       </div>
       </div>
       <footer className="container footer" data-review-target="footer" data-review-label="하단">
-        <div className="footer-tools"><a href="/site-lab-artifacts/">산출물 모음</a><a href="/site-lab-artifacts/reports/pre-settings-handoff.html">이번 준비와 종료 조건</a>
+        <div className="footer-tools"><a href="/site-lab-artifacts/">산출물 모음</a><a href={activeEdition.id === 'claude' ? '/site-lab-artifacts/reports/pre-settings-handoff.html' : '/site-lab-artifacts/reports/ip-directions.html'}>이번 준비와 종료 조건</a>
           <button onClick={() => open({ type: 'reading' })}>읽기 설정</button>
           <button onClick={() => go({ view: 'studio' })}>
             운영·디자인 체험

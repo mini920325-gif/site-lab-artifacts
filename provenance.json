@@ -205,13 +205,13 @@
           "sourcePath": "community/DesignExplorer.tsx",
           "path": "candidates/claude/DesignExplorer.tsx",
           "originalSha256": "25612247d3aa32db6566c8eedba14c79b1833220f32ee32456180886284ccb10",
-          "publicSha256": "54059e0f15cbdba8f13e3283084c422108bfe2880ce7336f88c8c3610ccd2df6"
+          "publicSha256": "35d696369ed993ce58ec30162c51950333a9b717c99fc47a2e72b58dcb9d3497"
         },
         {
           "sourcePath": "community/Draft.tsx",
           "path": "candidates/claude/Draft.tsx",
           "originalSha256": "3870de87f05edf2b6e11cd2df5b2f992ef40857b8b4be1fa5f7df09e22a7f908",
-          "publicSha256": "e65936142e69d0d7205f99686576894c45f1cbfd5e77e07327020cf9d2a7d964"
+          "publicSha256": "39b2d3893f6feee93154cb0be9b20af2cb239756f08e1a475b117bd047801416"
         },
         {
           "sourcePath": "community/JourneyHome.tsx",
@@ -235,7 +235,7 @@
           "sourcePath": "community/design.ts",
           "path": "candidates/claude/design.ts",
           "originalSha256": "194999b1496e49081c973def23f35f851f5a91aaac8e05f59125c6ede1292574",
-          "publicSha256": "e5c6c04e929e7d72db1a9c52ff8bea0d73c8d49d1f55d5c7995a0ee97581921d"
+          "publicSha256": "413009a2ae1eba334cb9b51df50431cc4bf4d99041484c80f55f91df1c88c361"
         },
         {
           "sourcePath": "community/detail.css",
@@ -253,7 +253,7 @@
           "sourcePath": "community/domain.ts",
           "path": "candidates/claude/domain.ts",
           "originalSha256": "32e68c53f6942a3f69517fdc77c7156bb174118e3d35f58619a30843c042956b",
-          "publicSha256": "7e0e7c2c133288946eab13e3db4318aaa55cda3122cbff028d99d387a03ec06d"
+          "publicSha256": "3493bcabf2075f68a5d5ae1c53b499743852bbff0f3b0facab8503f80261582f"
         },
         {
           "sourcePath": "community/draft.css",
@@ -319,7 +319,7 @@
           "sourcePath": "community/site-config.ts",
           "path": "candidates/claude/site-config.ts",
           "originalSha256": "c8ee0ad322bfd5bab7b98f31be67321cf7c27f6dacc01a552e26c2d5dfc0b3ef",
-          "publicSha256": "35657249e52b49597d7c3c9ad311df149ac1a53f8bc0a33dbf06e111f5287286"
+          "publicSha256": "a4ab6603770f5b98f8861dd5308402b29b646ddad4ba8d46d7e7d37d7d64a892"
         },
         {
           "sourcePath": "community/tsconfig.json",
@@ -331,7 +331,7 @@
           "sourcePath": "community/vite.config.ts",
           "path": "candidates/claude/vite.config.ts",
           "originalSha256": "38fbf2f2ca1dee399639a570f5a82db258be75f790b8d1e8fc562083c74471ac",
-          "publicSha256": "669203c7afc759c1eaa326e0b687c0a9c15e4c52df379a0341913b53963ab817"
+          "publicSha256": "16c75fb7eb9584f5e378be54c33be1c9856f81cd39e6ffaacc7322f7f1402d5b"
         }
       ],
       "adaptations": [
@@ -340,7 +340,8 @@
         "Distinct public-preview browser setting keys",
         "Original synthetic content and memory-only authentication/storage retained",
         "Codex visual integration: 32 starting combinations, seven independent design axes, actual page comparison, cancel/apply with browser persistence; original synthetic post data and memory-only service logic retained",
-        "Codex review workspace: anchored local notes, named snapshots and Save As, multi-tab conflict protection, strict JSON import, Markdown requests and isolated synthetic offline HTML export with licenses; existing static editor preserved"
+        "Codex review workspace: anchored local notes, named snapshots and Save As, multi-tab conflict protection, strict JSON import, Markdown requests and isolated synthetic offline HTML export with licenses; existing static editor preserved",
+        "Retain edition 1 home, URL and storage keys; add independently stored editorial and community IP concepts at ip-2 and ip-3 using the shared functional source, original synthetic editorial content and explicit edition export identity."
       ],
       "buildFiles": [
         {
@@ -348,16 +349,16 @@
           "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-BBBCfXZo.js",
-          "sha256": "67ed385c12acd5b8efc3d558bec635c477f1fd382e3b4e4da9c0e29dd6809de6"
+          "path": "docs-site/candidates/claude/assets/index-Czodeu-6.js",
+          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
         },
         {
-          "path": "docs-site/candidates/claude/assets/index-cjlxIHQR.css",
-          "sha256": "e451f7d6e732b1d34344df19fe5190323b582d748080cb38493f1fae77a1306e"
+          "path": "docs-site/candidates/claude/assets/index-D5_2OQzq.css",
+          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
         },
         {
           "path": "docs-site/candidates/claude/index.html",
-          "sha256": "03efefdb1e99569fbb58de5adaea04a8c13d0227177a81f954d0611be55a6e20"
+          "sha256": "d0f0ce3ad0e0ba4e11b88a2ced10d769ee6d1d75e4699fe4841c47c27898057b"
         }
       ],
       "createdFiles": [
@@ -374,12 +375,12 @@
         {
           "path": "candidates/claude/ReviewWorkspace.tsx",
           "author": "Codex",
-          "sha256": "d70a63964d629bb6f9fa19b687a04be784cda357cc8238217dd16885aba4cab7"
+          "sha256": "5c16569b411d6df0484a9e89b03680bd6081e4ee3ed3e5d47bce9ec9b0622ae9"
         },
         {
           "path": "candidates/claude/review.ts",
           "author": "Codex",
-          "sha256": "2c6268deef681af2290fc17add29018413f803a73e07935ecc820bcd0a4f9d0e"
+          "sha256": "01604856cda79e5ebc812c9ec1d42dd580e4f42eb66cd66577aa54d45b2a0975"
         },
         {
           "path": "candidates/claude/review.test.ts",
@@ -389,12 +390,57 @@
         {
           "path": "candidates/claude/review-export.ts",
           "author": "Codex",
-          "sha256": "dc5b900c02e235e954b011cd072dd1a4c8b8d784f35c27d252b6240264315eca"
+          "sha256": "8dc0c6a7c05ba860a5d1fc4ea40285492ef48c7cc819af8ac659f0ac4c11c302"
         },
         {
           "path": "candidates/claude/review-workspace.css",
           "author": "Codex",
           "sha256": "6ef81386890ef3fe8c44b7b15c69a6cbcae3436e13416fda166c26558854b7b5"
+        },
+        {
+          "path": "candidates/claude/edition.ts",
+          "author": "Codex",
+          "sha256": "2e1f7ae578d563cf8800a824e333b389570e72c3a32f3faa1aaf80068b66c19f"
+        },
+        {
+          "path": "candidates/claude/edition.test.ts",
+          "author": "Codex",
+          "sha256": "4d8748045e6740b44e7dbb17a895c68b9cd4701acd775f5e963d70801d219431"
+        },
+        {
+          "path": "candidates/claude/ip-content.ts",
+          "author": "Codex",
+          "sha256": "1dc5afe6b249fd4eb445696847d5a6616ddd3c187e34450c50f7da8b6eaf6e05"
+        },
+        {
+          "path": "candidates/claude/EditionSwitcher.tsx",
+          "author": "Codex",
+          "sha256": "7e3038b5c2f9f256bc3e608f83952a28aa0ef0ff1e1855d245e8358ed3fd2481"
+        },
+        {
+          "path": "candidates/claude/editions.css",
+          "author": "Codex",
+          "sha256": "3c5316f055b19ed0df489701ce4cfc8d11977cb8d785f9add66372bcb61f7a2c"
+        },
+        {
+          "path": "candidates/claude/IPArchiveHome.tsx",
+          "author": "Codex",
+          "sha256": "3acb33b245320373ec9a43bf10061539f66f3501360d2710cbb2c8c99a5ef792"
+        },
+        {
+          "path": "candidates/claude/ip-archive.css",
+          "author": "Codex",
+          "sha256": "1de138b403ed993ab9b0acd99c4f79e7f7dd32368f3604c3e8bd968751a697e6"
+        },
+        {
+          "path": "candidates/claude/IPCommunityHome.tsx",
+          "author": "Codex",
+          "sha256": "ad14ef7f75283a6613226713fe79c635e51c4956430ec74d4dc6ce38e27f6339"
+        },
+        {
+          "path": "candidates/claude/ip-community.css",
+          "author": "Codex",
+          "sha256": "648ed6b2681a31dca5a5ab279c64790886b2f9270a957cc492731aac5334a548"
         }
       ]
     },
@@ -565,6 +611,90 @@
         {
           "path": "docs-site/candidates/fable/index.html",
           "sha256": "6eccff303f08b8b41fc4354c9af8779982aea43ac9ed1cd653778e822eced50c"
+        }
+      ]
+    },
+    {
+      "id": "ip-2",
+      "sourceCommit": null,
+      "derivedFrom": "184a0f38b809d76d1e29d4f21a05eeb67c945bce",
+      "sharedSource": "candidates/claude",
+      "author": "Codex · Claude-derived functional foundation",
+      "importedOn": "2026-10-13",
+      "files": [],
+      "createdFiles": [
+        {
+          "path": "candidates/claude/IPArchiveHome.tsx",
+          "author": "Codex",
+          "sha256": "3acb33b245320373ec9a43bf10061539f66f3501360d2710cbb2c8c99a5ef792"
+        },
+        {
+          "path": "candidates/claude/ip-archive.css",
+          "author": "Codex",
+          "sha256": "1de138b403ed993ab9b0acd99c4f79e7f7dd32368f3604c3e8bd968751a697e6"
+        }
+      ],
+      "adaptations": [
+        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets."
+      ],
+      "buildFiles": [
+        {
+          "path": "docs-site/candidates/ip-2/THIRD_PARTY_NOTICES.txt",
+          "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "path": "docs-site/candidates/ip-2/assets/index-Czodeu-6.js",
+          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
+        },
+        {
+          "path": "docs-site/candidates/ip-2/assets/index-D5_2OQzq.css",
+          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
+        },
+        {
+          "path": "docs-site/candidates/ip-2/index.html",
+          "sha256": "7713f4a2701cc3b98f3fe37d4b28176e1af7b237b3a90ed4e384eca7d44219de"
+        }
+      ]
+    },
+    {
+      "id": "ip-3",
+      "sourceCommit": null,
+      "derivedFrom": "184a0f38b809d76d1e29d4f21a05eeb67c945bce",
+      "sharedSource": "candidates/claude",
+      "author": "Codex · Claude-derived functional foundation",
+      "importedOn": "2026-10-13",
+      "files": [],
+      "createdFiles": [
+        {
+          "path": "candidates/claude/IPCommunityHome.tsx",
+          "author": "Codex",
+          "sha256": "ad14ef7f75283a6613226713fe79c635e51c4956430ec74d4dc6ce38e27f6339"
+        },
+        {
+          "path": "candidates/claude/ip-community.css",
+          "author": "Codex",
+          "sha256": "648ed6b2681a31dca5a5ab279c64790886b2f9270a957cc492731aac5334a548"
+        }
+      ],
+      "adaptations": [
+        "Independent concept home and default design; shared functional engine, separate URL and local display/review keys; original editorial examples, no private case data or new third-party assets."
+      ],
+      "buildFiles": [
+        {
+          "path": "docs-site/candidates/ip-3/THIRD_PARTY_NOTICES.txt",
+          "sha256": "82c224bef069e865e4e81fedf15991aae9d04c101a7b2d82b4ff4874337970ac"
+        },
+        {
+          "path": "docs-site/candidates/ip-3/assets/index-Czodeu-6.js",
+          "sha256": "6a30b20789793f94c30e37adc491bd9253e74ffb41a0506464443ecbcdec05d0"
+        },
+        {
+          "path": "docs-site/candidates/ip-3/assets/index-D5_2OQzq.css",
+          "sha256": "2359e7e26808e2f5099914de3e86333046b842b453100c44c7f652a15170ca2a"
+        },
+        {
+          "path": "docs-site/candidates/ip-3/index.html",
+          "sha256": "3c313cec12e05798cacfc5f755ff3d2e62d45f046612528a6d3b860ff5a0dd26"
         }
       ]
     }

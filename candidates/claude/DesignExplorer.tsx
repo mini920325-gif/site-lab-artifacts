@@ -1,3 +1,4 @@
+import { activeEdition, editionPreviewURL } from './edition';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp, Columns2, RotateCcw, Search } from 'lucide-react';
 import { designOptions, designLabels, designPresets, paletteTokens, defaultDesign, type Design, type DesignAxis } from './design';
@@ -6,7 +7,7 @@ import './design-explorer.css';
 const axes = Object.keys(designOptions) as DesignAxis[];
 const pageSize = 8;
 const sameDesign = (a: Design, b: Design) => axes.every((axis) => a[axis] === b[axis]);
-const previewURL = (design: Design) => '/site-lab-artifacts/candidates/claude/?view=home&designPreview=1&design=' + encodeURIComponent(JSON.stringify(design));
+const previewURL = (design: Design) => editionPreviewURL(activeEdition, design);
 
 function Miniature({ design }: { design: Design }) {
   const palette = paletteTokens[design.color];
@@ -102,6 +103,6 @@ export function DesignExplorer({ value, appliedValue, change, apply, cancel }: {
         {compare && <div id="dx-comparison"><p className="dx-comparison-note">같은 1280px 홈 화면을 축소해 보여줍니다. 비교 화면 안의 버튼은 동작하지 않아요. 실제 읽기·이동은 아래 페이지에서 확인하세요.</p><div className="dx-comparison-grid"><PagePreview design={appliedValue} label="현재 적용한 화면" /><PagePreview design={value} label="지금 미리보는 화면" /></div></div>}
       </section>
     </div>
-    <footer className="dx-bottom"><p role="status">{changed ? '변경한 조합을 미리보고 있어요. 취소하면 적용 중인 화면으로 돌아갑니다.' : '적용 중인 조합입니다. 바꾼 뒤 적용하면 이 브라우저에 저장돼요.'}</p><div className="dx-bottom-actions"><button type="button" onClick={() => change({ ...defaultDesign })}><RotateCcw size={16} aria-hidden="true" />기본 조합 미리보기</button><button type="button" className="dx-apply" onClick={apply}><Check size={17} aria-hidden="true" />이 조합 적용</button></div></footer>
+    <footer className="dx-bottom"><p role="status">{changed ? '변경한 조합을 미리보고 있어요. 취소하면 적용 중인 화면으로 돌아갑니다.' : '적용 중인 조합입니다. 바꾼 뒤 적용하면 이 브라우저에 저장돼요.'}</p><div className="dx-bottom-actions"><button type="button" onClick={() => change({ ...activeEdition.design })}><RotateCcw size={16} aria-hidden="true" />기본 조합 미리보기</button><button type="button" className="dx-apply" onClick={apply}><Check size={17} aria-hidden="true" />이 조합 적용</button></div></footer>
   </section>;
 }

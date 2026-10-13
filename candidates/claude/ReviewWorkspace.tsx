@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { createPortal } from 'react-dom';
 import { type Design } from './design';
-import { readReviewBundle, reviewStorageSnapshot, persistReviewState, saveReview, loadReview, exportReview, parseReview, reviewBrief, type ReviewNote, type SavedReview } from './review';
+import { readReviewBundle, reviewStorageKey, reviewStorageSnapshot, persistReviewState, saveReview, loadReview, exportReview, parseReview, reviewBrief, type ReviewNote, type SavedReview } from './review';
 import './review-workspace.css';
 
 const targets = [
@@ -74,7 +74,7 @@ export function ReviewWorkspace({ design, route, onDesign, sourcePreviewHTML, on
   useEffect(() => {
     const markConflict = () => { conflictRef.current = true; setConflict(true); };
     const onStorage = (event: StorageEvent) => {
-      if ((event.key === 'artifacts-claude-review-v1' || event.key === null) && reviewStorageSnapshot() !== storedSnapshot.current) markConflict();
+      if ((event.key === reviewStorageKey || event.key === null) && reviewStorageSnapshot() !== storedSnapshot.current) markConflict();
     };
     const flush = () => {
       if (!conflictRef.current && persistReviewState(currentState.current, { snapshot: storedSnapshot.current })) storedSnapshot.current = reviewStorageSnapshot();

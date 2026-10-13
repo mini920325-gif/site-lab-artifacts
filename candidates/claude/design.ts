@@ -1,3 +1,4 @@
+import { activeEdition, editionStorageKey } from './edition.ts';
 export const designOptions = {
   frame: [
     { id: 'editorial', label: '에디토리얼', detail: '이야기를 앞에 두는 편집형 첫 화면.' },
@@ -135,7 +136,7 @@ export const designPresets: DesignPreset[] = [
   preset('AF', '자주빛 길잡이', '자료와 주제를 간결한 자주색 목록으로.', { frame: 'directory', color: 'plum', type: 'system', layout: 'forum', spacing: 'compact', corners: 'soft', symbols: 'full' }),
 ];
 
-const key = 'artifacts-claude-display-v1';
+const key = editionStorageKey('display');
 const maxPreviewLength = 2048;
 export function readDesign(): Design {
   try {
@@ -148,8 +149,8 @@ export function readDesign(): Design {
         catch { return { ...defaultDesign }; }
       }
     }
-    return normalizeDesign(JSON.parse(localStorage.getItem(key) || 'null'));
-  } catch { return { ...defaultDesign }; }
+    return normalizeDesign(JSON.parse(localStorage.getItem(key) || JSON.stringify(activeEdition.design)));
+  } catch { return { ...activeEdition.design }; }
 }
 export function saveDesign(design: Design): boolean {
   try { localStorage.setItem(key, JSON.stringify(normalizeDesign(design))); return true; }
